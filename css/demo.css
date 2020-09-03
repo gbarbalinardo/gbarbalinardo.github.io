@@ -1,0 +1,69 @@
+.preview-intro{
+	text-align: center;
+	padding-top: 60px;
+}
+.preview-intro h2{
+	font-size: 70px;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+}
+.preview-intro p{
+	font-size: 26px;
+    margin-bottom: 10px;
+}
+.preview{
+	padding-top: 50px;
+}
+
+.single {
+	text-align: center;
+	display: block;
+	box-shadow: -1px 3px 16px rgba(0, 0, 0, 0.13);
+	margin-bottom: 30px;
+	transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+}
+
+.single img {
+	min-width: 100%;
+}
+
+.single h2 {
+	font-family: 'Montserrat', sans-serif;
+	margin: 0;
+	padding: 20px 10px;
+	font-size: 18px;
+	font-weight: normal;
+	color: #333;
+}
+
+.single:hover {
+	box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+	text-decoration: none;
+}
+
+.site-btn {
+	display: inline-block;
+	border: none;
+	padding: 13px 30px;
+	border-radius: 25px;
+	color: #fff;
+	letter-spacing: 0.06em;
+	font-size: 12px;
+	font-weight: 700;
+	box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.34);
+	background-image: linear-gradient(left top, #591ec1, #00BCD4);
+	background-image: -webkit-linear-gradient(left top, #591ec1, #00BCD4);
+	background-image: -ms-linear-gradient(left top, #591ec1, #00BCD4);
+	background-image: -o-linear-gradient(left top, #591ec1, #00BCD4);
+	background-color: #00BCD4;
+	-webkit-transition: all 0.4s ease 0s;
+	transition: all 0.4s ease 0s;
+}
+
+.site-btn:hover,
+.site-btn:focus{
+	text-decoration: none;
+	color: #fff;
+}
