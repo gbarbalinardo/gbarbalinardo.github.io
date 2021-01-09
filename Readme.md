@@ -1,3 +1,3 @@
 # Giuseppe Barbalinardo website and portfolio
 
-Visit [here](http://giuseppe.barbalinardo.com) to find out more.
+Visit [here](https://giuseppe.barbalinardo.com) to find out more about me.
