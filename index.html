@@ -665,7 +665,6 @@
     </div>
 </section>
 
-<div id="map-area"></div>
 
 <!-- ==== Contact Section Start ==== -->
 <section class="contact-section" id="contact">
@@ -722,44 +721,6 @@
 <script src="js/wow.min.js"></script>
 <script src="js/particles.min.js"></script>
 <script src="js/init-particles.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5ccOD4--Z0oHM_iv1l98dGw9cpj47e9U"></script>
 <script src="js/scripts.js"></script>
-<script>
-    /*------------------
-        GOOGLE MAP
-    --------------------*/
-    function initialize() {
-        var myOptions = {
-            zoom: 11,
-            center: new google.maps.LatLng(37.80049, -122.3494), //change the coordinates
-            mapTypeId: google.maps.MapTypeId.ROADMAP,
-            scrollwheel: false,
-            mapTypeControl: false,
-            zoomControl: false,
-            streetViewControl: false,
-            styles: [{
-                "stylers": [{
-                    "hue": "#ffffff"
-                }, {
-                    saturation: -110
-                }, {
-                    gamma: 2
-                }]
-            }]
-        };
-        var map = new google.maps.Map(document.getElementById("map-area"), myOptions);
-
-        // var marker = new google.maps.Marker({
-        // 	map: map,
-        // 	position: new google.maps.LatLng(37.871462, -122.273526) //change the coordinates
-        // });
-        // google.maps.event.addListener(marker, "click", function() {
-        // 	infowindow.open(map, marker);
-        // });
-
-    }
-
-    google.maps.event.addDomListener(window, 'load', initialize);
-</script>
 </body>
 </html>
