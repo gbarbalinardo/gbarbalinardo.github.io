@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Giuseppe Barbalinardo, personal portfolio</title>
+
+
+    <meta name="description"
+          content="I am a data scientist with a background in software development and physics, combining technical expertise with leadership in building mathematical models and professional software. I have extensive experience in machine learning, AI, and natural language processing (NLP), driving innovative, data-driven solutions through both hands-on development and team leadership.">
+    <meta itemprop="name" content="Giuseppe Barbalinardo, personal portfolio">
+    <meta itemprop="description"
+          content="I am a data scientist with a background in software development and physics, combining technical expertise with leadership in building mathematical models and professional software. I have extensive experience in machine learning, AI, and natural language processing (NLP), driving innovative, data-driven solutions through both hands-on development and team leadership.">
+    <meta itemprop="image" content="https://giuseppe.barbalinardo.com/img/bg.jpg">
+    <meta property="og:url" content="https://giuseppe.barbalinardo.com">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Giuseppe Barbalinardo, personal portfolio">
+    <meta property="og:description"
+          content="I am a data scientist with a background in software development and physics, combining technical expertise with leadership in building mathematical models and professional software. I have extensive experience in machine learning, AI, and natural language processing (NLP), driving innovative, data-driven solutions through both hands-on development and team leadership.">
+    <meta property="og:image" content="https://giuseppe.barbalinardo.com/img/bg.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Giuseppe Barbalinardo, personal portfolio">
+    <meta name="twitter:description"
+          content="I am a data scientist with a background in software development and physics, combining technical expertise with leadership in building mathematical models and professional software. I have extensive experience in machine learning, AI, and natural language processing (NLP), driving innovative, data-driven solutions through both hands-on development and team leadership.">
+    <meta name="twitter:image" content="https://giuseppe.barbalinardo.com/img/bg.jpg">
+
+    <meta name="description" content="Giuseppe Barbalinardo">
+    <meta name="keywords"
+          content="Giuseppe Barbalinardo, Science, Development, Leadership, Research, Data, AI">
+	
+	<!-- Favicon -->   
+	<link href="img/favicon.ico" rel="shortcut icon"/>
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="css/magnific-popup.css"/>
+	<link rel="stylesheet" href="css/owl.carousel.css"/>
+	<link rel="stylesheet" href="css/animate.min.css"/>
+	<link rel="stylesheet" href="css/style.css"/>
+
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+
+	<!-- ==== Preloader Start ==== -->
+	<div id="preloader">
+		<div class="pre-container">
+			<div class="spinner">
+				<div class="bounce1"></div>
+				<div class="bounce2"></div>
+				<div class="bounce3"></div>
+			</div>
+		</div>
+	</div>
+	<!-- ==== Preloader End ==== -->
+
+	<!-- ==== Left Bar Start ==== -->
+	<div class="left-bar">
+		<div class="logo">
+			<h2>G</h2>
+		</div>
+		<div class="social">
+			<div>
+				<a href="https://www.linkedin.com/in/giuseppe-barbalinardo-phd-887a3586/"><i class="fa fa-linkedin"></i></a>
+				<a href="https://github.com/gbarbalinardo"><i class="fa fa-github"></i></a>
+				<a href="https://scholar.google.com/citations?user=moQOCykAAAAJ&hl=en"><i class="fa fa-university"></i></a>
+			</div>
+		</div>
+		<div class="nav-switch">
+			<span class="bar-one"></span>
+			<span class="bar-two"></span>
+			<span class="bar-three"></span>
+		</div>
+	</div>
+
+	
+	<!-- ==== Nav Menu Start ==== -->
+	<nav class="mainmenu">
+		<ul class="menu-list">
+			<li><a href="index.html#home">Home</a></li>
+			<li><a href="index.html#about">About</a></li>
+			<li><a href="index.html#skills">Skills</a></li>
+			<li><a href="index.html#portfolio">Portfolio</a></li>
+			<li><a href="index.html#blog">Research</a></li>
+			<li><a href="index.html#contact">Contact</a></li>
+		</ul>
+	</nav>
+	<!-- ==== Nav Menu End ==== -->
+
+	<header class="header-section">
+		<div class="header-wrap">
+			<h2 class="page-title">Fluctuation-Dissipation Theorem:</h2>
+			<h2 class="page-title">Applications in Thermodynamic Computing.</h2>
+			<div class="header-nav">
+				<a href="index.html"><i class="fa fa-home"></i> Home</a>
+			</div>
+		</div>
+	</header>
+	<main class="main-section spad">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 single-page">
+					<article class="post-single">
+						<div class="entry-content">
+	
+							<p> The Fluctuation-Dissipation Theorem (DFT) is a cornerstone of statistical mechanics, linking the random thermal fluctuations in a system to its response under external forces. This relationship enables thermodynamic systems to perform complex computations naturally, as fluctuations drive the system towards equilibrium states that reflect solutions to certain mathematical problems. In this post, we’ll dive into key applications of the DFT for thermodynamic computing, exploring how it supports tasks like matrix inversion, sampling, and optimization. These processes not only demonstrate the elegance of thermodynamic principles but also provide efficient alternatives to traditional computational methods in AI and data science.</p>
+	
+							<h3>1. Matrix Inversion</h3>
+							<p>The DFT allows for efficient matrix inversion by reaching thermal equilibrium in a coupled oscillator system. The covariance matrix <em>C<sub>ij</sub></em> at equilibrium is proportional to the inverse of the coupling matrix <em>K</em>:</p>
+							<p style="text-align:center;"><em>C<sub>ij</sub> = k<sub>B</sub> T · (K<sup>-1</sup>)<sub>ij</sub></em></p>
+							<p>This approach simplifies matrix inversion, useful for high-dimensional matrices in machine learning.</p>
+	
+							<h3>2. Sampling from Probability Distributions</h3>
+							<p>Thermal fluctuations in a system can provide natural samples from probability distributions. For example, sampling from a Gaussian distribution can be represented by:</p>
+							<p style="text-align:center;"><em>P(x) ~ e<sup>-x<sup>2</sup> / 2 k<sub>B</sub> T</sup></em></p>
+							<p>This is useful in Bayesian inference and Monte Carlo methods.</p>
+	
+							<h3>3. Solving Linear Systems</h3>
+							<p>To solve a linear system, configure the coupling matrix <em>K</em> to approximate the target matrix <em>A</em>:</p>
+							<p style="text-align:center;"><em>A · x = b, where K ≈ A</em></p>
+							<p>The system at equilibrium provides the solution <em>x</em>, essential for data fitting and physical simulations.</p>
+	
+							<h3>4. Eigenvalue and Eigenvector Computation</h3>
+							<p>Setting the coupling matrix <em>K</em> to represent matrix <em>A</em> allows eigenvalue and eigenvector computation:</p>
+							<p style="text-align:center;"><em>K · x = λ · x</em></p>
+							<p>This method benefits applications like Principal Component Analysis (PCA) for dimensionality reduction.</p>
+	
+							<h3>5. Optimization and Constrained Minimization</h3>
+							<p>Thermodynamic systems can use thermal fluctuations for optimization, settling into an energy-minimizing state:</p>
+							<p style="text-align:center;"><em>x(t) → minimizes E(x) = (1/2) k x<sup>2</sup> + U(x)</em></p>
+							<p>This approach is valuable in optimization tasks like simulated annealing for finding global minima.</p>
+	
+							<h2>Summary Table of Applications</h2>
+							<table style="width: 100%; border-collapse: collapse; font-size: 1.2em;">
+								<tr>
+									<th style="padding: 15px;">Application</th>
+									<th style="padding: 15px;">Formula</th>
+									<th style="padding: 15px;">Example Application</th>
+								</tr>
+								<tr>
+									<td style="padding: 15px;">Matrix Inversion</td>
+									<td style="padding: 15px;"><em>C<sub>ij</sub> = k<sub>B</sub> T · (K<sup>-1</sup>)<sub>ij</sub></em></td>
+									<td style="padding: 15px;">Inverting large covariance matrices in machine learning and AI.</td>
+								</tr>
+								<tr>
+									<td style="padding: 15px;">Sampling from Distributions</td>
+									<td style="padding: 15px;"><em>P(x) ~ e<sup>-x<sup>2</sup> / 2 k<sub>B</sub> T</sup></em></td>
+									<td style="padding: 15px;">Bayesian inference: drawing samples from Gaussian priors.</td>
+								</tr>
+								<tr>
+									<td style="padding: 15px;">Solving Linear Systems</td>
+									<td style="padding: 15px;"><em>A · x = b, where K ≈ A</em></td>
+									<td style="padding: 15px;">Solving high-dimensional linear equations in data fitting or physics simulations.</td>
+								</tr>
+								<tr>
+									<td style="padding: 15px;">Eigenvalue Computation</td>
+									<td style="padding: 15px;"><em>K · x = λ · x</em></td>
+									<td style="padding: 15px;">Principal Component Analysis (PCA): finding principal components in high-dimensional data.</td>
+								</tr>
+								<tr>
+									<td style="padding: 15px;">Optimization</td>
+									<td style="padding: 15px;"><em>x(t) → minimizes E(x) = (1/2) k x<sup>2</sup> + U(x)</em></td>
+									<td style="padding: 15px;">Simulated annealing in combinatorial optimization problems.</td>
+								</tr>
+							</table>
+							<h1>Conclusion</h1>
+
+							<p>The Fluctuation-Dissipation Theorem bridges thermal fluctuations and energy dissipation, enabling natural, energy-efficient solutions to complex problems. By leveraging these properties in thermodynamic systems, DFT-based approaches open doors to efficient, hardware-driven alternatives for tasks in machine learning and beyond. Whether performing matrix inversion, sampling, or optimization, the DFT provides a unique framework for achieving computational results by aligning physical principles with mathematical operations, hinting at new possibilities for future computing architectures.</p>
+	
+						</div>
+					</article>
+				</div>
+			</div>
+		</div>
+	</main>
+	
+	
+	<!-- ==== Main Section End ==== -->
+
+
+
+
+	<!-- ==== Footer Section Start ==== -->
+	<footer class="footer-section spad">
+		<p>All right reserved &copy; Giuseppe Barbalinardo, 2021</p>
+	</footer>
+	<!-- ==== Footer Section End ==== -->
+
+
+	<!-- ==== Jquery & Scripts==== -->
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/imagesloaded.pkgd.min.js"></script>
+	<script src="js/isotope.pkgd.min.js"></script>
+	<script src="js/magnific-popup.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/jquery.nav.js"></script>
+	<script src="js/wow.min.js"></script>
+	<script src="js/scripts.js"></script>
+</body>
+</html>
