@@ -47,3 +47,14 @@ The site includes:
 - Image assets are organized in themed subdirectories under `img/`
 - Blog posts follow a numbered naming convention (01-blog-*, 02-blog-*, etc.)
 - Keep consistent styling with the existing design system
+
+## Blog / Publications Section Rules
+
+The "Publications, Talks and Patents" section in `index.html` uses a Bootstrap 3-column grid (`col-md-4` inside `<div class="row">`). Each row must contain exactly 3 items.
+
+**When adding a new post:**
+1. Insert the new post at the top (first position in the first row)
+2. Shift every subsequent post down by one position
+3. The last item in each row spills into the next row — move it to become the first item of the following row
+4. Continue cascading through all rows until the end
+5. The final row may have fewer than 3 items (this is acceptable only for the last row)

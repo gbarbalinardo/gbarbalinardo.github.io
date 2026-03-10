@@ -430,7 +430,7 @@ img {
   height: 100%;
   left: 0;
   top: 0;
-  background-image: url("../img/bg.jpg");
+  background-image: url("../img/site/bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -1105,7 +1105,7 @@ img {
   min-height: 300px;
   padding-top: 110px;
   position: relative;
-  background-image: url(../img/header-bg.jpg);
+  background-image: url(../img/site/header-bg.jpg);
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
