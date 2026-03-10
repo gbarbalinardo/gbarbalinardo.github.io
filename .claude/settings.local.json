@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep:*)",
+      "Bash(open:*)",
+      "WebFetch(domain:substack.barbalinardo.com)",
+      "WebFetch(domain:www.linkedin.com)",
+      "Bash(curl:*)",
+      "Bash(sips:*)",
+      "Read(//Users/juicy/Development/personal/website-gbarbalinardo/**)",
+      "Bash(python3 /tmp/screenshot_check.py)",
+      "Bash(kill 79540:*)",
+      "Bash(kill %%:*)",
+      "Bash(python3 /tmp/ss2.py)",
+      "Bash(python3 /tmp/ss4.py)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
