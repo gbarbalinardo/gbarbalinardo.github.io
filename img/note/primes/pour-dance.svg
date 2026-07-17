@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 435" font-family="Helvetica, Arial, sans-serif">
+<rect width="1000" height="435" fill="white"/>
+<rect x="48.5" y="40" width="47" height="102.5" fill="#8C2B33" opacity="0.85"/>
+<path d="M 46 40 L 46 144 L 98 144 L 98 40" fill="none" stroke="#3A3A3A" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 116 79 L 116 144 L 160 144 L 160 79" fill="none" stroke="#3A3A3A" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 176 105 L 176 144 L 212 144 L 212 105" fill="none" stroke="#3A3A3A" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="128" y="170" font-size="15" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >(8, 0, 0)</text>
+<text x="128" y="190" font-size="12.5" fill="#9AA0A6" text-anchor="middle" font-weight="normal" >start</text>
+<line x1="238" y1="104" x2="262" y2="104" stroke="#9AA0A6" stroke-width="2.4"/><path d="M 262 104 L 253.0 108.3 M 262 104 L 253.0 99.7" stroke="#9AA0A6" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+<rect x="288.5" y="105" width="47" height="37.5" fill="#8C2B33" opacity="0.85"/>
+<path d="M 286 40 L 286 144 L 338 144 L 338 40" fill="none" stroke="#3A3A3A" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="358.5" y="79" width="39" height="63.5" fill="#8C2B33" opacity="0.85"/>
+<path d="M 356 79 L 356 144 L 400 144 L 400 79" fill="none" stroke="#3A3A3A" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 416 105 L 416 144 L 452 144 L 452 105" fill="none" stroke="#3A3A3A" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="368" y="170" font-size="15" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >(3, 5, 0)</text>
+<text x="368" y="190" font-size="12.5" fill="#9AA0A6" text-anchor="middle" font-weight="normal" >1. fill the five</text>
+<line x1="478" y1="104" x2="502" y2="104" stroke="#9AA0A6" stroke-width="2.4"/><path d="M 502 104 L 493.0 108.3 M 502 104 L 493.0 99.7" stroke="#9AA0A6" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+<rect x="528.5" y="105" width="47" height="37.5" fill="#8C2B33" opacity="0.85"/>
+<path d="M 526 40 L 526 144 L 578 144 L 578 40" fill="none" stroke="#3A3A3A" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="598.5" y="118" width="39" height="24.5" fill="#8C2B33" opacity="0.85"/>
+<path d="M 596 79 L 596 144 L 640 144 L 640 79" fill="none" stroke="#3A3A3A" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="658.5" y="105" width="31" height="37.5" fill="#8C2B33" opacity="0.85"/>
+<path d="M 656 105 L 656 144 L 692 144 L 692 105" fill="none" stroke="#3A3A3A" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="608" y="170" font-size="15" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >(3, 2, 3)</text>
+<text x="608" y="190" font-size="12.5" fill="#9AA0A6" text-anchor="middle" font-weight="normal" >2. fill the three from the five</text>
+<line x1="718" y1="104" x2="742" y2="104" stroke="#9AA0A6" stroke-width="2.4"/><path d="M 742 104 L 733.0 108.3 M 742 104 L 733.0 99.7" stroke="#9AA0A6" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+<rect x="768.5" y="66" width="47" height="76.5" fill="#8C2B33" opacity="0.85"/>
+<path d="M 766 40 L 766 144 L 818 144 L 818 40" fill="none" stroke="#3A3A3A" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="838.5" y="118" width="39" height="24.5" fill="#8C2B33" opacity="0.85"/>
+<path d="M 836 79 L 836 144 L 880 144 L 880 79" fill="none" stroke="#3A3A3A" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 896 105 L 896 144 L 932 144 L 932 105" fill="none" stroke="#3A3A3A" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="848" y="170" font-size="15" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >(6, 2, 0)</text>
+<text x="848" y="190" font-size="12.5" fill="#9AA0A6" text-anchor="middle" font-weight="normal" >3. empty the three into the eight</text>
+<rect x="48.5" y="256" width="47" height="76.5" fill="#8C2B33" opacity="0.85"/>
+<path d="M 46 230 L 46 334 L 98 334 L 98 230" fill="none" stroke="#3A3A3A" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 116 269 L 116 334 L 160 334 L 160 269" fill="none" stroke="#3A3A3A" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="178.5" y="308" width="31" height="24.5" fill="#8C2B33" opacity="0.85"/>
+<path d="M 176 295 L 176 334 L 212 334 L 212 295" fill="none" stroke="#3A3A3A" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="128" y="360" font-size="15" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >(6, 0, 2)</text>
+<text x="128" y="380" font-size="12.5" fill="#9AA0A6" text-anchor="middle" font-weight="normal" >4. pour the five into the three</text>
+<line x1="238" y1="294" x2="262" y2="294" stroke="#9AA0A6" stroke-width="2.4"/><path d="M 262 294 L 253.0 298.3 M 262 294 L 253.0 289.7" stroke="#9AA0A6" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+<rect x="288.5" y="321" width="47" height="11.5" fill="#8C2B33" opacity="0.85"/>
+<path d="M 286 230 L 286 334 L 338 334 L 338 230" fill="none" stroke="#3A3A3A" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="358.5" y="269" width="39" height="63.5" fill="#8C2B33" opacity="0.85"/>
+<path d="M 356 269 L 356 334 L 400 334 L 400 269" fill="none" stroke="#3A3A3A" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="418.5" y="308" width="31" height="24.5" fill="#8C2B33" opacity="0.85"/>
+<path d="M 416 295 L 416 334 L 452 334 L 452 295" fill="none" stroke="#3A3A3A" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="368" y="360" font-size="15" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >(1, 5, 2)</text>
+<text x="368" y="380" font-size="12.5" fill="#9AA0A6" text-anchor="middle" font-weight="normal" >5. fill the five again</text>
+<line x1="478" y1="294" x2="502" y2="294" stroke="#9AA0A6" stroke-width="2.4"/><path d="M 502 294 L 493.0 298.3 M 502 294 L 493.0 289.7" stroke="#9AA0A6" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+<rect x="528.5" y="321" width="47" height="11.5" fill="#8C2B33" opacity="0.85"/>
+<path d="M 526 230 L 526 334 L 578 334 L 578 230" fill="none" stroke="#3A3A3A" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="598.5" y="282" width="39" height="50.5" fill="#8C2B33" opacity="0.85"/>
+<path d="M 596 269 L 596 334 L 640 334 L 640 269" fill="none" stroke="#3A3A3A" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="658.5" y="295" width="31" height="37.5" fill="#8C2B33" opacity="0.85"/>
+<path d="M 656 295 L 656 334 L 692 334 L 692 295" fill="none" stroke="#3A3A3A" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="608" y="360" font-size="15" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >(1, 4, 3)</text>
+<text x="608" y="380" font-size="12.5" fill="#9AA0A6" text-anchor="middle" font-weight="normal" >6. top up the three</text>
+<line x1="718" y1="294" x2="742" y2="294" stroke="#9AA0A6" stroke-width="2.4"/><path d="M 742 294 L 733.0 298.3 M 742 294 L 733.0 289.7" stroke="#9AA0A6" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+<rect x="768.5" y="282" width="47" height="50.5" fill="#8C2B33" opacity="0.85"/>
+<path d="M 766 230 L 766 334 L 818 334 L 818 230" fill="none" stroke="#3A3A3A" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="838.5" y="282" width="39" height="50.5" fill="#8C2B33" opacity="0.85"/>
+<path d="M 836 269 L 836 334 L 880 334 L 880 269" fill="none" stroke="#3A3A3A" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 896 295 L 896 334 L 932 334 L 932 295" fill="none" stroke="#3A3A3A" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="848" y="360" font-size="15" fill="#8C2B33" text-anchor="middle" font-weight="bold" >(4, 4, 0)</text>
+<text x="848" y="380" font-size="12.5" fill="#9AA0A6" text-anchor="middle" font-weight="normal" >7. empty the three into the eight</text>
+<text x="500" y="415" font-size="15" fill="#9AA0A6" text-anchor="middle" font-weight="normal" >Seven pours. The wine at the end remembers none of them.</text>
+</svg>

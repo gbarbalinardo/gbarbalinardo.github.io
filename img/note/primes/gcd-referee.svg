@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 816 312" font-family="Helvetica, Arial, sans-serif">
+<rect width="816" height="312" fill="white"/>
+<line x1="120" y1="80" x2="696" y2="80" stroke="#3A3A3A" stroke-width="2.2"/>
+<line x1="120" y1="74" x2="120" y2="86" stroke="#3A3A3A" stroke-width="2"/>
+<circle cx="120" cy="80" r="9" fill="#8C2B33"/>
+<text x="120" y="114" font-size="14" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >0</text>
+<line x1="192" y1="74" x2="192" y2="86" stroke="#3A3A3A" stroke-width="2"/>
+<circle cx="192" cy="80" r="9" fill="#8C2B33"/>
+<text x="192" y="114" font-size="14" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >1</text>
+<line x1="264" y1="74" x2="264" y2="86" stroke="#3A3A3A" stroke-width="2"/>
+<circle cx="264" cy="80" r="9" fill="#8C2B33"/>
+<text x="264" y="114" font-size="14" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >2</text>
+<line x1="336" y1="74" x2="336" y2="86" stroke="#3A3A3A" stroke-width="2"/>
+<circle cx="336" cy="80" r="9" fill="#8C2B33"/>
+<text x="336" y="114" font-size="14" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >3</text>
+<line x1="408" y1="74" x2="408" y2="86" stroke="#3A3A3A" stroke-width="2"/>
+<circle cx="408" cy="80" r="9" fill="#8C2B33"/>
+<text x="408" y="114" font-size="14" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >4</text>
+<line x1="480" y1="74" x2="480" y2="86" stroke="#3A3A3A" stroke-width="2"/>
+<circle cx="480" cy="80" r="9" fill="#8C2B33"/>
+<text x="480" y="114" font-size="14" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >5</text>
+<line x1="552" y1="74" x2="552" y2="86" stroke="#3A3A3A" stroke-width="2"/>
+<circle cx="552" cy="80" r="9" fill="#8C2B33"/>
+<text x="552" y="114" font-size="14" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >6</text>
+<line x1="624" y1="74" x2="624" y2="86" stroke="#3A3A3A" stroke-width="2"/>
+<circle cx="624" cy="80" r="9" fill="#8C2B33"/>
+<text x="624" y="114" font-size="14" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >7</text>
+<line x1="696" y1="74" x2="696" y2="86" stroke="#3A3A3A" stroke-width="2"/>
+<circle cx="696" cy="80" r="9" fill="#8C2B33"/>
+<text x="696" y="114" font-size="14" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >8</text>
+<text x="408" y="52" font-size="15.5" fill="#3A3A3A" text-anchor="middle" font-weight="bold" >jugs of 5 and 3   (gcd = 1): every amount reachable</text>
+<line x1="120" y1="210" x2="696" y2="210" stroke="#3A3A3A" stroke-width="2.2"/>
+<line x1="120" y1="204" x2="120" y2="216" stroke="#3A3A3A" stroke-width="2"/>
+<circle cx="120" cy="210" r="9" fill="#8C2B33"/>
+<text x="120" y="244" font-size="14" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >0</text>
+<line x1="192" y1="204" x2="192" y2="216" stroke="#3A3A3A" stroke-width="2"/>
+<line x1="185" y1="203" x2="199" y2="217" stroke="#9AA0A6" stroke-width="2.4"/><line x1="185" y1="217" x2="199" y2="203" stroke="#9AA0A6" stroke-width="2.4"/>
+<text x="192" y="244" font-size="14" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >1</text>
+<line x1="264" y1="204" x2="264" y2="216" stroke="#3A3A3A" stroke-width="2"/>
+<circle cx="264" cy="210" r="9" fill="#8C2B33"/>
+<text x="264" y="244" font-size="14" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >2</text>
+<line x1="336" y1="204" x2="336" y2="216" stroke="#3A3A3A" stroke-width="2"/>
+<line x1="329" y1="203" x2="343" y2="217" stroke="#9AA0A6" stroke-width="2.4"/><line x1="329" y1="217" x2="343" y2="203" stroke="#9AA0A6" stroke-width="2.4"/>
+<text x="336" y="244" font-size="14" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >3</text>
+<line x1="408" y1="204" x2="408" y2="216" stroke="#3A3A3A" stroke-width="2"/>
+<circle cx="408" cy="210" r="9" fill="#8C2B33"/>
+<text x="408" y="244" font-size="14" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >4</text>
+<line x1="480" y1="204" x2="480" y2="216" stroke="#3A3A3A" stroke-width="2"/>
+<line x1="473" y1="203" x2="487" y2="217" stroke="#9AA0A6" stroke-width="2.4"/><line x1="473" y1="217" x2="487" y2="203" stroke="#9AA0A6" stroke-width="2.4"/>
+<text x="480" y="244" font-size="14" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >5</text>
+<line x1="552" y1="204" x2="552" y2="216" stroke="#3A3A3A" stroke-width="2"/>
+<circle cx="552" cy="210" r="9" fill="#8C2B33"/>
+<text x="552" y="244" font-size="14" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >6</text>
+<line x1="624" y1="204" x2="624" y2="216" stroke="#3A3A3A" stroke-width="2"/>
+<line x1="617" y1="203" x2="631" y2="217" stroke="#9AA0A6" stroke-width="2.4"/><line x1="617" y1="217" x2="631" y2="203" stroke="#9AA0A6" stroke-width="2.4"/>
+<text x="624" y="244" font-size="14" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >7</text>
+<line x1="696" y1="204" x2="696" y2="216" stroke="#3A3A3A" stroke-width="2"/>
+<circle cx="696" cy="210" r="9" fill="#8C2B33"/>
+<text x="696" y="244" font-size="14" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >8</text>
+<text x="408" y="182" font-size="15.5" fill="#3A3A3A" text-anchor="middle" font-weight="bold" >jugs of 6 and 2   (gcd = 2): odd amounts unreachable, forever</text>
+<text x="408" y="292" font-size="15" fill="#9AA0A6" text-anchor="middle" font-weight="normal" >The referee is multiplicative: only multiples of the gcd can ever be isolated.</text>
+</svg>

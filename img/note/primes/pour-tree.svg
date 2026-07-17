@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 640" font-family="Helvetica, Arial, sans-serif">
+<rect width="860" height="640" fill="white"/>
+<ellipse cx="430" cy="46" rx="46" ry="16" fill="white" stroke="#3A3A3A" stroke-width="1.8"/><text x="430" y="51" font-size="13.5" fill="#3A3A3A" text-anchor="middle" font-weight="bold" >(8,0,0)</text>
+<line x1="400" y1="60" x2="260" y2="92" stroke="#8C2B33" stroke-width="2.4"/>
+<line x1="460" y1="60" x2="600" y2="92" stroke="#9AA0A6" stroke-width="2.2"/>
+<text x="299.0" y="72" font-size="13.5" fill="#8C2B33" text-anchor="middle" font-weight="normal" >fill the five</text>
+<text x="563.0" y="72" font-size="13.5" fill="#9AA0A6" text-anchor="middle" font-weight="normal" >fill the three</text>
+<ellipse cx="260" cy="108" rx="46" ry="16" fill="white" stroke="#3A3A3A" stroke-width="1.8"/><text x="260" y="113" font-size="13.5" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >(3,5,0)</text>
+<line x1="260" y1="124" x2="260" y2="154" stroke="#8C2B33" stroke-width="2.4"/>
+<ellipse cx="260" cy="170" rx="46" ry="16" fill="white" stroke="#3A3A3A" stroke-width="1.8"/><text x="260" y="175" font-size="13.5" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >(3,2,3)</text>
+<line x1="260" y1="186" x2="260" y2="216" stroke="#8C2B33" stroke-width="2.4"/>
+<ellipse cx="260" cy="232" rx="46" ry="16" fill="white" stroke="#3A3A3A" stroke-width="1.8"/><text x="260" y="237" font-size="13.5" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >(6,2,0)</text>
+<line x1="260" y1="248" x2="260" y2="278" stroke="#8C2B33" stroke-width="2.4"/>
+<ellipse cx="260" cy="294" rx="46" ry="16" fill="white" stroke="#3A3A3A" stroke-width="1.8"/><text x="260" y="299" font-size="13.5" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >(6,0,2)</text>
+<line x1="260" y1="310" x2="260" y2="340" stroke="#8C2B33" stroke-width="2.4"/>
+<ellipse cx="260" cy="356" rx="46" ry="16" fill="white" stroke="#3A3A3A" stroke-width="1.8"/><text x="260" y="361" font-size="13.5" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >(1,5,2)</text>
+<line x1="260" y1="372" x2="260" y2="402" stroke="#8C2B33" stroke-width="2.4"/>
+<ellipse cx="260" cy="418" rx="46" ry="16" fill="white" stroke="#3A3A3A" stroke-width="1.8"/><text x="260" y="423" font-size="13.5" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >(1,4,3)</text>
+<line x1="260" y1="434" x2="260" y2="464" stroke="#8C2B33" stroke-width="2.4"/>
+<ellipse cx="260" cy="480" rx="46" ry="16" fill="white" stroke="#8C2B33" stroke-width="1.8"/><text x="260" y="485" font-size="13.5" fill="#8C2B33" text-anchor="middle" font-weight="bold" >(4,4,0)</text>
+<ellipse cx="600" cy="108" rx="46" ry="16" fill="white" stroke="#3A3A3A" stroke-width="1.8"/><text x="600" y="113" font-size="13.5" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >(5,0,3)</text>
+<line x1="600" y1="124" x2="600" y2="154" stroke="#9AA0A6" stroke-width="2.2"/>
+<ellipse cx="600" cy="170" rx="46" ry="16" fill="white" stroke="#3A3A3A" stroke-width="1.8"/><text x="600" y="175" font-size="13.5" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >(5,3,0)</text>
+<line x1="600" y1="186" x2="600" y2="216" stroke="#9AA0A6" stroke-width="2.2"/>
+<ellipse cx="600" cy="232" rx="46" ry="16" fill="white" stroke="#3A3A3A" stroke-width="1.8"/><text x="600" y="237" font-size="13.5" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >(2,3,3)</text>
+<line x1="600" y1="248" x2="600" y2="278" stroke="#9AA0A6" stroke-width="2.2"/>
+<ellipse cx="600" cy="294" rx="46" ry="16" fill="white" stroke="#3A3A3A" stroke-width="1.8"/><text x="600" y="299" font-size="13.5" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >(2,5,1)</text>
+<line x1="600" y1="310" x2="600" y2="340" stroke="#9AA0A6" stroke-width="2.2"/>
+<ellipse cx="600" cy="356" rx="46" ry="16" fill="white" stroke="#3A3A3A" stroke-width="1.8"/><text x="600" y="361" font-size="13.5" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >(7,0,1)</text>
+<line x1="600" y1="372" x2="600" y2="402" stroke="#9AA0A6" stroke-width="2.2"/>
+<ellipse cx="600" cy="418" rx="46" ry="16" fill="white" stroke="#3A3A3A" stroke-width="1.8"/><text x="600" y="423" font-size="13.5" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >(7,1,0)</text>
+<line x1="600" y1="434" x2="600" y2="464" stroke="#9AA0A6" stroke-width="2.2"/>
+<ellipse cx="600" cy="480" rx="46" ry="16" fill="white" stroke="#3A3A3A" stroke-width="1.8"/><text x="600" y="485" font-size="13.5" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >(4,1,3)</text>
+<line x1="600" y1="496" x2="600" y2="526" stroke="#9AA0A6" stroke-width="2.2"/>
+<ellipse cx="600" cy="542" rx="46" ry="16" fill="white" stroke="#2B4B8C" stroke-width="1.8"/><text x="600" y="547" font-size="13.5" fill="#2B4B8C" text-anchor="middle" font-weight="bold" >(4,4,0)</text>
+<text x="260" y="524" font-size="16" fill="#8C2B33" text-anchor="middle" font-weight="bold" >7 pours</text>
+<text x="600" y="586" font-size="16" fill="#2B4B8C" text-anchor="middle" font-weight="bold" >8 pours</text>
+<text x="430" y="620" font-size="15" fill="#9AA0A6" text-anchor="middle" font-weight="normal" >A tree of alternatives: every fork is an OR.</text>
+</svg>
