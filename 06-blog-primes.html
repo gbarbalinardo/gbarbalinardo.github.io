@@ -119,47 +119,32 @@
 
 							<p>Divide the wine into two equal parts: four liters and four liters.</p>
 
+							<!-- .featured-image -->
+							<div class="featured-image" style="margin: 24px 0; text-align: center;">
+								<img src="img/note/primes/riddle-setup.svg" alt="Three jugs of 8, 5, and 3 liters; the eight-liter jug is full" style="max-width: 100%; height: auto;">
+							</div>
+
 							<p>Stop here and try it in your head. It is harder than it looks, and then, once you see it, easier than it looked.</p>
 
 							<p>He did not invent it, though I did not know that then. The puzzle appears in a French arithmetic manuscript of 1484, and it was made famous by Niccol&ograve; Tartaglia, the self-taught Renaissance mathematician who also cracked the cubic equation and got swindled out of the credit. For five centuries, people have been passing wine and this riddle across tables. My grandfather was a link in that chain, and he almost certainly did not know it either.</p>
 
 							<h2 style="margin-bottom: 20px;">The dance</h2>
 
-							<p>Here is the solution, as a dance in seven pours. The triple is what the 8, 5, and 3 liter jugs hold at each moment.</p>
+							<p>Here is the solution, as a dance in seven pours. Each panel shows how much the 8, 5, and 3 liter jugs hold at that moment.</p>
 
-							<pre style="background: #f7f7f7; padding: 16px; overflow-x: auto; line-height: 1.6;">
-(8, 0, 0)   fill the five            ->  (3, 5, 0)
-            fill the three from it   ->  (3, 2, 3)
-            empty the three back     ->  (6, 2, 0)
-            pour the two into three  ->  (6, 0, 2)
-            fill the five again      ->  (1, 5, 2)
-            top up the three         ->  (1, 4, 3)
-            empty the three back     ->  (4, 4, 0)</pre>
+							<!-- .featured-image -->
+							<div class="featured-image" style="margin: 24px 0; text-align: center;">
+								<img src="img/note/primes/pour-dance.svg" alt="The seven pours that split eight liters into four and four" style="max-width: 100%; height: auto;">
+							</div>
 
 							<p>Seven pours, and no way to do it in fewer.</p>
 
-							<p>And this dance is not the only one. At the very first pour you stand at a fork: fill the five first, or fill the three. Both roads lead to four-and-four; one takes seven pours, the other eight. Map every choice and the riddle becomes a tree:</p>
+							<p>And this dance is not the only one. At the very first pour you stand at a fork: fill the five first, or fill the three. Both roads lead to four-and-four; one takes seven pours, the other eight. Map every choice and the riddle becomes a tree.</p>
 
-							<pre style="background: #f7f7f7; padding: 16px; overflow-x: auto; line-height: 1.5;">
-            (8,0,0)
-       fill 5 /  \ fill 3
-             /    \
-       (3,5,0)    (5,0,3)
-          |          |
-       (3,2,3)    (5,3,0)
-          |          |
-       (6,2,0)    (2,3,3)
-          |          |
-       (6,0,2)    (2,5,1)
-          |          |
-       (1,5,2)    (7,0,1)
-          |          |
-       (1,4,3)    (7,1,0)
-          |          |
-       (4,4,0)    (4,1,3)
-       7 pours       |
-                  (4,4,0)
-                  8 pours</pre>
+							<!-- .featured-image -->
+							<div class="featured-image" style="margin: 24px 0; text-align: center;">
+								<img src="img/note/primes/pour-tree.svg" alt="A tree of the two solution paths: seven pours on the left, eight on the right" style="max-width: 100%; height: auto;">
+							</div>
 
 							<p>Hold on to this picture: a tree whose every branching is an OR, a fork between alternative futures. A second, very different kind of tree is coming.</p>
 
@@ -173,6 +158,11 @@
 
 							<p>Answer: exactly the multiples of the greatest common divisor of the jug sizes. Five and three share no common factor, so their gcd is 1, and every whole number of liters from zero to eight is reachable. That is why four is possible. But give my grandfather jugs of 8, 6, and 2 liters and no sequence of pours, however long, will ever isolate an odd liter of wine. Every reachable amount would be even, forever. One liter, three liters, five: unreachable, not by lack of cleverness but by law.</p>
 
+							<!-- .featured-image -->
+							<div class="featured-image" style="margin: 24px 0; text-align: center;">
+								<img src="img/note/primes/gcd-referee.svg" alt="Which amounts are reachable with 5-and-3 jugs versus 6-and-2 jugs" style="max-width: 100%; height: auto;">
+							</div>
+
 							<p>Look once more at the dance and you can see the law working. Over the seven pours, the five-liter jug was filled twice and the three-liter jug was emptied twice, and 2 &times; 5 &minus; 2 &times; 3 = 4. The dance is a physical computation. The wine is enacting an identity about fives and threes, the kind number theorists write down for coprime numbers.</p>
 
 							<p>Sit with how strange this is. The game is purely additive: pour, merge, top up. Nothing in the rules mentions multiplication. And yet the referee deciding which amounts are reachable is a multiplicative object, the gcd, which is to say: the atoms that 5 and 3 are built from. The pouring world is governed, from outside, by the packing world.</p>
@@ -185,7 +175,17 @@
 
 							<p>The second verb is AND. When two events are independent and you need both, their chances compound: the probability that two coin flips both come up heads is 1/2 &times; 1/2. One condition nested inside another. AND is multiplication. Picture two doors in a corridor: to pass, you must open the first and the second.</p>
 
+							<!-- .featured-image -->
+							<div class="featured-image" style="margin: 24px 0; text-align: center;">
+								<img src="img/note/primes/two-verbs.svg" alt="OR as a fork between alternatives, AND as two doors in a corridor" style="max-width: 100%; height: auto;">
+							</div>
+
 							<p>The two verbs are not interchangeable, but they have an official translator. The information in one coin flip is one bit; in two flips, two bits. The probabilities multiplied (1/2 &times; 1/2 = 1/4) while the information added (1 + 1 = 2). The translator is the logarithm: it converts AND-language into OR-language, compounding into accumulating. This one fact explains why logarithms appear wherever humans build rulers for nature: decibels, earthquake magnitudes, pH. The world compounds; our senses and our rulers prefer to pour.</p>
+
+							<!-- .featured-image -->
+							<div class="featured-image" style="margin: 24px 0; text-align: center;">
+								<img src="img/note/primes/log-bridge.svg" alt="The logarithm as translator: probabilities multiply while information adds" style="max-width: 100%; height: auto;">
+							</div>
 
 							<h2 style="margin-bottom: 20px;">Packing</h2>
 
@@ -194,6 +194,11 @@
 							<p>Take six one-liter bottles. Do not pour them anywhere. Instead, pack them: two bottles to a carton, three cartons. That is 3 &times; 2 liters, taken literally: three groups of two. Now repack: three bottles to a carton, two cartons. That is 2 &times; 3.</p>
 
 							<p>Both arrangements contain six liters; a scale cannot tell them apart. But they are different objects. One is three small cartons, the other two big ones. And notice the crucial thing: at no point did multiplication produce six liters. It produced a structured package whose label reads six. To actually obtain six loose liters from 3 &times; 2, you must perform a second and different act: tear the cartons open and pour, which is to say, hand the result over to addition.</p>
+
+							<!-- .featured-image -->
+							<div class="featured-image" style="margin: 24px 0; text-align: center;">
+								<img src="img/note/primes/packing.svg" alt="3 times 2 as three cartons of two, 2 times 3 as two cartons of three; both flatten to six liters" style="max-width: 100%; height: auto;">
+							</div>
 
 							<p><em>You never get six liters from multiplication. You get a package whose shadow is 6.</em></p>
 
@@ -214,6 +219,11 @@
 							<p>School arithmetic tears open every carton on sight: 3 &times; 2 = 6, done, next exercise. Some months ago I began to wonder what happens if you refuse: if you treat the package, not the number, as the real object. This became a research project, and eventually a paper, and the rest of this post is what fell out.</p>
 
 							<p>The move sounds small and is not. If a multiplication is a packing, the integer is demoted from object to label: the shadow the package casts on a scale. Distinct packings share a label. The number 12 can be assembled as 2 &times; (2 &times; 3), or as (2 &times; 2) &times; 3, or as 3 &times; (2 &times; 2), and so on: six distinct packing histories if you track the order of assembly, two if you do not. Twelve is not one thing. Twelve is a label worn by a small family of structures.</p>
+
+							<!-- .featured-image -->
+							<div class="featured-image" style="margin: 24px 0; text-align: center;">
+								<img src="img/note/primes/twelve-histories.svg" alt="The six assembly histories of the number 12, each an AND-tree over its prime factors" style="max-width: 100%; height: auto;">
+							</div>
 
 							<p>These packing diagrams are trees too, but of the opposite species from the riddle's. The pouring tree branched on OR: each fork a choice between alternative next moves, and possibilities add across branches. A packing tree branches on AND: each split names the parts that must all be present, and counts multiply across children. Computer scientists call these OR-trees and AND-trees. A game is an OR-tree; a molecule is an AND-tree. The two verbs even have their own species of diagram.</p>
 
@@ -243,6 +253,11 @@
 							<p>Thought experiments are cheap, and stories about temperature can sound like poetry. So let me end with the most concrete thing the packing view produced: a one-unit correction to a reference work.</p>
 
 							<p>To count unordered packings, you must settle one fussy case: a package that splits into two identical halves. Take n = 144, which splits as 12 &times; 12. Each half, we said, can be packed in 2 unordered ways. How many packings of 144 does the split {12, 12} contribute? If the halves were distinguishable, 2 &times; 2 = 4: two choices on the left, two on the right. But the halves are not distinguishable: left-A with right-B is the same object as left-B with right-A. The true count is 3: both halves packed one way, both the other, or mixed.</p>
+
+							<!-- .featured-image -->
+							<div class="featured-image" style="margin: 24px 0; text-align: center;">
+								<img src="img/note/primes/bug-144.svg" alt="At n = 144, ordered counting gives 4 but unordered gives 3, so 42 was wrong and 41 is right" style="max-width: 100%; height: auto;">
+							</div>
 
 							<p>The Online Encyclopedia of Integer Sequences, the reference where mathematicians register such counts, had an entry for this very sequence (<a href="https://oeis.org/A375120">A375120</a>) whose formula and program made the distinguishable choice, while the entry's own definition promised indistinguishable. The smallest integer where the two conventions part ways happens to be 144, and the entry displayed terms only up to 87. So the error sat in the encyclopedia, invisible, for two years: its formula says 144 has 42 unordered packings; the truth is 41.</p>
 

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 404" font-family="Helvetica, Arial, sans-serif">
+<rect width="860" height="404" fill="white"/>
+<line x1="120" y1="46" x2="92" y2="80" stroke="#3A3A3A" stroke-width="2"/>
+<line x1="120" y1="46" x2="150" y2="112" stroke="#3A3A3A" stroke-width="2"/>
+<line x1="92" y1="80" x2="70" y2="112" stroke="#3A3A3A" stroke-width="2"/>
+<line x1="92" y1="80" x2="114" y2="112" stroke="#3A3A3A" stroke-width="2"/>
+<circle cx="120" cy="46" r="4.5" fill="#3A3A3A"/>
+<circle cx="92" cy="80" r="4.5" fill="#3A3A3A"/>
+<text x="70" y="133" font-size="15" fill="#8C2B33" text-anchor="middle" font-weight="bold" >2</text>
+<text x="114" y="133" font-size="15" fill="#8C2B33" text-anchor="middle" font-weight="bold" >2</text>
+<text x="150" y="133" font-size="15" fill="#8C2B33" text-anchor="middle" font-weight="bold" >3</text>
+<line x1="380" y1="46" x2="352" y2="80" stroke="#3A3A3A" stroke-width="2"/>
+<line x1="380" y1="46" x2="410" y2="112" stroke="#3A3A3A" stroke-width="2"/>
+<line x1="352" y1="80" x2="330" y2="112" stroke="#3A3A3A" stroke-width="2"/>
+<line x1="352" y1="80" x2="374" y2="112" stroke="#3A3A3A" stroke-width="2"/>
+<circle cx="380" cy="46" r="4.5" fill="#3A3A3A"/>
+<circle cx="352" cy="80" r="4.5" fill="#3A3A3A"/>
+<text x="330" y="133" font-size="15" fill="#8C2B33" text-anchor="middle" font-weight="bold" >2</text>
+<text x="374" y="133" font-size="15" fill="#8C2B33" text-anchor="middle" font-weight="bold" >3</text>
+<text x="410" y="133" font-size="15" fill="#8C2B33" text-anchor="middle" font-weight="bold" >2</text>
+<line x1="640" y1="46" x2="612" y2="80" stroke="#3A3A3A" stroke-width="2"/>
+<line x1="640" y1="46" x2="670" y2="112" stroke="#3A3A3A" stroke-width="2"/>
+<line x1="612" y1="80" x2="590" y2="112" stroke="#3A3A3A" stroke-width="2"/>
+<line x1="612" y1="80" x2="634" y2="112" stroke="#3A3A3A" stroke-width="2"/>
+<circle cx="640" cy="46" r="4.5" fill="#3A3A3A"/>
+<circle cx="612" cy="80" r="4.5" fill="#3A3A3A"/>
+<text x="590" y="133" font-size="15" fill="#8C2B33" text-anchor="middle" font-weight="bold" >3</text>
+<text x="634" y="133" font-size="15" fill="#8C2B33" text-anchor="middle" font-weight="bold" >2</text>
+<text x="670" y="133" font-size="15" fill="#8C2B33" text-anchor="middle" font-weight="bold" >2</text>
+<line x1="120" y1="196" x2="148" y2="230" stroke="#3A3A3A" stroke-width="2"/>
+<line x1="120" y1="196" x2="90" y2="262" stroke="#3A3A3A" stroke-width="2"/>
+<line x1="148" y1="230" x2="126" y2="262" stroke="#3A3A3A" stroke-width="2"/>
+<line x1="148" y1="230" x2="170" y2="262" stroke="#3A3A3A" stroke-width="2"/>
+<circle cx="120" cy="196" r="4.5" fill="#3A3A3A"/>
+<circle cx="148" cy="230" r="4.5" fill="#3A3A3A"/>
+<text x="90" y="283" font-size="15" fill="#8C2B33" text-anchor="middle" font-weight="bold" >2</text>
+<text x="126" y="283" font-size="15" fill="#8C2B33" text-anchor="middle" font-weight="bold" >2</text>
+<text x="170" y="283" font-size="15" fill="#8C2B33" text-anchor="middle" font-weight="bold" >3</text>
+<line x1="380" y1="196" x2="408" y2="230" stroke="#3A3A3A" stroke-width="2"/>
+<line x1="380" y1="196" x2="350" y2="262" stroke="#3A3A3A" stroke-width="2"/>
+<line x1="408" y1="230" x2="386" y2="262" stroke="#3A3A3A" stroke-width="2"/>
+<line x1="408" y1="230" x2="430" y2="262" stroke="#3A3A3A" stroke-width="2"/>
+<circle cx="380" cy="196" r="4.5" fill="#3A3A3A"/>
+<circle cx="408" cy="230" r="4.5" fill="#3A3A3A"/>
+<text x="350" y="283" font-size="15" fill="#8C2B33" text-anchor="middle" font-weight="bold" >2</text>
+<text x="386" y="283" font-size="15" fill="#8C2B33" text-anchor="middle" font-weight="bold" >3</text>
+<text x="430" y="283" font-size="15" fill="#8C2B33" text-anchor="middle" font-weight="bold" >2</text>
+<line x1="640" y1="196" x2="668" y2="230" stroke="#3A3A3A" stroke-width="2"/>
+<line x1="640" y1="196" x2="610" y2="262" stroke="#3A3A3A" stroke-width="2"/>
+<line x1="668" y1="230" x2="646" y2="262" stroke="#3A3A3A" stroke-width="2"/>
+<line x1="668" y1="230" x2="690" y2="262" stroke="#3A3A3A" stroke-width="2"/>
+<circle cx="640" cy="196" r="4.5" fill="#3A3A3A"/>
+<circle cx="668" cy="230" r="4.5" fill="#3A3A3A"/>
+<text x="610" y="283" font-size="15" fill="#8C2B33" text-anchor="middle" font-weight="bold" >3</text>
+<text x="646" y="283" font-size="15" fill="#8C2B33" text-anchor="middle" font-weight="bold" >2</text>
+<text x="690" y="283" font-size="15" fill="#8C2B33" text-anchor="middle" font-weight="bold" >2</text>
+<text x="430" y="358" font-size="16" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >The six assembly histories of 12. One label, six microstates:</text>
+<text x="430" y="384" font-size="16.5" fill="#8C2B33" text-anchor="middle" font-weight="bold" >S(12) = log 6 ≈ 2.6 bits of forgotten history.</text>
+</svg>
