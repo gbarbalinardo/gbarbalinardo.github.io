@@ -1,40 +1,69 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 666" font-family="Helvetica, Arial, sans-serif">
-<rect width="860" height="666" fill="white"/>
-<ellipse cx="430" cy="46" rx="46" ry="16" fill="white" stroke="#3A3A3A" stroke-width="1.8"/><text x="430" y="51" font-size="13.5" fill="#3A3A3A" text-anchor="middle" font-weight="bold" >(8,0,0)</text>
-<line x1="400" y1="60" x2="260" y2="92" stroke="#8C2B33" stroke-width="2.4"/>
-<line x1="460" y1="60" x2="600" y2="92" stroke="#9AA0A6" stroke-width="2.2"/>
-<text x="299.0" y="72" font-size="13.5" fill="#8C2B33" text-anchor="middle" font-weight="normal" >fill the five</text>
-<text x="563.0" y="72" font-size="13.5" fill="#9AA0A6" text-anchor="middle" font-weight="normal" >fill the three</text>
-<ellipse cx="260" cy="108" rx="46" ry="16" fill="white" stroke="#3A3A3A" stroke-width="1.8"/><text x="260" y="113" font-size="13.5" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >(3,5,0)</text>
-<line x1="260" y1="124" x2="260" y2="154" stroke="#8C2B33" stroke-width="2.4"/>
-<ellipse cx="260" cy="170" rx="46" ry="16" fill="white" stroke="#3A3A3A" stroke-width="1.8"/><text x="260" y="175" font-size="13.5" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >(3,2,3)</text>
-<line x1="260" y1="186" x2="260" y2="216" stroke="#8C2B33" stroke-width="2.4"/>
-<ellipse cx="260" cy="232" rx="46" ry="16" fill="white" stroke="#3A3A3A" stroke-width="1.8"/><text x="260" y="237" font-size="13.5" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >(6,2,0)</text>
-<line x1="260" y1="248" x2="260" y2="278" stroke="#8C2B33" stroke-width="2.4"/>
-<ellipse cx="260" cy="294" rx="46" ry="16" fill="white" stroke="#3A3A3A" stroke-width="1.8"/><text x="260" y="299" font-size="13.5" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >(6,0,2)</text>
-<line x1="260" y1="310" x2="260" y2="340" stroke="#8C2B33" stroke-width="2.4"/>
-<ellipse cx="260" cy="356" rx="46" ry="16" fill="white" stroke="#3A3A3A" stroke-width="1.8"/><text x="260" y="361" font-size="13.5" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >(1,5,2)</text>
-<line x1="260" y1="372" x2="260" y2="402" stroke="#8C2B33" stroke-width="2.4"/>
-<ellipse cx="260" cy="418" rx="46" ry="16" fill="white" stroke="#3A3A3A" stroke-width="1.8"/><text x="260" y="423" font-size="13.5" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >(1,4,3)</text>
-<line x1="260" y1="434" x2="260" y2="464" stroke="#8C2B33" stroke-width="2.4"/>
-<ellipse cx="260" cy="480" rx="46" ry="16" fill="white" stroke="#8C2B33" stroke-width="1.8"/><text x="260" y="485" font-size="13.5" fill="#8C2B33" text-anchor="middle" font-weight="bold" >(4,4,0)</text>
-<ellipse cx="600" cy="108" rx="46" ry="16" fill="white" stroke="#3A3A3A" stroke-width="1.8"/><text x="600" y="113" font-size="13.5" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >(5,0,3)</text>
-<line x1="600" y1="124" x2="600" y2="154" stroke="#9AA0A6" stroke-width="2.2"/>
-<ellipse cx="600" cy="170" rx="46" ry="16" fill="white" stroke="#3A3A3A" stroke-width="1.8"/><text x="600" y="175" font-size="13.5" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >(5,3,0)</text>
-<line x1="600" y1="186" x2="600" y2="216" stroke="#9AA0A6" stroke-width="2.2"/>
-<ellipse cx="600" cy="232" rx="46" ry="16" fill="white" stroke="#3A3A3A" stroke-width="1.8"/><text x="600" y="237" font-size="13.5" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >(2,3,3)</text>
-<line x1="600" y1="248" x2="600" y2="278" stroke="#9AA0A6" stroke-width="2.2"/>
-<ellipse cx="600" cy="294" rx="46" ry="16" fill="white" stroke="#3A3A3A" stroke-width="1.8"/><text x="600" y="299" font-size="13.5" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >(2,5,1)</text>
-<line x1="600" y1="310" x2="600" y2="340" stroke="#9AA0A6" stroke-width="2.2"/>
-<ellipse cx="600" cy="356" rx="46" ry="16" fill="white" stroke="#3A3A3A" stroke-width="1.8"/><text x="600" y="361" font-size="13.5" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >(7,0,1)</text>
-<line x1="600" y1="372" x2="600" y2="402" stroke="#9AA0A6" stroke-width="2.2"/>
-<ellipse cx="600" cy="418" rx="46" ry="16" fill="white" stroke="#3A3A3A" stroke-width="1.8"/><text x="600" y="423" font-size="13.5" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >(7,1,0)</text>
-<line x1="600" y1="434" x2="600" y2="464" stroke="#9AA0A6" stroke-width="2.2"/>
-<ellipse cx="600" cy="480" rx="46" ry="16" fill="white" stroke="#3A3A3A" stroke-width="1.8"/><text x="600" y="485" font-size="13.5" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >(4,1,3)</text>
-<line x1="600" y1="496" x2="600" y2="526" stroke="#9AA0A6" stroke-width="2.2"/>
-<ellipse cx="600" cy="542" rx="46" ry="16" fill="white" stroke="#2B4B8C" stroke-width="1.8"/><text x="600" y="547" font-size="13.5" fill="#2B4B8C" text-anchor="middle" font-weight="bold" >(4,4,0)</text>
-<text x="260" y="524" font-size="16" fill="#8C2B33" text-anchor="middle" font-weight="bold" >7 pours</text>
-<text x="600" y="586" font-size="16" fill="#2B4B8C" text-anchor="middle" font-weight="bold" >8 pours</text>
-<text x="430" y="606" font-size="15" fill="#9AA0A6" text-anchor="middle" font-weight="normal" >A tree of alternatives: every fork is an OR.</text>
-<line x1="190.0" y1="626" x2="670.0" y2="626" stroke="#9AA0A6" stroke-width="1" opacity="0.45"/><text x="430" y="642" font-size="13.5" fill="#3A3A3A" text-anchor="middle" font-weight="bold" >ℹ  Naming which path you took: log₂ 2 = 1 bit of information.</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1356 450" font-family="Helvetica, Arial, sans-serif">
+<rect width="1356" height="450" fill="white"/>
+<text x="678.0" y="34" font-size="17" fill="#3A3A3A" text-anchor="middle" font-weight="bold" >Every state offers several pours: the real graph branches everywhere</text>
+<line x1="722.4" y1="111.9" x2="465.6" y2="68.1" stroke="#9AA0A6" stroke-width="1.1" opacity="0.5"/>
+<line x1="1226.0" y1="209.4" x2="130.0" y2="162.6" stroke="#9AA0A6" stroke-width="1.1" opacity="0.5"/>
+<line x1="426.0" y1="147.0" x2="426.0" y2="81.0" stroke="#9AA0A6" stroke-width="1.1" opacity="0.5"/>
+<line x1="1226.2" y1="115.4" x2="297.8" y2="208.6" stroke="#9AA0A6" stroke-width="1.1" opacity="0.5"/>
+<line x1="554.2" y1="208.6" x2="129.8" y2="163.4" stroke="#9AA0A6" stroke-width="1.1" opacity="0.5"/>
+<line x1="1058.3" y1="208.3" x2="297.7" y2="115.7" stroke="#9AA0A6" stroke-width="1.1" opacity="0.5"/>
+<line x1="555.5" y1="118.1" x2="296.5" y2="205.9" stroke="#9AA0A6" stroke-width="1.1" opacity="0.5"/>
+<line x1="890.0" y1="210.0" x2="298.0" y2="210.0" stroke="#9AA0A6" stroke-width="1.1" opacity="0.5"/>
+<line x1="890.2" y1="112.6" x2="465.8" y2="67.4" stroke="#9AA0A6" stroke-width="1.1" opacity="0.5"/>
+<line x1="1058.1" y1="112.9" x2="465.9" y2="67.1" stroke="#9AA0A6" stroke-width="1.1" opacity="0.5"/>
+<line x1="722.1" y1="208.9" x2="129.9" y2="163.1" stroke="#9AA0A6" stroke-width="1.1" opacity="0.5"/>
+<line x1="1226.2" y1="208.6" x2="297.8" y2="115.4" stroke="#9AA0A6" stroke-width="1.1" opacity="0.5"/>
+<line x1="296.5" y1="109.9" x2="387.5" y2="70.1" stroke="#9AA0A6" stroke-width="1.1" opacity="0.5"/>
+<line x1="288.4" y1="200.2" x2="395.6" y2="75.8" stroke="#9AA0A6" stroke-width="1.1" opacity="0.5"/>
+<line x1="1058.0" y1="209.3" x2="130.0" y2="162.7" stroke="#9AA0A6" stroke-width="1.1" opacity="0.5"/>
+<line x1="395.6" y1="248.2" x2="288.4" y2="123.8" stroke="#9AA0A6" stroke-width="1.1" opacity="0.5"/>
+<line x1="387.5" y1="166.1" x2="296.5" y2="205.9" stroke="#9AA0A6" stroke-width="1.1" opacity="0.5"/>
+<line x1="722.0" y1="114.0" x2="298.0" y2="114.0" stroke="#9AA0A6" stroke-width="1.1" opacity="0.5"/>
+<line x1="890.1" y1="209.1" x2="129.9" y2="162.9" stroke="#9AA0A6" stroke-width="1.1" opacity="0.5"/>
+<line x1="1226.1" y1="113.1" x2="465.9" y2="66.9" stroke="#9AA0A6" stroke-width="1.1" opacity="0.5"/>
+<line x1="555.5" y1="109.9" x2="464.5" y2="70.1" stroke="#9AA0A6" stroke-width="1.1" opacity="0.5"/>
+<line x1="890.0" y1="114.0" x2="298.0" y2="114.0" stroke="#9AA0A6" stroke-width="1.1" opacity="0.5"/>
+<line x1="1058.3" y1="115.7" x2="297.7" y2="208.3" stroke="#9AA0A6" stroke-width="1.1" opacity="0.5"/>
+<line x1="555.5" y1="205.9" x2="296.5" y2="118.1" stroke="#9AA0A6" stroke-width="1.1" opacity="0.5"/>
+<line x1="387.5" y1="253.9" x2="128.5" y2="166.1" stroke="#9AA0A6" stroke-width="1.1" opacity="0.5"/>
+<line x1="722.0" y1="210.0" x2="298.0" y2="210.0" stroke="#9AA0A6" stroke-width="1.1" opacity="0.5"/>
+<line x1="296.5" y1="214.1" x2="387.5" y2="253.9" stroke="#2B4B8C" stroke-width="2.6" opacity="1.0"/>
+<line x1="128.5" y1="166.1" x2="219.5" y2="205.9" stroke="#2B4B8C" stroke-width="2.6" opacity="1.0"/>
+<line x1="970.0" y1="210.0" x2="1058.0" y2="210.0" stroke="#2B4B8C" stroke-width="2.6" opacity="1.0"/>
+<line x1="796.7" y1="121.4" x2="895.3" y2="202.6" stroke="#2B4B8C" stroke-width="2.6" opacity="1.0"/>
+<line x1="1266.0" y1="129.0" x2="1266.0" y2="195.0" stroke="#2B4B8C" stroke-width="2.6" opacity="1.0"/>
+<line x1="634.0" y1="114.0" x2="722.0" y2="114.0" stroke="#2B4B8C" stroke-width="2.6" opacity="1.0"/>
+<line x1="456.4" y1="248.2" x2="563.6" y2="123.8" stroke="#2B4B8C" stroke-width="2.6" opacity="1.0"/>
+<line x1="1132.7" y1="202.6" x2="1231.3" y2="121.4" stroke="#2B4B8C" stroke-width="2.6" opacity="1.0"/>
+<line x1="296.5" y1="118.1" x2="387.5" y2="157.9" stroke="#8C2B33" stroke-width="3.0" opacity="1.0"/>
+<line x1="796.7" y1="202.6" x2="895.3" y2="121.4" stroke="#8C2B33" stroke-width="3.0" opacity="1.0"/>
+<line x1="1132.7" y1="121.4" x2="1231.3" y2="202.6" stroke="#8C2B33" stroke-width="3.0" opacity="1.0"/>
+<line x1="970.0" y1="114.0" x2="1058.0" y2="114.0" stroke="#8C2B33" stroke-width="3.0" opacity="1.0"/>
+<line x1="464.5" y1="166.1" x2="555.5" y2="205.9" stroke="#8C2B33" stroke-width="3.0" opacity="1.0"/>
+<line x1="128.5" y1="157.9" x2="219.5" y2="118.1" stroke="#8C2B33" stroke-width="3.0" opacity="1.0"/>
+<line x1="634.0" y1="210.0" x2="722.0" y2="210.0" stroke="#8C2B33" stroke-width="3.0" opacity="1.0"/>
+<ellipse cx="90" cy="162.0" rx="40" ry="15" fill="white" stroke="#3A3A3A" stroke-width="2.2"/><text x="90" y="167.0" font-size="12.5" fill="#3A3A3A" text-anchor="middle" font-weight="bold" >(8,0,0)</text>
+<ellipse cx="258" cy="114.0" rx="40" ry="15" fill="white" stroke="#8C2B33" stroke-width="1.6"/><text x="258" y="119.0" font-size="12.5" fill="#8C2B33" text-anchor="middle" font-weight="normal" >(3,5,0)</text>
+<ellipse cx="258" cy="210.0" rx="40" ry="15" fill="white" stroke="#2B4B8C" stroke-width="1.6"/><text x="258" y="215.0" font-size="12.5" fill="#2B4B8C" text-anchor="middle" font-weight="normal" >(5,0,3)</text>
+<ellipse cx="426" cy="66.0" rx="40" ry="15" fill="white" stroke="#9AA0A6" stroke-width="1.6"/><text x="426" y="71.0" font-size="12.5" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >(0,5,3)</text>
+<ellipse cx="426" cy="162.0" rx="40" ry="15" fill="white" stroke="#8C2B33" stroke-width="1.6"/><text x="426" y="167.0" font-size="12.5" fill="#8C2B33" text-anchor="middle" font-weight="normal" >(3,2,3)</text>
+<ellipse cx="426" cy="258.0" rx="40" ry="15" fill="white" stroke="#2B4B8C" stroke-width="1.6"/><text x="426" y="263.0" font-size="12.5" fill="#2B4B8C" text-anchor="middle" font-weight="normal" >(5,3,0)</text>
+<ellipse cx="594" cy="114.0" rx="40" ry="15" fill="white" stroke="#2B4B8C" stroke-width="1.6"/><text x="594" y="119.0" font-size="12.5" fill="#2B4B8C" text-anchor="middle" font-weight="normal" >(2,3,3)</text>
+<ellipse cx="594" cy="210.0" rx="40" ry="15" fill="white" stroke="#8C2B33" stroke-width="1.6"/><text x="594" y="215.0" font-size="12.5" fill="#8C2B33" text-anchor="middle" font-weight="normal" >(6,2,0)</text>
+<ellipse cx="762" cy="114.0" rx="40" ry="15" fill="white" stroke="#2B4B8C" stroke-width="1.6"/><text x="762" y="119.0" font-size="12.5" fill="#2B4B8C" text-anchor="middle" font-weight="normal" >(2,5,1)</text>
+<ellipse cx="762" cy="210.0" rx="40" ry="15" fill="white" stroke="#8C2B33" stroke-width="1.6"/><text x="762" y="215.0" font-size="12.5" fill="#8C2B33" text-anchor="middle" font-weight="normal" >(6,0,2)</text>
+<ellipse cx="930" cy="114.0" rx="40" ry="15" fill="white" stroke="#8C2B33" stroke-width="1.6"/><text x="930" y="119.0" font-size="12.5" fill="#8C2B33" text-anchor="middle" font-weight="normal" >(1,5,2)</text>
+<ellipse cx="930" cy="210.0" rx="40" ry="15" fill="white" stroke="#2B4B8C" stroke-width="1.6"/><text x="930" y="215.0" font-size="12.5" fill="#2B4B8C" text-anchor="middle" font-weight="normal" >(7,0,1)</text>
+<ellipse cx="1098" cy="114.0" rx="40" ry="15" fill="white" stroke="#8C2B33" stroke-width="1.6"/><text x="1098" y="119.0" font-size="12.5" fill="#8C2B33" text-anchor="middle" font-weight="normal" >(1,4,3)</text>
+<ellipse cx="1098" cy="210.0" rx="40" ry="15" fill="white" stroke="#2B4B8C" stroke-width="1.6"/><text x="1098" y="215.0" font-size="12.5" fill="#2B4B8C" text-anchor="middle" font-weight="normal" >(7,1,0)</text>
+<ellipse cx="1266" cy="114.0" rx="40" ry="15" fill="white" stroke="#2B4B8C" stroke-width="1.6"/><text x="1266" y="119.0" font-size="12.5" fill="#2B4B8C" text-anchor="middle" font-weight="normal" >(4,1,3)</text>
+<ellipse cx="1266" cy="210.0" rx="40" ry="15" fill="white" stroke="#8C2B33" stroke-width="2.2"/><text x="1266" y="215.0" font-size="12.5" fill="#8C2B33" text-anchor="middle" font-weight="bold" >(4,4,0)</text>
+<text x="90" y="138.0" font-size="12.5" fill="#3A3A3A" text-anchor="middle" font-weight="bold" >start</text>
+<text x="1312" y="210.0" font-size="12.5" fill="#8C2B33" text-anchor="start" font-weight="bold" >goal</text>
+<line x1="428.0" y1="372" x2="458.0" y2="372" stroke="#8C2B33" stroke-width="3"/>
+<text x="464.0" y="376" font-size="13.5" fill="#3A3A3A" text-anchor="start" font-weight="normal" >shortest solution: 7 pours</text>
+<line x1="698.0" y1="372" x2="728.0" y2="372" stroke="#2B4B8C" stroke-width="2.6"/>
+<text x="734.0" y="376" font-size="13.5" fill="#3A3A3A" text-anchor="start" font-weight="normal" >a longer route: 8 pours</text>
+<text x="678.0" y="398" font-size="13.5" fill="#9AA0A6" text-anchor="middle" font-weight="normal" >16 states, 58 possible pours, one goal. The grey web is every move the rules allow.</text>
+<line x1="368.0" y1="418" x2="988.0" y2="418" stroke="#9AA0A6" stroke-width="1" opacity="0.45"/><text x="678.0" y="434" font-size="13.5" fill="#3A3A3A" text-anchor="middle" font-weight="bold" >ℹ  The puzzle is choosing a path through this graph; each fork is an OR (an either/or choice).</text>
 </svg>
