@@ -2,36 +2,36 @@
 <rect width="900" height="470" fill="#FBFAF7"/>
 <text x="60" y="30" font-size="11.5" fill="#6B6B6B" text-anchor="start" font-weight="bold" font-family="'Helvetica Neue Condensed', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" letter-spacing="1.6" style="font-variant-numeric:tabular-nums" >FROM ONE NUMBER TO ALL OF THEM</text>
 <text x="60" y="52" font-size="20" fill="#1A1A1A" text-anchor="start" font-weight="bold" font-family="'Helvetica Neue Condensed', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" style="font-variant-numeric:tabular-nums" >Add up every number, and you get zeta</text>
-<text x="70" y="130" font-size="22" fill="#9E2B25" text-anchor="start" font-weight="bold" style="font-variant-numeric:tabular-nums" >ζ(s) =</text>
+<text x="70" y="130" font-size="22" fill="#9E2B25" text-anchor="start" font-weight="bold" font-family="'Helvetica Neue Condensed', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" style="font-variant-numeric:tabular-nums" >ζ(s) =</text>
 <line x1="112" y1="124" x2="148" y2="124" stroke="#1A1A1A" stroke-width="1.8"/>
-<text x="130" y="118" font-size="16" fill="#1A1A1A" text-anchor="middle" font-weight="normal" style="font-variant-numeric:tabular-nums" >1</text>
-<text x="130" y="146" font-size="16" fill="#1A1A1A" text-anchor="middle" font-weight="normal" style="font-variant-numeric:tabular-nums" >1</text>
-<text x="142" y="140" font-size="11" fill="#1A1A1A" text-anchor="middle" font-weight="normal" style="font-variant-numeric:tabular-nums" >s</text>
+<text x="130" y="118" font-size="16" fill="#1A1A1A" text-anchor="middle" font-weight="normal" font-family="'Helvetica Neue Condensed', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" style="font-variant-numeric:tabular-nums" >1</text>
+<text x="130" y="146" font-size="16" fill="#1A1A1A" text-anchor="middle" font-weight="normal" font-family="'Helvetica Neue Condensed', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" style="font-variant-numeric:tabular-nums" >1</text>
+<text x="142" y="140" font-size="11" fill="#1A1A1A" text-anchor="middle" font-weight="normal" font-family="'Helvetica Neue Condensed', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" style="font-variant-numeric:tabular-nums" >s</text>
 <text x="183" y="130" font-size="20" fill="#B8B4AC" text-anchor="middle" font-weight="normal" style="font-variant-numeric:tabular-nums" >+</text>
 <line x1="217" y1="124" x2="253" y2="124" stroke="#1A1A1A" stroke-width="1.8"/>
-<text x="235" y="118" font-size="16" fill="#1A1A1A" text-anchor="middle" font-weight="normal" style="font-variant-numeric:tabular-nums" >1</text>
-<text x="235" y="146" font-size="16" fill="#1A1A1A" text-anchor="middle" font-weight="normal" style="font-variant-numeric:tabular-nums" >2</text>
-<text x="247" y="140" font-size="11" fill="#1A1A1A" text-anchor="middle" font-weight="normal" style="font-variant-numeric:tabular-nums" >s</text>
+<text x="235" y="118" font-size="16" fill="#1A1A1A" text-anchor="middle" font-weight="normal" font-family="'Helvetica Neue Condensed', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" style="font-variant-numeric:tabular-nums" >1</text>
+<text x="235" y="146" font-size="16" fill="#1A1A1A" text-anchor="middle" font-weight="normal" font-family="'Helvetica Neue Condensed', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" style="font-variant-numeric:tabular-nums" >2</text>
+<text x="247" y="140" font-size="11" fill="#1A1A1A" text-anchor="middle" font-weight="normal" font-family="'Helvetica Neue Condensed', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" style="font-variant-numeric:tabular-nums" >s</text>
 <text x="283" y="130" font-size="20" fill="#B8B4AC" text-anchor="middle" font-weight="normal" style="font-variant-numeric:tabular-nums" >+</text>
 <line x1="317" y1="124" x2="353" y2="124" stroke="#1A1A1A" stroke-width="1.8"/>
-<text x="335" y="118" font-size="16" fill="#1A1A1A" text-anchor="middle" font-weight="normal" style="font-variant-numeric:tabular-nums" >1</text>
-<text x="335" y="146" font-size="16" fill="#1A1A1A" text-anchor="middle" font-weight="normal" style="font-variant-numeric:tabular-nums" >3</text>
-<text x="347" y="140" font-size="11" fill="#1A1A1A" text-anchor="middle" font-weight="normal" style="font-variant-numeric:tabular-nums" >s</text>
+<text x="335" y="118" font-size="16" fill="#1A1A1A" text-anchor="middle" font-weight="normal" font-family="'Helvetica Neue Condensed', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" style="font-variant-numeric:tabular-nums" >1</text>
+<text x="335" y="146" font-size="16" fill="#1A1A1A" text-anchor="middle" font-weight="normal" font-family="'Helvetica Neue Condensed', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" style="font-variant-numeric:tabular-nums" >3</text>
+<text x="347" y="140" font-size="11" fill="#1A1A1A" text-anchor="middle" font-weight="normal" font-family="'Helvetica Neue Condensed', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" style="font-variant-numeric:tabular-nums" >s</text>
 <text x="383" y="130" font-size="20" fill="#B8B4AC" text-anchor="middle" font-weight="normal" style="font-variant-numeric:tabular-nums" >+</text>
 <line x1="417" y1="124" x2="453" y2="124" stroke="#1A1A1A" stroke-width="1.8"/>
-<text x="435" y="118" font-size="16" fill="#1A1A1A" text-anchor="middle" font-weight="normal" style="font-variant-numeric:tabular-nums" >1</text>
-<text x="435" y="146" font-size="16" fill="#1A1A1A" text-anchor="middle" font-weight="normal" style="font-variant-numeric:tabular-nums" >4</text>
-<text x="447" y="140" font-size="11" fill="#1A1A1A" text-anchor="middle" font-weight="normal" style="font-variant-numeric:tabular-nums" >s</text>
+<text x="435" y="118" font-size="16" fill="#1A1A1A" text-anchor="middle" font-weight="normal" font-family="'Helvetica Neue Condensed', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" style="font-variant-numeric:tabular-nums" >1</text>
+<text x="435" y="146" font-size="16" fill="#1A1A1A" text-anchor="middle" font-weight="normal" font-family="'Helvetica Neue Condensed', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" style="font-variant-numeric:tabular-nums" >4</text>
+<text x="447" y="140" font-size="11" fill="#1A1A1A" text-anchor="middle" font-weight="normal" font-family="'Helvetica Neue Condensed', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" style="font-variant-numeric:tabular-nums" >s</text>
 <text x="520" y="130" font-size="20" fill="#B8B4AC" text-anchor="middle" font-weight="normal" style="font-variant-numeric:tabular-nums" >+  ⋯</text>
 <line x1="602" y1="124" x2="638" y2="124" stroke="#9E2B25" stroke-width="1.8"/>
-<text x="620" y="118" font-size="16" fill="#9E2B25" text-anchor="middle" font-weight="normal" style="font-variant-numeric:tabular-nums" >1</text>
-<text x="620" y="146" font-size="16" fill="#9E2B25" text-anchor="middle" font-weight="bold" style="font-variant-numeric:tabular-nums" >12</text>
-<text x="632" y="140" font-size="11" fill="#9E2B25" text-anchor="middle" font-weight="normal" style="font-variant-numeric:tabular-nums" >s</text>
+<text x="620" y="118" font-size="16" fill="#9E2B25" text-anchor="middle" font-weight="normal" font-family="'Helvetica Neue Condensed', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" style="font-variant-numeric:tabular-nums" >1</text>
+<text x="620" y="146" font-size="16" fill="#9E2B25" text-anchor="middle" font-weight="bold" font-family="'Helvetica Neue Condensed', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" style="font-variant-numeric:tabular-nums" >30</text>
+<text x="632" y="140" font-size="11" fill="#9E2B25" text-anchor="middle" font-weight="normal" font-family="'Helvetica Neue Condensed', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" style="font-variant-numeric:tabular-nums" >s</text>
 <rect x="590" y="100" width="60" height="58" rx="6" fill="none" stroke="#9E2B25" stroke-width="1.6" stroke-dasharray="5 3"/>
 <text x="745" y="130" font-size="20" fill="#B8B4AC" text-anchor="middle" font-weight="normal" style="font-variant-numeric:tabular-nums" >+  ⋯</text>
 <path d="M 620 168 C 600 192 560 196 500 210" fill="none" stroke="#9E2B25" stroke-width="1.6"/>
-<text x="450.0" y="232" font-size="14" fill="#9E2B25" text-anchor="middle" font-weight="normal" style="font-variant-numeric:tabular-nums" >12's term is one drop in the sum: the "forget everything" corner of its square.</text>
-<text x="450.0" y="252" font-size="14" fill="#1A1A1A" text-anchor="middle" font-weight="normal" style="font-variant-numeric:tabular-nums" >Keep the history instead and 12 pours in six times as much: a richer partition function.</text>
+<text x="450.0" y="232" font-size="14" fill="#9E2B25" text-anchor="middle" font-weight="normal" style="font-variant-numeric:tabular-nums" >30's term is one drop in the sum: the “forget everything” corner of its square.</text>
+<text x="450.0" y="252" font-size="14" fill="#1A1A1A" text-anchor="middle" font-weight="normal" style="font-variant-numeric:tabular-nums" >Keep the history instead and 30 pours in twelve times as much: a richer partition function.</text>
 <line x1="90" y1="280" x2="810" y2="280" stroke="#B8B4AC" stroke-width="1" opacity="0.5"/>
 <text x="450.0" y="306" font-size="14.5" fill="#B8B4AC" text-anchor="middle" font-weight="normal" style="font-variant-numeric:tabular-nums" >The same sum, factored over the primes (this is the AND hiding inside):</text>
 <text x="450.0" y="344" font-size="19" fill="#1A1A1A" text-anchor="middle" font-weight="bold" style="font-variant-numeric:tabular-nums" >ζ(s)  =  1 / (1 − 2⁻ˢ)  ×  1 / (1 − 3⁻ˢ)  ×  1 / (1 − 5⁻ˢ)  ×  ⋯</text>
