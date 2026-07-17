@@ -117,7 +117,7 @@
 							<div class="featured-image" style="margin: 0 0 28px 0; text-align: center;">
 								<img src="img/note/primes/wine-hero.jpg" alt="A bottle of Italian Ciro Rosso Classico beside a glass of red wine" style="max-width: 100%; height: auto; border-radius: 4px;">
 								<div style="font-size: 12px; color: #9AA0A6; margin-top: 6px; text-align: right;">
-									Photo: <a href="https://commons.wikimedia.org/wiki/File:Cir%C3%B2_rosso_wine_and_bottle_1.jpg" style="color:#9AA0A6;">Bonvol</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0" style="color:#9AA0A6;">CC BY-SA 3.0</a>, via Wikimedia Commons
+									Photo: <a href="https://commons.wikimedia.org/wiki/File:Wine_being_poured_into_a_glass.jpg" style="color:#9AA0A6;">Fabio Ingrosso</a>, <a href="https://creativecommons.org/licenses/by/2.0" style="color:#9AA0A6;">CC BY 2.0</a>, via Wikimedia Commons
 								</div>
 							</div>
 
@@ -248,7 +248,22 @@
 
 							<p>In this view of arithmetic, then, an integer has an entropy. The entropy of 12 is log 6: about 2.6 bits, between two and three yes/no questions to learn which of its six assembly histories you are holding. Primes are the states of zero entropy, readings with a unique history: seeing the label 7 tells you everything, seeing the label 12 leaves 2.6 bits unsaid.</p>
 
-							<p>And physics has a machine for processing exactly this data: the partition function, the sum over all configurations weighted by size. Run that machine on the world of packages and something remarkable happens. For the fully poured-out world (occupation counts only, no history), the partition function turns out to be the most studied object in mathematics: Riemann's zeta function, appearing here in its thermodynamic role as the partition function of a gas whose particles are the primes, each carrying energy log p. The logarithm again, translating: labels multiply while energies add. This identity is old and lovely; physicists call it the gas of numbers.</p>
+							<p>And physics has a machine for processing exactly this data: the partition function, a single sum that weighs every configuration by its size and adds them all up. Let me build it, because the destination is a surprise.</p>
+
+							<p>Give each number a weight that shrinks as the number grows: let 12 count for 1/12<sup>s</sup>, where s is a knob we can turn (a colder gas, larger s, leans harder on the small numbers). Now add up the weights of every integer. If we work at the fully forgotten corner, where each number counts once, the sum is</p>
+
+							<p style="text-align:center; font-size:19px; margin:18px 0;">1/1<sup>s</sup> + 1/2<sup>s</sup> + 1/3<sup>s</sup> + 1/4<sup>s</sup> + &middot;&middot;&middot; + 1/12<sup>s</sup> + &middot;&middot;&middot;</p>
+
+							<p>and 12's single drop in that ocean is exactly the "forget everything" corner of its square. Keep the history instead, weigh 12 by its six microstates, and it pours in six times as heavily (6/12<sup>s</sup>): a different, richer sum. Each level of memory gives its own partition function, all built from the same per-number weights.</p>
+
+							<p>The fully forgotten one is the sum written above, and it has a name that will stop a mathematician in their tracks. That endless sum equals a product, one factor for every prime, and it is the most studied object in all of mathematics: Riemann's zeta function. The primes appear not as terms but as the <em>factors</em> from which the whole sum is woven, which is the AND of our two verbs hiding inside the OR. Written in the language of this post: zeta is the partition function of a gas whose particles are the primes, each carrying energy log p. (The logarithm once more, translating between the two worlds: the numbers multiply, their energies add.) Physicists call it the gas of numbers.</p>
+
+							<!-- .featured-image -->
+							<div class="featured-image" style="margin: 24px 0; text-align: center;">
+								<img src="img/note/primes/zeta-bridge.svg" alt="The sum of 1 over n to the s over all integers equals the zeta function, factored over the primes" style="max-width: 100%; height: auto;">
+							</div>
+
+							<p>This is the whole arc in one line. We started by refusing to pour 3 &times; 2 into six liters; we ended at the function whose zeros are the deepest open problem in mathematics. The bridge between them was only ever bookkeeping: count the histories of each number, weigh them, and add.</p>
 
 							<p>Keep more structure and the machine produces new partition functions, cousins of zeta that mathematics had less reason to study before. The fully structured one obeys a self-consistency equation you can state in one breath (a package is a prime, or a pair of packages), and this equation is, symbol for symbol, the bootstrap equation that particle physicists in the 1960s wrote for strongly interacting matter. That theory's signature was a maximum temperature: heat the system past a point and added energy makes more particles instead of more speed. The arithmetic version has the same feature. The gas of packages has a limiting temperature, four of them in fact, a ladder of critical points, one per level of remembered structure.</p>
 

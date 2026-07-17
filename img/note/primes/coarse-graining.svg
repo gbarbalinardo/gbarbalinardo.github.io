@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" font-family="Helvetica, Arial, sans-serif">
-<rect width="900" height="620" fill="white"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 632" font-family="Helvetica, Arial, sans-serif">
+<rect width="900" height="632" fill="white"/>
 <rect x="85.0" y="40.0" width="300" height="220" rx="12" fill="white" stroke="#2B4B8C" stroke-width="2" opacity="0.95"/><text x="235" y="66.0" font-size="15.5" fill="#2B4B8C" text-anchor="middle" font-weight="bold" >keep everything: 6 histories</text><text x="365.0" y="66.0" font-size="20" fill="#8C2B33" text-anchor="end" font-weight="bold" >6</text>
 <line x1="143" y1="108" x2="131.5" y2="126" stroke="#3A3A3A" stroke-width="1.6"/>
 <line x1="143" y1="108" x2="160" y2="137" stroke="#3A3A3A" stroke-width="1.6"/>
@@ -191,6 +191,6 @@
 <line x1="235" y1="264.0" x2="235" y2="316.0" stroke="#3A3A3A" stroke-width="2.6"/><path d="M 235 316.0 L 230.7 307.0 M 235 316.0 L 239.3 307.0" stroke="#3A3A3A" stroke-width="2.6" fill="none" stroke-linecap="round"/><text x="227" y="290.0" font-size="13.5" fill="#3A3A3A" text-anchor="end" font-weight="normal" >forget order</text>
 <line x1="665" y1="264.0" x2="665" y2="316.0" stroke="#3A3A3A" stroke-width="2.6"/><path d="M 665 316.0 L 660.7 307.0 M 665 316.0 L 669.3 307.0" stroke="#3A3A3A" stroke-width="2.6" fill="none" stroke-linecap="round"/><text x="673" y="290.0" font-size="13.5" fill="#3A3A3A" text-anchor="start" font-weight="normal" >forget order</text>
 <text x="450.0" y="34" font-size="18" fill="#3A3A3A" text-anchor="middle" font-weight="bold" >Two ways to forget, and they agree</text>
-<text x="450.0" y="566" font-size="15.5" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >6 → 3 → 1  and  6 → 2 → 1 : both roads end at one number.</text>
-<text x="450.0" y="592" font-size="15" fill="#8C2B33" text-anchor="middle" font-weight="bold" >That the last corner holds exactly one is the Fundamental Theorem of Arithmetic.</text>
+<text x="450.0" y="560" font-size="15" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >Each arrow discards information: 2.6 bits → 1.6 → 0  and  2.6 → 1.0 → 0.</text>
+<line x1="150.0" y1="576" x2="750.0" y2="576" stroke="#9AA0A6" stroke-width="1" opacity="0.45"/><text x="450.0" y="592" font-size="13.5" fill="#3A3A3A" text-anchor="middle" font-weight="bold" >ℹ  Zero bits left at the last corner: nothing forgotten. That is the Fundamental Theorem of Arithmetic.</text>
 </svg>

@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" font-family="Helvetica, Arial, sans-serif">
-<rect width="880" height="470" fill="white"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 476" font-family="Helvetica, Arial, sans-serif">
+<rect width="880" height="476" fill="white"/>
 <text x="470" y="26" font-size="16" fill="#3A3A3A" text-anchor="middle" font-weight="bold" >order the three bottles: 3 ways</text>
 <text x="250" y="58" font-size="14.5" fill="#8C2B33" text-anchor="middle" font-weight="bold" >( 2 , 2 , 3 )</text>
 <text x="470" y="58" font-size="14.5" fill="#8C2B33" text-anchor="middle" font-weight="bold" >( 2 , 3 , 2 )</text>
@@ -123,6 +123,6 @@
 <path d="M 723.625 337 L 723.625 309.95 Q 723.625 304.0 727.45 302.3 L 727.45 292.95 L 732.5500000000001 292.95 L 732.5500000000001 302.3 Q 736.375 304.0 736.375 309.95 L 736.375 337 Z" fill="none" stroke="#8C2B33" stroke-width="1.8" stroke-linejoin="round"/>
 <rect x="726.85" y="290.4" width="6.3" height="2.8899999999999997" fill="#8C2B33"/>
 <text x="730" y="326.95" font-size="10.2" fill="white" text-anchor="middle" font-weight="bold" >2</text>
-<text x="470" y="420" font-size="17" fill="#3A3A3A" text-anchor="middle" font-weight="bold" >2 nesting shapes  ×  3 orders  =  6 ways to build 12</text>
-<text x="470" y="447" font-size="15" fill="#8C2B33" text-anchor="middle" font-weight="normal" >one label, six microstates:  S(12) = log 6 ≈ 2.6 bits of forgotten history</text>
+<text x="470" y="418" font-size="17" fill="#3A3A3A" text-anchor="middle" font-weight="bold" >2 nesting shapes  ×  3 orders  =  6 ways to build 12</text>
+<line x1="130.0" y1="436" x2="750.0" y2="436" stroke="#9AA0A6" stroke-width="1" opacity="0.45"/><text x="440" y="452" font-size="13.5" fill="#3A3A3A" text-anchor="middle" font-weight="bold" >ℹ  Information hidden by the label "12":  log₂ 6 ≈ 2.6 bits, the answer to "which of the six?"</text>
 </svg>

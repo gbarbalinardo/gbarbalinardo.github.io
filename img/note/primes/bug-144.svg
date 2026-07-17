@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 330" font-family="Helvetica, Arial, sans-serif">
-<rect width="860" height="330" fill="white"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 360" font-family="Helvetica, Arial, sans-serif">
+<rect width="860" height="360" fill="white"/>
 <text x="430" y="34" font-size="16.5" fill="#3A3A3A" text-anchor="middle" font-weight="bold" >144 = 12 × 12 — and each 12 packs in two ways, A and B</text>
 <line x1="130" y1="70" x2="102" y2="104" stroke="#3A3A3A" stroke-width="2"/>
 <line x1="130" y1="70" x2="160" y2="136" stroke="#3A3A3A" stroke-width="2"/>
@@ -33,6 +33,7 @@
 <text x="700" y="128" font-size="13" fill="#8C2B33" text-anchor="start" font-weight="normal" >same object,</text>
 <text x="700" y="145" font-size="13" fill="#8C2B33" text-anchor="start" font-weight="normal" >counted once</text>
 <text x="580" y="214" font-size="16" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >ordered: 4        unordered: 3</text>
-<text x="430" y="280" font-size="15.5" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >The encyclopedia's formula chose 4. The right answer is 3.</text>
-<text x="430" y="306" font-size="16.5" fill="#8C2B33" text-anchor="middle" font-weight="bold" >Total at n = 144: it said 42; the truth is 41.</text>
+<text x="430" y="276" font-size="15.5" fill="#3A3A3A" text-anchor="middle" font-weight="normal" >The encyclopedia's formula chose 4. The right answer is 3.</text>
+<text x="430" y="300" font-size="16.5" fill="#8C2B33" text-anchor="middle" font-weight="bold" >Total at n = 144: it said 42; the truth is 41.</text>
+<line x1="130.0" y1="320" x2="730.0" y2="320" stroke="#9AA0A6" stroke-width="1" opacity="0.45"/><text x="430" y="336" font-size="13.5" fill="#3A3A3A" text-anchor="middle" font-weight="bold" >ℹ  The split should carry log₂ 3 ≈ 1.6 bits; the bug counted it as log₂ 4 = 2 bits.</text>
 </svg>

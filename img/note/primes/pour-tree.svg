@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 640" font-family="Helvetica, Arial, sans-serif">
-<rect width="860" height="640" fill="white"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 666" font-family="Helvetica, Arial, sans-serif">
+<rect width="860" height="666" fill="white"/>
 <ellipse cx="430" cy="46" rx="46" ry="16" fill="white" stroke="#3A3A3A" stroke-width="1.8"/><text x="430" y="51" font-size="13.5" fill="#3A3A3A" text-anchor="middle" font-weight="bold" >(8,0,0)</text>
 <line x1="400" y1="60" x2="260" y2="92" stroke="#8C2B33" stroke-width="2.4"/>
 <line x1="460" y1="60" x2="600" y2="92" stroke="#9AA0A6" stroke-width="2.2"/>
@@ -35,5 +35,6 @@
 <ellipse cx="600" cy="542" rx="46" ry="16" fill="white" stroke="#2B4B8C" stroke-width="1.8"/><text x="600" y="547" font-size="13.5" fill="#2B4B8C" text-anchor="middle" font-weight="bold" >(4,4,0)</text>
 <text x="260" y="524" font-size="16" fill="#8C2B33" text-anchor="middle" font-weight="bold" >7 pours</text>
 <text x="600" y="586" font-size="16" fill="#2B4B8C" text-anchor="middle" font-weight="bold" >8 pours</text>
-<text x="430" y="620" font-size="15" fill="#9AA0A6" text-anchor="middle" font-weight="normal" >A tree of alternatives: every fork is an OR.</text>
+<text x="430" y="606" font-size="15" fill="#9AA0A6" text-anchor="middle" font-weight="normal" >A tree of alternatives: every fork is an OR.</text>
+<line x1="190.0" y1="626" x2="670.0" y2="626" stroke="#9AA0A6" stroke-width="1" opacity="0.45"/><text x="430" y="642" font-size="13.5" fill="#3A3A3A" text-anchor="middle" font-weight="bold" >ℹ  Naming which path you took: log₂ 2 = 1 bit of information.</text>
 </svg>
