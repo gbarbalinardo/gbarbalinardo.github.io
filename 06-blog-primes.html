@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>My Grandfather's Wine Riddle, and the Only Two Things Nature Does</title>
+    <title>The Zeros That Refuse to Line Up, and a Formula That Counts Them</title>
 
     <meta name="description"
-          content="A 500-year-old wine-pouring riddle hides the deepest split in mathematics: nature combines things in exactly two ways. Following that split leads to the primes as the atoms of multiplication, arithmetic as statistical mechanics, and a correction to the Online Encyclopedia of Integer Sequences.">
-    <meta itemprop="name" content="My Grandfather's Wine Riddle, and the Only Two Things Nature Does">
+          content="595 zeros of a cousin of Riemann's zeta scatter off any line, yet their density has an exact formula: each prime weighted by how often it outruns the rest.">
+    <meta itemprop="name" content="The Zeros That Refuse to Line Up, and a Formula That Counts Them">
     <meta itemprop="description"
-          content="A 500-year-old wine-pouring riddle hides the deepest split in mathematics: nature combines things in exactly two ways. Following that split leads to the primes as the atoms of multiplication, arithmetic as statistical mechanics, and a correction to the Online Encyclopedia of Integer Sequences.">
+          content="595 zeros of a cousin of Riemann's zeta scatter off any line, yet their density has an exact formula: each prime weighted by how often it outruns the rest.">
     <meta itemprop="image" content="https://giuseppe.barbalinardo.com/img/note/primes/zeros.png">
     <meta property="og:url" content="https://giuseppe.barbalinardo.com/06-blog-primes.html">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="My Grandfather's Wine Riddle, and the Only Two Things Nature Does">
+    <meta property="og:title" content="The Zeros That Refuse to Line Up, and a Formula That Counts Them">
     <meta property="og:description"
-          content="A 500-year-old wine-pouring riddle hides the deepest split in mathematics: nature combines things in exactly two ways. Following that split leads to the primes as the atoms of multiplication, arithmetic as statistical mechanics, and a correction to the Online Encyclopedia of Integer Sequences.">
+          content="595 zeros of a cousin of Riemann's zeta scatter off any line, yet their density has an exact formula: each prime weighted by how often it outruns the rest.">
     <meta property="og:image" content="https://giuseppe.barbalinardo.com/img/note/primes/zeros.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="My Grandfather's Wine Riddle, and the Only Two Things Nature Does">
+    <meta name="twitter:title" content="The Zeros That Refuse to Line Up, and a Formula That Counts Them">
     <meta name="twitter:description"
-          content="A 500-year-old wine-pouring riddle hides the deepest split in mathematics: nature combines things in exactly two ways.">
+          content="595 zeros of a cousin of Riemann's zeta scatter off any line, yet their density has an exact formula.">
     <meta name="twitter:image" content="https://giuseppe.barbalinardo.com/img/note/primes/zeros.png">
 
     <meta name="keywords"
-          content="Giuseppe Barbalinardo, Prime Numbers, Mathematics, Statistical Mechanics, Number Theory, OEIS, Riemann Zeta">
+          content="Giuseppe Barbalinardo, Prime Numbers, Prime Zeta Function, Mathematics, Statistical Mechanics, Number Theory, OEIS, Riemann Zeta">
 
 	<!-- Favicon -->
 	<link href="img/site/favicon.ico" rel="shortcut icon"/>
@@ -94,8 +94,8 @@
 
 	<header class="header-section">
 		<div class="header-wrap">
-			<h2 class="page-title">My Grandfather's Wine Riddle,</h2>
-			<h2 class="page-title">and the Only Two Things Nature Does</h2>
+			<h2 class="page-title">The Zeros That Refuse to Line Up,</h2>
+			<h2 class="page-title">and a Formula That Counts Them</h2>
 			<div class="header-nav">
 				<a href="index.html"><i class="fa fa-home"></i> Home</a>
 			</div>
@@ -111,221 +111,116 @@
 						<header class="entry-header">
 							<!-- .entry-meta -->
 							<div class="entry-meta">
-								<span class="entry-date">July 17, 2026</span>
+								<span class="entry-date">July 18, 2026</span>
 								<span class="cat-links"><a href="#">Giuseppe Barbalinardo</a></span>
 							</div>
 						</header>
 						<!-- .blog-content -->
 						<div class="entry-content">
 
-							<!-- .featured-image (hero) -->
-							<div class="featured-image" style="margin: 0 0 28px 0; text-align: center;">
-								<img src="img/note/primes/wine-hero.jpg" alt="A bottle of Italian Ciro Rosso Classico beside a glass of red wine" style="max-width: 100%; height: auto; border-radius: 4px;">
-								<div style="font-size: 12px; color: #9AA0A6; margin-top: 6px; text-align: right;">
-									Photo: <a href="https://commons.wikimedia.org/wiki/File:Wine_being_poured_into_a_glass.jpg" style="color:#9AA0A6;">Fabio Ingrosso</a>, <a href="https://creativecommons.org/licenses/by/2.0" style="color:#9AA0A6;">CC BY 2.0</a>, via Wikimedia Commons
-								</div>
-							</div>
+							<p>The most famous unsolved problem in mathematics is a claim about alignment. In 1859 Riemann conjectured that the nontrivial zeros of his zeta function all sit on one vertical line in the complex plane. Every such zero anyone has ever computed does sit there. Nobody can prove they must. The order is overwhelming, and unexplained.</p>
 
-							<p>My grandfather had a riddle he liked to ask over wine, poured from a <em>damigiana</em>, the big straw-caged glass demijohn that sat in every Italian cellar.</p>
-
-							<p>You have an eight-liter jug, full. You have two empty jugs, one that holds five liters and one that holds three. None of them has any markings. You may only pour from one vessel into another until either the source is empty or the target is full, with no guessing and no eyeballing half-full jugs.</p>
-
-							<p>Divide the wine into two equal parts: four liters and four liters.</p>
+							<p>This post is about a cousin object whose zeros do the opposite. Below are all 595 solutions of $P(s) = \tfrac14$ in a computational window: real part between 1.25 and 2.72, height (imaginary part) up to 5000. Here $P(s) = \sum_p p^{-s}$ is the prime zeta function, the same kind of series as zeta but summed over the primes only.</p>
 
 							<!-- .featured-image -->
 							<div class="featured-image" style="margin: 24px 0; text-align: center;">
-								<img src="img/note/primes/riddle-setup.svg" alt="Three jugs of 8, 5, and 3 liters; the eight-liter jug is full" style="max-width: 100%; height: auto;">
+								<img src="img/note/primes/zeros.png" alt="The 595 solutions of P(s) equals one quarter up to height 5000: a scatter in a vertical band, on no line" style="max-width: 100%; height: auto;">
 							</div>
 
-							<p>Stop here and try it in your head. It is harder than it looks, and then, once you see it, easier than it looked.</p>
+							<p>The real parts scatter from 1.2615 to 2.5679. No line holds them, vertical or otherwise, and this is not numerical fog: each position is computed to fifteen digits. Where Riemann's zeros are believed to align and cannot be proved to, these demonstrably refuse.</p>
 
-							<p>He did not invent it, though I did not know that then. The puzzle appears in a French arithmetic manuscript of 1484, and it was made famous by Niccol&ograve; Tartaglia, the self-taught Renaissance mathematician who also cracked the cubic equation and got swindled out of the credit. For five centuries, people have been passing wine and this riddle across tables. My grandfather was a link in that chain, and he almost certainly did not know it either.</p>
+							<p>The refusal is not the story. The story is what survives it: the cloud has an exact density. By the end I will write down a formula for the number of zeros per unit height, in which every prime appears weighted by the probability that it outruns all the other primes combined, check it against the 595 dots to about one percent, and tell how a check along the way corrected a reference book by exactly one. First, where the equation comes from.</p>
 
-							<h2 style="margin-bottom: 20px;">The dance</h2>
+							<h2 style="margin-bottom: 20px;">Where the equation comes from</h2>
 
-							<p>Here is the solution, as a dance in seven pours. Each panel shows how much the 8, 5, and 3 liter jugs hold at that moment.</p>
-
-							<!-- .featured-image -->
-							<div class="featured-image" style="margin: 24px 0; text-align: center;">
-								<img src="img/note/primes/pour-dance.svg" alt="The seven pours that split eight liters into four and four" style="max-width: 100%; height: auto;">
-							</div>
-
-							<p>Seven pours, and no way to do it in fewer.</p>
-
-							<p>And this dance is not the only one. At almost every moment you face a choice: from most states there are three or four legal pours, not one. Map them all and the riddle is not a line but a web of sixteen states, laced together by every move the rules permit. Solving it means threading a path from the full jug to four-and-four, and there are several. The shortest takes seven pours; a scenic route takes eight and rejoins the same goal.</p>
-
-							<!-- .featured-image -->
-							<div class="featured-image" style="margin: 24px 0; text-align: center;">
-								<img src="img/note/primes/pour-tree.svg" alt="A tree of the two solution paths: seven pours on the left, eight on the right" style="max-width: 100%; height: auto;">
-							</div>
-
-							<p>Hold on to this picture: a graph whose every branching is an OR, an either/or choice between next moves. A second, very different kind of tree is coming.</p>
-
-							<p>Now notice something about the prize. The four liters you worked so hard for are completely ordinary. Nothing about that wine remembers the dance. If someone walked in with four liters measured from a marked bottle, the two would be identical in every possible respect. Seven clever pours or one boring one: the result carries no trace of its history.</p>
-
-							<p>That is the first lesson, and it is about addition. Pouring is addition and subtraction of amounts, and amounts have no memory. When wine merges, the histories of the parts are annihilated. An amount is a number and nothing more.</p>
-
-							<h2 style="margin-bottom: 20px;">The referee</h2>
-
-							<p>The second lesson is hiding underneath, and my grandfather never mentioned it. Why does the riddle work at all? Which amounts can a pouring dance ever isolate?</p>
-
-							<p>Answer: exactly the multiples of the greatest common divisor of the jug sizes. Five and three share no common factor, so their gcd is 1, and every whole number of liters from zero to eight is reachable. That is why four is possible. But give my grandfather jugs of 8, 6, and 2 liters and no sequence of pours, however long, will ever isolate an odd liter of wine. Every reachable amount would be even, forever. One liter, three liters, five: unreachable, not by lack of cleverness but by law.</p>
-
-							<!-- .featured-image -->
-							<div class="featured-image" style="margin: 24px 0; text-align: center;">
-								<img src="img/note/primes/gcd-referee.svg" alt="Which amounts are reachable with 5-and-3 jugs versus 6-and-2 jugs" style="max-width: 100%; height: auto;">
-							</div>
-
-							<p>Look once more at the dance and you can see the law working. Over the seven pours, the five-liter jug was filled twice and the three-liter jug was emptied twice, and 2 &times; 5 &minus; 2 &times; 3 = 4. The dance is a physical computation. The wine is enacting an identity about fives and threes, the kind number theorists write down for coprime numbers.</p>
-
-							<p>Sit with how strange this is. The game is purely additive: pour, merge, top up. Nothing in the rules mentions multiplication. And yet the referee deciding which amounts are reachable is a multiplicative object, the gcd, which is to say: the atoms that 5 and 3 are built from. The pouring world is governed, from outside, by the packing world.</p>
-
-							<p>Which brings me to the actual subject of this post. I have come to believe the riddle is a small window onto something larger: nature has exactly two ways of combining things, and almost everything interesting in mathematics and physics happens at the border between them.</p>
-
-							<h2 style="margin-bottom: 20px;">The two verbs</h2>
-
-							<p>The first verb is OR. When two outcomes exclude each other, their chances pool: the probability of rolling a 3 or a 4 with one die is 1/6 + 1/6. Alternatives sit side by side, like wines merged in a jug. OR is addition. Picture a fork in the road.</p>
-
-							<p>The second verb is AND. When two events are independent and you need both, their chances compound: the probability that two coin flips both come up heads is 1/2 &times; 1/2. One condition nested inside another. AND is multiplication. Picture two doors in a corridor: to pass, you must open the first and the second.</p>
-
-							<!-- .featured-image -->
-							<div class="featured-image" style="margin: 24px 0; text-align: center;">
-								<img src="img/note/primes/two-verbs.svg" alt="OR as a fork between alternatives, AND as two doors in a corridor" style="max-width: 100%; height: auto;">
-							</div>
-
-							<p>The two verbs are not interchangeable, but they have an official translator. The information in one coin flip is one bit; in two flips, two bits. The probabilities multiplied (1/2 &times; 1/2 = 1/4) while the information added (1 + 1 = 2). The translator is the logarithm: it converts AND-language into OR-language, compounding into accumulating. This one fact explains why logarithms appear wherever humans build rulers for nature: decibels, earthquake magnitudes, pH. The world compounds; our senses and our rulers prefer to pour.</p>
-
-							<!-- .featured-image -->
-							<div class="featured-image" style="margin: 24px 0; text-align: center;">
-								<img src="img/note/primes/log-bridge.svg" alt="The logarithm as translator: probabilities multiply while information adds" style="max-width: 100%; height: auto;">
-							</div>
-
-							<h2 style="margin-bottom: 20px;">Packing</h2>
-
-							<p>Here is a second kitchen experiment, the mirror image of my grandfather's.</p>
-
-							<p>Take six one-liter bottles. Do not pour them anywhere. Instead, pack them: two bottles to a carton, three cartons. That is 3 &times; 2 liters, taken literally: three groups of two. Now repack: three bottles to a carton, two cartons. That is 2 &times; 3.</p>
-
-							<p>Both arrangements contain six liters; a scale cannot tell them apart. But they are different objects. One is three small cartons, the other two big ones. And notice the crucial thing: at no point did multiplication produce six liters. It produced a structured package whose label reads six. To actually obtain six loose liters from 3 &times; 2, you must perform a second and different act: tear the cartons open and pour, which is to say, hand the result over to addition.</p>
-
-							<!-- .featured-image -->
-							<div class="featured-image" style="margin: 24px 0; text-align: center;">
-								<img src="img/note/primes/packing.svg" alt="3 times 2 as three cartons of two, 2 times 3 as two cartons of three; both flatten to six liters" style="max-width: 100%; height: auto;">
-							</div>
-
-							<p><em>You never get six liters from multiplication. You get a package whose shadow is 6.</em></p>
-
-							<p>So the two verbs are not just AND and OR of probability. They are two opposite attitudes toward structure. Addition levels: it merges alternatives and erases history, like the wine in the jug. Multiplication builds: it nests things inside things and remembers, like cartons inside a van. The riddle's two lessons were exactly this pair: pouring forgets, and yet what pouring can reach is dictated by packing.</p>
-
-							<h2 style="margin-bottom: 20px;">One atom, or infinitely many</h2>
-
-							<p>Ask the same question of each verb: what are its atoms, the pieces that cannot be broken down further?</p>
-
-							<p>In the world of addition the answer is brutally short: there is one atom, the number 1. Every integer is 1 + 1 + ... + 1, and that is its entire additive biography. True, complete, and flat.</p>
-
-							<p>In the world of multiplication, the atoms are the primes: the packages that cannot be repacked as several identical smaller cartons. Six bottles go into two cartons of three or three of two; seven bottles refuse every such arrangement. And the primes are not one or two special cases. There are infinitely many of them, spaced irregularly, with no closed formula in sight after two and a half millennia of looking.</p>
-
-							<p>Why does one verb have a single atom and the other an infinite alphabet? Because OR merely accumulates, while AND nests, and an operation that nests is rich enough to contain irreducibles. Richness has a price: mystery. It is no accident that the celebrated unsolved problems of arithmetic are, without exception, sentences that mix the two verbs. Goldbach's conjecture asks an addition question about the atoms of multiplication: is every even number the sum of two primes? The Riemann Hypothesis, beneath its analytic dress, is a statement about how the atoms of AND are distributed along the additive line. My grandfather's riddle, where a pouring game answers to the gcd, is the same species of question, small enough to fit in a kitchen.</p>
-
-							<h2 style="margin-bottom: 20px;">Keeping the packages</h2>
-
-							<p>School arithmetic tears open every carton on sight: 3 &times; 2 = 6, done, next exercise. Some months ago I began to wonder what happens if you refuse: if you treat the package, not the number, as the real object. This became a research project, and eventually a paper, and the rest of this post is what fell out.</p>
-
-							<p>The move sounds small and is not. If a multiplication is a packing, the integer is demoted from object to label: the shadow the package casts on a scale. Distinct packings share a label. Take 30 = 2 &times; 3 &times; 5, our running example for the rest of the post. You can pour the bottles in any of six orders, and for each order you can nest either the first pair or the last, so 30 can be assembled in twelve distinct ways: 2 &times; (3 &times; 5), (2 &times; 3) &times; 5, 5 &times; (3 &times; 2), and nine more. Thirty is not one thing. Thirty is a label worn by twelve structures.</p>
+							<p>It begins with a refusal of my own: do not simplify $2 \cdot 3 \cdot 5$ to 30. Keep the assembly. Multiplication joins two numbers at a time, so building 30 from its primes means choosing an order for 2, 3, 5 (six ways) and choosing which join happens first (two ways): twelve assembly histories, all wearing the label 30.</p>
 
 							<!-- .featured-image -->
 							<div class="featured-image" style="margin: 24px 0; text-align: center;">
 								<img src="img/note/primes/twelve-histories.svg" alt="The twelve assembly histories of 30, a 2 by 6 grid of trees over the primes 2, 3, 5" style="max-width: 100%; height: auto;">
 							</div>
 
-							<p>Forgetting is not one act but two, and they can be done in either order. Forget which pair you nested first, and the twelve histories collapse to six ordered lists of bottles. Forget the order of the bottles instead, and they collapse to three bare tree shapes. Do both, in whichever sequence, and you land on a single number. The two roads always agree, and that they end at exactly one number is a theorem with a famous name.</p>
+							<p>Seen this way, an integer is a macrostate: one label worn by many microstates, the way one temperature reading is worn by many arrangements of molecules. Forget the nesting and the twelve collapse to six; forget the order instead and they collapse to three; forget everything and you hold the bare number. The forgetting is measurable: the entropy of 30 is $\log_2 12 \approx 3.6$ bits. (For a squarefree number like 30 these counts depend only on how many primes appear; repeated primes make the counting subtler, a detail that returns at the end.)</p>
 
-							<!-- .featured-image -->
-							<div class="featured-image" style="margin: 24px 0; text-align: center;">
-								<img src="img/note/primes/coarse-graining.svg" alt="30 collapsing along two routes: twelve histories to six orders to one, and twelve to three shapes to one" style="max-width: 100%; height: auto;">
-							</div>
+							<p>Many microstates per label is a situation physics has one machine for. Give the number $n$ an energy $\log n$, so that energies add exactly when sizes multiply, weight each microstate by the Boltzmann factor $n^{-s}$ with $s$ an inverse temperature, and sum:</p>
 
-							<p>These packing diagrams are trees too, but of the opposite species from the riddle's. The pouring tree branched on OR: each fork a choice between alternative next moves, and possibilities add across branches. A packing tree branches on AND: each split names the parts that must all be present, and counts multiply across children. Computer scientists call these OR-trees and AND-trees. The two verbs even have their own species of diagram.</p>
+							<p style="text-align:center; margin:16px 0;">$$Z(s) = \sum_n \frac{g(n)}{n^s},$$</p>
 
-							<p>Physics has an exact name for this situation, attached to the most misunderstood word in science: entropy. Strip away the folklore about disorder and entropy is just counting. When many microscopic configurations share one macroscopic reading, the reading is called a macrostate, the configurations are its microstates, and the entropy is the logarithm of how many there are. That is the entire definition, and Boltzmann was so sure of it that he had it carved on his grave:</p>
+							<p>where $g(n)$ counts the histories of $n$. Each level of forgetting keeps its own $g$ and gets its own partition function.</p>
 
-							<p style="text-align:center; margin:18px 0;">$$S = k \log W$$</p>
+							<p>At the fully forgotten bottom, $g = 1$ and $Z$ is Riemann's zeta. That reading is not mine and not new. Euler's product,</p>
 
-							<!-- .featured-image -->
-							<div class="featured-image" style="margin: 24px 0; text-align: center;">
-								<img src="img/note/primes/boltzmann-grave.jpg" alt="Ludwig Boltzmann's grave in Vienna, with S = k log W carved above the bust" style="max-width: 62%; height: auto; border-radius: 4px;">
-								<div style="font-size: 12px; color: #9AA0A6; margin-top: 6px;">Boltzmann&rsquo;s grave, Vienna. Photo: <a href="https://commons.wikimedia.org/wiki/File:Ludwig_Boltzmann_Grave_Zentralfriedhof_Vienna_2022.jpg" style="color:#9AA0A6;">Feldkurat Katz</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" style="color:#9AA0A6;">CC BY-SA 4.0</a>.</div>
-							</div>
+							<p style="text-align:center; margin:16px 0;">$$\zeta(s) = \prod_p \frac{1}{1 - p^{-s}},$$</p>
 
-							<p>Here $W$ is the number of microstates and $k$ is just a choice of units. The logarithm is there for the reason you already know: it is the translator. Independent systems multiply their counts, because configurations combine by AND, but we want a measure that adds. Entropy is AND-counting expressed in OR-units.</p>
-
-							<p>Information theory is the same counting seen from the receiving end. Shannon's 1948 insight was that the information in a message is the logarithm of the number of alternatives it rules out: a fair coin flip resolves two, and carries one bit. So learning which microstate hides behind a macrostate is worth exactly the entropy in bits: entropy is the number of yes/no questions standing between the label and the thing itself. One quantity, two directions: to the physicist it measures what the macrostate forgot, to the engineer it prices what a message must carry to restore it.</p>
-
-							<p>In this view of arithmetic, then, an integer has an entropy. The entropy of 30 is log 12: about 3.6 bits, between three and four yes/no questions to learn which of its twelve assembly histories you are holding. Primes are the states of zero entropy, readings with a unique history: seeing the label 7 tells you everything, seeing the label 30 leaves 3.6 bits unsaid.</p>
-
-							<p>Now for the step that makes the whole thing sing, and the reason entropy and energy are the same story told twice. Physics packages a system into one number, the partition function, a sum over every state weighted by how much energy it costs:</p>
-
-							<p style="text-align:center; margin:16px 0;">$$Z = \sum_{\text{states}} e^{-E/kT}.$$</p>
-
-							<p>Low-energy states count for a lot, high-energy states are suppressed, and everything a thermodynamic system does can be read off from $Z$. The bridge to our world is a single dictionary entry: energy is the logarithm of size. Give a number $n$ the energy $E = \log n$, so that big numbers are expensive, and the Boltzmann weight $e^{-E/kT}$ becomes $n^{-s}$ with $s = 1/kT$. The partition function of the integers is then</p>
-
-							<p style="text-align:center; margin:16px 0;">$$Z(s) = \sum_{n} \frac{g(n)}{n^{s}},$$</p>
-
-							<p>where $g(n)$ counts the histories of $n$, the very entropy we just measured. Energies add exactly when sizes multiply, which is the same logarithm that took counting into entropy a moment ago. Entropy and energy are not an analogy here; they are one quantity seen from two sides, joined by $\log$.</p>
-
-							<p>Give each number a weight that shrinks as the number grows: let 30 count for 1/30<sup>s</sup>, where s is a knob we can turn (a colder gas, larger s, leans harder on the small numbers). Now add up the weights of every integer. If we work at the fully forgotten corner, where each number counts once, the sum is</p>
-
-							<p style="text-align:center; font-size:19px; margin:18px 0;">1/1<sup>s</sup> + 1/2<sup>s</sup> + 1/3<sup>s</sup> + 1/4<sup>s</sup> + &middot;&middot;&middot; + 1/30<sup>s</sup> + &middot;&middot;&middot;</p>
-
-							<p>and 30's single drop in that ocean is exactly the "forget everything" corner of its square. Keep the history instead, weigh 30 by its twelve microstates, and it pours in twelve times as heavily (12/30<sup>s</sup>): a different, richer sum. Each level of memory gives its own partition function, all built from the same per-number weights.</p>
-
-							<p>The fully forgotten one is the sum written above, and it has a name that will stop a mathematician in their tracks. Before the name, though, watch what Euler noticed in 1737, because it is the whole argument of this post in one line of algebra.</p>
-
-							<h3 style="margin: 26px 0 12px 0; font-size: 21px;">Euler&rsquo;s product: the AND hiding inside the OR</h3>
-
-							<p>Every integer is a product of primes in exactly one way. So building an integer means making one independent choice per prime: how many 2s, how many 3s, how many 5s, and so on. Choices that are independent and must all be made are an AND, and AND multiplies. Sum over the choices for a single prime $p$ first, which is a geometric series, and then multiply those sums together:</p>
-
-							<p style="text-align:center; margin:16px 0;">$$\sum_{n \ge 1} \frac{1}{n^{s}} \;=\; \prod_{p \text{ prime}} \left( 1 + \frac{1}{p^{s}} + \frac{1}{p^{2s}} + \cdots \right) \;=\; \prod_{p \text{ prime}} \frac{1}{1 - p^{-s}}.$$</p>
-
-							<p>On the left, a sum over every integer: an OR over alternatives. On the right, a product over every prime: an AND over independent choices. The equals sign between them is the Fundamental Theorem of Arithmetic doing its work, and it is the same two verbs we have been chasing since the wine jugs. Euler&rsquo;s identity is the sentence &ldquo;every number factors uniquely&rdquo; rewritten as arithmetic.</p>
-
-							<h3 style="margin: 26px 0 12px 0; font-size: 21px;">Riemann&rsquo;s zeta: the same object, allowed to roam</h3>
-
-							<p>That function is Riemann&rsquo;s zeta, $\zeta(s)$. Euler studied it for real $s$; Riemann&rsquo;s move in 1859 was to let $s$ be a complex number and ask where the function vanishes. The payoff is that the zeros of $\zeta$ control the primes: they are the correction terms in the formula for how many primes lie below a given size. Whether all the interesting zeros sit on one vertical line is the Riemann Hypothesis, still open after a century and a half, and the reason this function is the most studied object in mathematics.</p>
-
-							<p>In our language the arithmetic is already familiar. Zeta is the partition function of a gas whose particles are the primes, each mode $p$ carrying energy $\log p$. Its zeros are where that partition function does something singular, and a partition function going singular is the physicist&rsquo;s definition of a phase transition. The deepest open problem in number theory is a question about where an arithmetic gas changes phase.</p>
-
-							<h3 style="margin: 26px 0 12px 0; font-size: 21px;">The same formula I use on crystals</h3>
-
-							<p>Here is where this stopped feeling like a metaphor to me. In my day job I compute how heat flows through crystals and glasses. A solid is a collection of vibrational modes, phonons, each with a frequency $\omega$, and the partition function of that vibrating solid is</p>
-
-							<p style="text-align:center; margin:16px 0;">$$Z_{\text{solid}} = \prod_{\text{modes}} \frac{1}{1 - e^{-\hbar\omega/kT}}.$$</p>
-
-							<p>Compare it with Euler&rsquo;s product. They are the same formula. Put $\hbar\omega = \log p$ and one becomes the other, exactly, not approximately. The primes are the vibrational modes of the integers; the exponent of $p$ in a factorization is that mode&rsquo;s occupation number, how many quanta sit in it; and the average occupation is $1/(p^{s}-1)$, which is the Planck distribution, the formula behind blackbody radiation and behind every heat-capacity curve I fit.</p>
-
-							<p>So the bridge runs in both directions. The entropy we counted for 30 is the same quantity a materials scientist computes when asking how many microscopic arrangements of vibration share one measured temperature, and the specific heat of a crystal is a derivative of the same $\log Z$ that, over on the arithmetic side, is telling you about primes. One equation, two subjects, joined by the fact that counting states and adding energies are related by a logarithm.</p>
+							<p>is, symbol for symbol, the partition function of a Bose gas whose modes are the primes with energies $\log p$: the exponent of $p$ in a factorization is an occupation number, and its average, $1/(p^s - 1)$, is Planck's distribution. Bernard Julia called it the free Riemann gas in 1990, and the folklore is older still. My day job is computing heat transport in crystals, where the same product appears with $\hbar\omega$ in place of $\log p$, so this formula and I were already acquainted.</p>
 
 							<!-- .featured-image -->
 							<div class="featured-image" style="margin: 24px 0; text-align: center;">
 								<img src="img/note/primes/zeta-bridge.svg" alt="The sum of 1 over n to the s over all integers equals the zeta function, factored over the primes" style="max-width: 100%; height: auto;">
 							</div>
 
-							<p>This is the whole arc in one line. We started by refusing to pour 3 &times; 2 into six liters; we ended at the function whose zeros are the deepest open problem in mathematics. The bridge between them was only ever bookkeeping: count the histories of each number, weigh them, and add.</p>
+							<p>At the fully remembered top sit the trees, and their partition function satisfies an equation you can say in one breath: a tree is a prime, or a pair of trees.</p>
 
-							<p>Keep more structure and the machine produces new partition functions, cousins of zeta that mathematics had less reason to study before. The fully structured one obeys a self-consistency equation you can state in one breath (a package is a prime, or a pair of packages), and this equation is, symbol for symbol, the bootstrap equation that particle physicists in the 1960s wrote for strongly interacting matter. That theory's signature was a maximum temperature: heat the system past a point and added energy makes more particles instead of more speed. The arithmetic version has the same feature. The gas of packages has a limiting temperature, four of them in fact, a ladder of critical points, one per level of remembered structure.</p>
+							<p style="text-align:center; margin:16px 0;">$$Z_T(s) = P(s) + Z_T(s)^2$$</p>
 
-							<p>And where zeta has its famous zeros, the package gas has its own critical points in the complex plane. We located 595 of them. They do not fall on a straight line, the way Riemann's are conjectured to do; instead they march upward in a rigid, almost crystalline pattern, unlike random spectra, with a density we could compute exactly and then verify against the census.</p>
+							<p>Solving the quadratic gives $Z_T = \tfrac12\left(1 - \sqrt{1 - 4P}\right)$, and the square root, the same one that appears in every count of binary trees since Catalan, fails exactly where $P(s) = \tfrac14$. On the real axis this happens once, at $\sigma^* = 2.5973851271346716$, where $Z_T = \tfrac12$ exactly. Every rung of the forgetting ladder has such a ceiling, an inverse limiting temperature: 1 for zeta, then 1.3994, 1.9885, 2.5974 as memory is restored.</p>
+
+							<p>In the complex plane, the condition $P(s) = \tfrac14$ marks the singular points of the tree gas. Those are the 595 dots of the opening figure; I call them zeros because they are the zeros of $P - \tfrac14$. Here the literature goes quiet. Zeta's zeros are among the most studied objects in mathematics; the zeros of $P$ have a thin literature; its level sets, as far as I could find, and I searched hard, had never been studied at all. The first questions were the crude ones: where, and how many?</p>
+
+							<h2 style="margin-bottom: 20px;">The band</h2>
+
+							<p>The right edge of the cloud is exact. On the real axis every term of $P$ points the same way, so $P(\sigma)$ is the largest $|P|$ can be anywhere on that vertical line. Past $\sigma^* = 2.597\ldots$, even perfect alignment of every term leaves $|P| &lt; \tfrac14$, and solutions are impossible by the triangle inequality. The rightmost zero in the census sits at 2.5679, close under the wall.</p>
+
+							<p>The left edge is soft. Moving left the terms grow, cancellations of every depth become available, and the zeros keep coming; nothing stops them before the edge of convergence at $\operatorname{Re}\, s = 1$. The window was cut at 1.25 for practical reasons. I will come back to what lies beyond.</p>
+
+							<p>Why no line? A line is usually what a symmetry buys, and zeta has one: a functional equation that reflects the plane about the critical line, which is part of why a line there is even plausible. $P - \tfrac14$ has no such reflection, and inside the band no vertical line is distinguished from its neighbors. My first reaction to the scatter was disappointment: the object had failed to be like the famous one. It took me longer to see the trade. Zeta's order is conjectured and unexplained; this disorder is demonstrable, and it obeys a law. To find the law you need the right picture of $P$, which is a shop full of clocks.</p>
+
+							<h2 style="margin-bottom: 20px;">The clocks</h2>
+
+							<p>Fix the real part $\sigma$ and climb, letting the height $t$ run. Each prime contributes to $P$ the term $p^{-\sigma - it}$: a hand of fixed length $p^{-\sigma}$ turning at constant speed $\log p$. Chain the hands tip to tail and anchor the chain at the point $-\tfrac14$; the free end then traces out $P - \tfrac14$. A zero is a moment when the chain folds exactly back onto the origin. Every hand in the right place at once: a conspiracy.</p>
+
+							<p>The 2-hand is the longest and the slowest, one revolution per $2\pi/\log 2 \approx 9.06$ units of height; the hands of the larger primes are shorter and quicker. The configuration never repeats. Repetition would need two speeds with a common measure, positive integers $a$ and $b$ with $a \log 2 = b \log 3$, say; but that equation says $2^a = 3^b$, one number with two different prime factorizations, precisely what unique factorization forbids. The theorem schoolchildren use to reduce fractions is the reason these clocks never revisit a configuration.</p>
+
+							<p>Never repeating is not lawlessness. Rotations with incommensurable speeds sweep their possible configurations evenly (Weyl's equidistribution theorem, which needs exactly this absence of rational relations), so the fraction of time the hands spend in any arrangement is a definite number. No period, and exact statistics.</p>
+
+							<p>My grandfather poured wine by eye from the damigiana, the fat glass demijohn in its straw cage that lived in his cellar. He never measured, and no two of his pours were ever quite the same, and none was careless. I thought about him while watching these hands: rhythms that share no common measure never repeat, and are not disordered either. He would have shrugged at the theorem and recognized the fact.</p>
 
 							<!-- .featured-image -->
-							<div class="featured-image" style="margin-bottom: 10px;">
-								<a href="#">
-									<img src="img/note/primes/zeros.png" alt="The 595 complex-temperature zeros of the tree gas">
-								</a>
+							<div class="featured-image" style="margin: 24px 0; text-align: center;">
+								<img src="img/note/primes/wine-hero.jpg" alt="Hands pouring red wine into a glass" style="max-width: 100%; height: auto; border-radius: 4px;">
+								<div style="font-size: 12px; color: #9AA0A6; margin-top: 6px; text-align: right;">
+									Photo: <a href="https://commons.wikimedia.org/wiki/File:Wine_being_poured_into_a_glass.jpg" style="color:#9AA0A6;">Fabio Ingrosso</a>, <a href="https://creativecommons.org/licenses/by/2.0" style="color:#9AA0A6;">CC BY 2.0</a>, via Wikimedia Commons
+								</div>
 							</div>
 
-							<p>That is the view once the cartons stay closed: integers with entropy, arithmetic with a temperature, a new spectrum with its own geometry. Proofs, constants, and code are all in the paper linked at the end; every number in this post can be recomputed from an open repository.</p>
+							<h2 style="margin-bottom: 20px;">An exact formula for disorder</h2>
 
-							<h2 style="margin-bottom: 20px;">A footnote that turned out to be real</h2>
+							<p>Here is how clocks count zeros. Stand on the line $\operatorname{Re}\, s = \sigma$ and watch the tip while $t$ climbs. By the argument principle, the accountant of complex analysis, every net lap the tip makes around the origin registers one zero lying to the right of your line. Density of zeros equals winding rate. And winding is something a dominant hand does.</p>
+
+							<p>Suppose, at some moment, one hand is longer than the anchor and all the other hands combined. Then the tip has no choice: it circles the origin at that hand's speed, because the rest of the chain is too short to pull it away. While the dominance lasts, that prime drives the winding; when no hand dominates, the tip wanders without net progress. Averaged over the equidistributed phases (the mean motion theorem of Jessen and Tornehave makes the average exact), each prime drives for a definite share of the time, $q_p(\sigma)$: the probability that the $p$-hand outreaches the anchored sum of everything else. The density follows:</p>
+
+							<p style="text-align:center; margin:16px 0;">$$D(\sigma) = \frac{1}{2\pi} \sum_p (\log p)\, q_p(\sigma),$$</p>
+
+							<p>zeros per unit height to the right of the line at $\sigma$. Each prime's speed, times its share of the time, summed. Nothing else survives the averaging.</p>
+
+							<p>To be precise about what is new here: that counts of this kind grow linearly with height is classical, from the theory of almost periodic functions built by Harald Bohr's school a century ago, which also expresses the slope abstractly. The new part is the evaluation, the slope in closed form as prime-by-prime dominance probabilities, for an equation that, as far as I know, nobody had studied.</p>
+
+							<p>At $\sigma = 1.30$ the tug-of-war goes $q_2 = 0.624$, $q_3 = 0.148$, $q_5 = 0.042$, $q_7 = 0.017$: the 2-hand rules five eighths of the time, and even the 7-hand takes its turns. The naive count stops at the biggest hand: if the 2-hand always dominated, the tip would lap once per revolution, one zero per 9.06 of height, a density of $\log 2 / 2\pi \approx 0.110$. The truth at $\sigma = 1.30$ is $D = 0.1162$, five percent more. The difference is stolen turns: the smaller hands are faster, and each brief win winds in extra zeros. Slide the line left and more primes grow long enough to compete: $D(1.10) = 0.1314$, $D(1.05) = 0.1372$, and at the edge of convergence $D(1) = 0.1436$, one zero for every seven units of height in the entire half-plane. (The densities come from Monte Carlo averages over the phases; four independent seeds pin $D(1)$ with a standard deviation of 0.0001.)</p>
+
+							<p>Then the check, which is the part I trust most. The census: 595 zeros with heights up to 5000, each located to fifteen digits. The formula predicts the count in the window to about one percent. The staircase in the figure is the running count against height, climbing at the computed slope, and the mean spacing comes out to 8.39, a shade under the 9.06 beat of the 2-hand: the metronome, quickened by theft.</p>
+
+							<!-- .featured-image -->
+							<div class="featured-image" style="margin: 24px 0; text-align: center;">
+								<img src="img/note/primes/staircase.png" alt="The running count of zeros against height climbs along the predicted straight line" style="max-width: 100%; height: auto;">
+							</div>
+
+							<p>The spacings hold more structure than the count, and I state it carefully. Their statistics are neither the Poisson behavior of independent random points nor the random-matrix repulsion conjectured for Riemann's zeros. They show what the theory of almost periodic functions says to expect: a quasi-periodic skeleton paced by the 9.06 beat, dressed with defects where the lesser primes intervene. On 595 points this is a measurement, not a theorem, and I hold it loosely.</p>
+
+							<p>Step back and notice the trade; it is the whole point. The incommensurability of $\log 2, \log 3, \log 5, \ldots$ is what scatters the zeros: phases that never lock cannot hold a line. The same incommensurability is what counts them: phases that never lock equidistribute, equidistribution turns time shares into probabilities, and the probabilities assemble into an exact density. One fact about the integers, unique factorization, both denies the order and writes the law for the disorder.</p>
+
+							<h2 style="margin-bottom: 20px;">The edge of the map</h2>
+
+							<p>The census window stops at real part 1.25; the zeros do not. Sweeps below the window's edge keep finding them, drifting toward $\operatorname{Re}\, s = 1$ as the density formula says they should. And at $\operatorname{Re}\, s = 1$ the water deepens. To the left the series for $P$ diverges, and its analytic continuation carries an inheritance: every zero $\rho$ of Riemann's zeta plants a branch point at $\rho/k$, for every positive integer $k$, and the imaginary axis is a natural boundary past which no continuation exists at all. Follow the scattered zeros left and they lead toward the country governed by the aligned ones. What the level set does there I do not know. The spacing statistics are measured, not proved, and the defects missing from them are most likely hiding just left of the window; the two open ends may be one.</p>
 
 							<blockquote style="border-left: 3px solid #9E2B25; margin: 8px 0 24px 0; padding: 4px 0 4px 20px; color: #444; font-style: italic;">
 								<p style="margin:0 0 4px 0;">&ldquo;The theory works perfectly.&rdquo;</p>
@@ -334,19 +229,11 @@
 								<p style="margin:8px 0 0 0; font-style: normal; font-size: 13px; color: #9AA0A6;">An exchange every theorist has had, apocryphally</p>
 							</blockquote>
 
-							<p>All of this began as a thought experiment, and thought experiments are cheap. So here is the smallest hard thing it produced. When you count the unordered histories carefully, one fussy case decides everything: a number that splits into two identical halves. The count there is not the obvious product but a smaller number, because the two halves cannot be told apart, the same indistinguishability that gave 30 its entropy a moment ago.</p>
+							<p>Checking against the numbers is where this project left its one small mark on the reference books. While tabulating the unordered histories, the ladder's middle rung, I compared my counts with the Online Encyclopedia of Integer Sequences. Entry A375120 carried a published formula; at $n = 144$ it said 42 where my code said 41. I assumed I was wrong: an encyclopedia is checked by many eyes, my program only by mine, so I went hunting for my bug. There was no bug. The trouble was the subtlety promised back at 30: 144 splits as $12 \times 12$, two identical halves, and identical halves cannot be told apart, so the formula counted one assembly twice. I sent the editors my count and ten thousand computed terms; within a day they had confirmed the error, and the corrected entry went live the following week. The full table is attached to it now.</p>
 
-							<p>The Online Encyclopedia of Integer Sequences, where mathematicians register such counts, had this exact sequence recorded with the obvious product, which is wrong. I only spotted it because my own count disagreed and I assumed, for a while, that I was the one who had made the mistake. When the numbers kept disagreeing I sent ten thousand computed terms to the editors, who confirmed it and corrected the entry within a day. It now carries the right formula and a link to the paper. A kitchen thought experiment, carried far enough, moved a line in the reference books.</p>
+							<p>That settles the two promises from the top: an exact formula for the thickness of a cloud of zeros that demonstrably will not line up, checked against a census to about one percent, and one digit in one reference book, now right. Everything else is open, beginning a hair to the left of everything I computed. A line would have been tidier. What exists instead is a scatter with a law, and an edge past which the level set is unexplored.</p>
 
-							<h2 style="margin-bottom: 20px;">A toast</h2>
-
-							<p>So: nature has two verbs. OR pools and forgets; AND nests and remembers. One has a single atom; the other has the primes. The logarithm ferries between them, physics happens on the ferry, and the oldest unsolved questions in mathematics are the ones that force the two verbs into a single sentence.</p>
-
-							<p>My grandfather's riddle was doing all of this already: an additive dance, refereed by multiplicative atoms, played with wine. He asked it, I now think, the way all the best riddles are asked: as a gift wrapped so well you spend decades unwrapping it.</p>
-
-							<p>Salute.</p>
-
-							<p><em>The paper: <a href="https://doi.org/10.5281/zenodo.21252898">Prime-Leaf Tree Theory</a>. Code and data: <a href="https://github.com/gbarbalinardo/primeleaf">github.com/gbarbalinardo/primeleaf</a>. The corrected encyclopedia entry: <a href="https://oeis.org/A375120">OEIS A375120</a>.</em></p>
+							<p><em>The paper: <a href="https://doi.org/10.5281/zenodo.21252898">Prime-Leaf Tree Theory</a>. Code and data: <a href="https://github.com/gbarbalinardo/primeleaf">github.com/gbarbalinardo/primeleaf</a>. The corrected entry: <a href="https://oeis.org/A375120">OEIS A375120</a>.</em></p>
 
 							<!-- Optional closing line; uncomment to use:
 							<p><em>This work, paper included, was done in close collaboration with an AI system; how that collaboration works is a story for a future post.</em></p>
