@@ -279,7 +279,31 @@
 
 							<p>and 30's single drop in that ocean is exactly the "forget everything" corner of its square. Keep the history instead, weigh 30 by its twelve microstates, and it pours in twelve times as heavily (12/30<sup>s</sup>): a different, richer sum. Each level of memory gives its own partition function, all built from the same per-number weights.</p>
 
-							<p>The fully forgotten one is the sum written above, and it has a name that will stop a mathematician in their tracks. That endless sum equals a product, one factor for every prime, and it is the most studied object in all of mathematics: Riemann's zeta function. The primes appear not as terms but as the <em>factors</em> from which the whole sum is woven, which is the AND of our two verbs hiding inside the OR. Written in the language of this post: zeta is the partition function of a gas whose particles are the primes, each carrying energy log p. (The logarithm once more, translating between the two worlds: the numbers multiply, their energies add.) Physicists call it the gas of numbers.</p>
+							<p>The fully forgotten one is the sum written above, and it has a name that will stop a mathematician in their tracks. Before the name, though, watch what Euler noticed in 1737, because it is the whole argument of this post in one line of algebra.</p>
+
+							<h3 style="margin: 26px 0 12px 0; font-size: 21px;">Euler&rsquo;s product: the AND hiding inside the OR</h3>
+
+							<p>Every integer is a product of primes in exactly one way. So building an integer means making one independent choice per prime: how many 2s, how many 3s, how many 5s, and so on. Choices that are independent and must all be made are an AND, and AND multiplies. Sum over the choices for a single prime $p$ first, which is a geometric series, and then multiply those sums together:</p>
+
+							<p style="text-align:center; margin:16px 0;">$$\sum_{n \ge 1} \frac{1}{n^{s}} \;=\; \prod_{p \text{ prime}} \left( 1 + \frac{1}{p^{s}} + \frac{1}{p^{2s}} + \cdots \right) \;=\; \prod_{p \text{ prime}} \frac{1}{1 - p^{-s}}.$$</p>
+
+							<p>On the left, a sum over every integer: an OR over alternatives. On the right, a product over every prime: an AND over independent choices. The equals sign between them is the Fundamental Theorem of Arithmetic doing its work, and it is the same two verbs we have been chasing since the wine jugs. Euler&rsquo;s identity is the sentence &ldquo;every number factors uniquely&rdquo; rewritten as arithmetic.</p>
+
+							<h3 style="margin: 26px 0 12px 0; font-size: 21px;">Riemann&rsquo;s zeta: the same object, allowed to roam</h3>
+
+							<p>That function is Riemann&rsquo;s zeta, $\zeta(s)$. Euler studied it for real $s$; Riemann&rsquo;s move in 1859 was to let $s$ be a complex number and ask where the function vanishes. The payoff is that the zeros of $\zeta$ control the primes: they are the correction terms in the formula for how many primes lie below a given size. Whether all the interesting zeros sit on one vertical line is the Riemann Hypothesis, still open after a century and a half, and the reason this function is the most studied object in mathematics.</p>
+
+							<p>In our language the arithmetic is already familiar. Zeta is the partition function of a gas whose particles are the primes, each mode $p$ carrying energy $\log p$. Its zeros are where that partition function does something singular, and a partition function going singular is the physicist&rsquo;s definition of a phase transition. The deepest open problem in number theory is a question about where an arithmetic gas changes phase.</p>
+
+							<h3 style="margin: 26px 0 12px 0; font-size: 21px;">The same formula I use on crystals</h3>
+
+							<p>Here is where this stopped feeling like a metaphor to me. In my day job I compute how heat flows through crystals and glasses. A solid is a collection of vibrational modes, phonons, each with a frequency $\omega$, and the partition function of that vibrating solid is</p>
+
+							<p style="text-align:center; margin:16px 0;">$$Z_{\text{solid}} = \prod_{\text{modes}} \frac{1}{1 - e^{-\hbar\omega/kT}}.$$</p>
+
+							<p>Compare it with Euler&rsquo;s product. They are the same formula. Put $\hbar\omega = \log p$ and one becomes the other, exactly, not approximately. The primes are the vibrational modes of the integers; the exponent of $p$ in a factorization is that mode&rsquo;s occupation number, how many quanta sit in it; and the average occupation is $1/(p^{s}-1)$, which is the Planck distribution, the formula behind blackbody radiation and behind every heat-capacity curve I fit.</p>
+
+							<p>So the bridge runs in both directions. The entropy we counted for 30 is the same quantity a materials scientist computes when asking how many microscopic arrangements of vibration share one measured temperature, and the specific heat of a crystal is a derivative of the same $\log Z$ that, over on the arithmetic side, is telling you about primes. One equation, two subjects, joined by the fact that counting states and adding energies are related by a logarithm.</p>
 
 							<!-- .featured-image -->
 							<div class="featured-image" style="margin: 24px 0; text-align: center;">
