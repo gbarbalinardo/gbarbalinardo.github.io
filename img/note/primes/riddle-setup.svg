@@ -3,62 +3,66 @@
 <text x="60" y="34" font-size="11.5" fill="#6B6B6B" text-anchor="start" font-weight="bold" font-family="'Helvetica Neue Condensed', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" letter-spacing="1.6" style="font-variant-numeric:tabular-nums" >THE PUZZLE</text>
 <text x="60" y="56" font-size="20" fill="#1A1A1A" text-anchor="start" font-weight="bold" font-family="'Helvetica Neue Condensed', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" style="font-variant-numeric:tabular-nums" >Three damigiane, no markings</text>
 <text x="60" y="76" font-size="13" fill="#6B6B6B" text-anchor="start" font-weight="normal" style="font-variant-numeric:tabular-nums" >You may pour from one into another only until the source is empty or the target is full.</text>
-<path d="M 150.3 181.6 L 150.9 264.0 Q 151.7 268.0 155.3 268.0 L 264.7 268.0 Q 268.3 268.0 269.1 264.0 L 269.7 181.6 Z" fill="#9E2B25" opacity="0.78"/>
-<path d="M 148.3 180.6 L 150.9 264.0 Q 151.7 268.0 156.3 268.0 L 263.7 268.0 Q 268.3 268.0 269.1 264.0 L 271.7 180.6 Z" fill="none" stroke="#3A3A3A" stroke-width="3.51" stroke-linejoin="round"/>
-<line x1="173.0" y1="182.6" x2="179.6" y2="265.0" stroke="#3A3A3A" stroke-width="1.17" opacity="0.75"/>
-<line x1="197.7" y1="182.6" x2="199.9" y2="265.0" stroke="#3A3A3A" stroke-width="1.17" opacity="0.75"/>
-<line x1="222.3" y1="182.6" x2="220.1" y2="265.0" stroke="#3A3A3A" stroke-width="1.17" opacity="0.75"/>
-<line x1="247.0" y1="182.6" x2="240.4" y2="265.0" stroke="#3A3A3A" stroke-width="1.17" opacity="0.75"/>
-<line x1="150.1" y1="202.4" x2="269.9" y2="202.4" stroke="#3A3A3A" stroke-width="1.17" opacity="0.75"/>
-<line x1="152.0" y1="224.3" x2="268.0" y2="224.3" stroke="#3A3A3A" stroke-width="1.17" opacity="0.75"/>
-<line x1="153.8" y1="246.1" x2="266.2" y2="246.1" stroke="#3A3A3A" stroke-width="1.17" opacity="0.75"/>
-<ellipse cx="210" cy="180.6" rx="61.7" ry="5.6" fill="#3A3A3A"/>
-<path d="M 149.3 179.6 q -10.5 -1.9 -11.7 5.6 q -0.9 4.9 4.4 5.6" fill="none" stroke="#3A3A3A" stroke-width="3.04" stroke-linecap="round"/>
-<path d="M 270.7 179.6 q 10.5 -1.9 11.7 5.6 q 0.9 4.9 -4.4 5.6" fill="none" stroke="#3A3A3A" stroke-width="3.04" stroke-linecap="round"/>
-<path d="M 148.3 180.6 Q 210 118.4 271.7 180.6" fill="none" stroke="#3A3A3A" stroke-width="3.51"/>
-<path d="M 160.6 166.4 Q 210 162.2 259.4 166.4" fill="none" stroke="#3A3A3A" stroke-width="1.17" opacity="0.75"/>
-<path d="M 173.0 152.3 Q 210 148.1 247.0 152.3" fill="none" stroke="#3A3A3A" stroke-width="1.17" opacity="0.75"/>
-<path d="M 185.3 138.1 Q 210 133.9 234.7 138.1" fill="none" stroke="#3A3A3A" stroke-width="1.17" opacity="0.75"/>
-<rect x="203.3" y="95.7" width="13.4" height="28.3" fill="#CFCEC6" stroke="#3A3A3A" stroke-width="1.87"/>
-<rect x="202.8" y="91.0" width="14.4" height="5.4" rx="1.9" fill="#2E6E3A"/>
+<path d="M 192.8 190.8 L 192.8 265.0 Q 193.4 268.0 197.0 268.0 L 223.0 268.0 Q 226.6 268.0 227.2 265.0 L 227.2 190.8 Z" fill="#9E2B25" opacity="0.78"/>
+<path d="M 191.0 188.8 L 191.0 264.0 Q 191.0 268.0 196.0 268.0 L 224.0 268.0 Q 229.0 268.0 229.0 264.0 L 229.0 188.8 Z" fill="none" stroke="#3A3A3A" stroke-width="1.5" stroke-linejoin="round"/>
+<line x1="200.5" y1="190.3" x2="200.5" y2="266.0" stroke="#3A3A3A" stroke-width="0.5" opacity="0.7"/>
+<line x1="210.0" y1="190.3" x2="210.0" y2="266.0" stroke="#3A3A3A" stroke-width="0.5" opacity="0.7"/>
+<line x1="219.5" y1="190.3" x2="219.5" y2="266.0" stroke="#3A3A3A" stroke-width="0.5" opacity="0.7"/>
+<line x1="191.0" y1="259.2" x2="229.0" y2="259.2" stroke="#3A3A3A" stroke-width="0.5" opacity="0.7"/>
+<line x1="191.0" y1="250.4" x2="229.0" y2="250.4" stroke="#3A3A3A" stroke-width="0.5" opacity="0.7"/>
+<line x1="191.0" y1="241.6" x2="229.0" y2="241.6" stroke="#3A3A3A" stroke-width="0.5" opacity="0.7"/>
+<line x1="191.0" y1="232.8" x2="229.0" y2="232.8" stroke="#3A3A3A" stroke-width="0.5" opacity="0.7"/>
+<line x1="191.0" y1="224.0" x2="229.0" y2="224.0" stroke="#3A3A3A" stroke-width="0.5" opacity="0.7"/>
+<line x1="191.0" y1="215.2" x2="229.0" y2="215.2" stroke="#3A3A3A" stroke-width="0.5" opacity="0.7"/>
+<line x1="191.0" y1="206.4" x2="229.0" y2="206.4" stroke="#3A3A3A" stroke-width="0.5" opacity="0.7"/>
+<line x1="191.0" y1="197.6" x2="229.0" y2="197.6" stroke="#3A3A3A" stroke-width="0.5" opacity="0.7"/>
+<ellipse cx="210" cy="188.8" rx="19.0" ry="2.6" fill="#3A3A3A"/>
+<path d="M 191.5 188.3 q -4.2 -0.8 -4.6 2.6 q -0.4 2.4 2.0 2.6" fill="none" stroke="#3A3A3A" stroke-width="1.27" stroke-linecap="round"/>
+<path d="M 228.5 188.3 q 4.2 -0.8 4.6 2.6 q 0.4 2.4 -2.0 2.6" fill="none" stroke="#3A3A3A" stroke-width="1.27" stroke-linecap="round"/>
+<path d="M 191.0 188.8 Q 210 162.8 229.0 188.8" fill="#FBFAF7" stroke="#3A3A3A" stroke-width="1.5"/>
+<path d="M 194.8 185.6 Q 210 183.6 225.2 185.6" fill="none" stroke="#3A3A3A" stroke-width="0.5" opacity="0.7"/>
+<path d="M 198.6 182.3 Q 210 180.3 221.4 182.3" fill="none" stroke="#3A3A3A" stroke-width="0.5" opacity="0.7"/>
+<path d="M 202.4 179.1 Q 210 177.1 217.6 179.1" fill="none" stroke="#3A3A3A" stroke-width="0.5" opacity="0.7"/>
+<rect x="207.8" y="167.8" width="4.4" height="9.0" fill="#CFCEC6" stroke="#3A3A3A" stroke-width="0.9"/>
+<rect x="207.1" y="165.2" width="5.8" height="3.0" rx="1" fill="#2E6E3A"/>
 <text x="210" y="294" font-size="15" fill="#1A1A1A" text-anchor="middle" font-weight="bold" font-family="'Helvetica Neue Condensed', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" style="font-variant-numeric:tabular-nums" >8 liters</text>
 <text x="210" y="312" font-size="12.5" fill="#6B6B6B" text-anchor="middle" font-weight="normal" font-family="'Helvetica Neue Condensed', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" style="font-variant-numeric:tabular-nums" >full</text>
-<path d="M 411.4 213.4 L 414.0 264.0 Q 414.8 268.0 419.4 268.0 L 480.6 268.0 Q 485.2 268.0 486.0 264.0 L 488.6 213.4 Z" fill="none" stroke="#3A3A3A" stroke-width="2.19" stroke-linejoin="round"/>
-<line x1="426.9" y1="215.4" x2="431.0" y2="265.0" stroke="#3A3A3A" stroke-width="0.73" opacity="0.75"/>
-<line x1="442.3" y1="215.4" x2="443.7" y2="265.0" stroke="#3A3A3A" stroke-width="0.73" opacity="0.75"/>
-<line x1="457.7" y1="215.4" x2="456.3" y2="265.0" stroke="#3A3A3A" stroke-width="0.73" opacity="0.75"/>
-<line x1="473.1" y1="215.4" x2="469.0" y2="265.0" stroke="#3A3A3A" stroke-width="0.73" opacity="0.75"/>
-<line x1="412.6" y1="227.0" x2="487.4" y2="227.0" stroke="#3A3A3A" stroke-width="0.73" opacity="0.75"/>
-<line x1="413.7" y1="240.7" x2="486.3" y2="240.7" stroke="#3A3A3A" stroke-width="0.73" opacity="0.75"/>
-<line x1="414.9" y1="254.3" x2="485.1" y2="254.3" stroke="#3A3A3A" stroke-width="0.73" opacity="0.75"/>
-<ellipse cx="450" cy="213.4" rx="38.6" ry="3.5" fill="#3A3A3A"/>
-<path d="M 412.4 212.4 q -6.6 -1.2 -7.3 3.5 q -0.6 3.1 2.8 3.5" fill="none" stroke="#3A3A3A" stroke-width="1.90" stroke-linecap="round"/>
-<path d="M 487.6 212.4 q 6.6 -1.2 7.3 3.5 q 0.6 3.1 -2.8 3.5" fill="none" stroke="#3A3A3A" stroke-width="1.90" stroke-linecap="round"/>
-<path d="M 411.4 213.4 Q 450 174.5 488.6 213.4" fill="none" stroke="#3A3A3A" stroke-width="2.19"/>
-<path d="M 419.1 204.5 Q 450 201.9 480.9 204.5" fill="none" stroke="#3A3A3A" stroke-width="0.73" opacity="0.75"/>
-<path d="M 426.9 195.7 Q 450 193.0 473.1 195.7" fill="none" stroke="#3A3A3A" stroke-width="0.73" opacity="0.75"/>
-<path d="M 434.6 186.8 Q 450 184.2 465.4 186.8" fill="none" stroke="#3A3A3A" stroke-width="0.73" opacity="0.75"/>
-<rect x="445.8" y="160.3" width="8.4" height="17.7" fill="#CFCEC6" stroke="#3A3A3A" stroke-width="1.17"/>
-<rect x="445.3" y="157.4" width="9.4" height="3.4" rx="1.2" fill="#2E6E3A"/>
+<path d="M 431.0 218.5 L 431.0 264.0 Q 431.0 268.0 436.0 268.0 L 464.0 268.0 Q 469.0 268.0 469.0 264.0 L 469.0 218.5 Z" fill="none" stroke="#3A3A3A" stroke-width="1.5" stroke-linejoin="round"/>
+<line x1="440.5" y1="220.0" x2="440.5" y2="266.0" stroke="#3A3A3A" stroke-width="0.5" opacity="0.7"/>
+<line x1="450.0" y1="220.0" x2="450.0" y2="266.0" stroke="#3A3A3A" stroke-width="0.5" opacity="0.7"/>
+<line x1="459.5" y1="220.0" x2="459.5" y2="266.0" stroke="#3A3A3A" stroke-width="0.5" opacity="0.7"/>
+<line x1="431.0" y1="259.8" x2="469.0" y2="259.8" stroke="#3A3A3A" stroke-width="0.5" opacity="0.7"/>
+<line x1="431.0" y1="251.5" x2="469.0" y2="251.5" stroke="#3A3A3A" stroke-width="0.5" opacity="0.7"/>
+<line x1="431.0" y1="243.2" x2="469.0" y2="243.2" stroke="#3A3A3A" stroke-width="0.5" opacity="0.7"/>
+<line x1="431.0" y1="235.0" x2="469.0" y2="235.0" stroke="#3A3A3A" stroke-width="0.5" opacity="0.7"/>
+<line x1="431.0" y1="226.8" x2="469.0" y2="226.8" stroke="#3A3A3A" stroke-width="0.5" opacity="0.7"/>
+<ellipse cx="450" cy="218.5" rx="19.0" ry="2.6" fill="#3A3A3A"/>
+<path d="M 431.5 218.0 q -4.2 -0.8 -4.6 2.6 q -0.4 2.4 2.0 2.6" fill="none" stroke="#3A3A3A" stroke-width="1.27" stroke-linecap="round"/>
+<path d="M 468.5 218.0 q 4.2 -0.8 4.6 2.6 q 0.4 2.4 -2.0 2.6" fill="none" stroke="#3A3A3A" stroke-width="1.27" stroke-linecap="round"/>
+<path d="M 431.0 218.5 Q 450 192.5 469.0 218.5" fill="#FBFAF7" stroke="#3A3A3A" stroke-width="1.5"/>
+<path d="M 434.8 215.2 Q 450 213.2 465.2 215.2" fill="none" stroke="#3A3A3A" stroke-width="0.5" opacity="0.7"/>
+<path d="M 438.6 212.0 Q 450 210.0 461.4 212.0" fill="none" stroke="#3A3A3A" stroke-width="0.5" opacity="0.7"/>
+<path d="M 442.4 208.8 Q 450 206.8 457.6 208.8" fill="none" stroke="#3A3A3A" stroke-width="0.5" opacity="0.7"/>
+<rect x="447.8" y="197.5" width="4.4" height="9.0" fill="#CFCEC6" stroke="#3A3A3A" stroke-width="0.9"/>
+<rect x="447.1" y="194.9" width="5.8" height="3.0" rx="1" fill="#2E6E3A"/>
 <text x="450" y="294" font-size="15" fill="#1A1A1A" text-anchor="middle" font-weight="bold" font-family="'Helvetica Neue Condensed', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" style="font-variant-numeric:tabular-nums" >5 liters</text>
 <text x="450" y="312" font-size="12.5" fill="#6B6B6B" text-anchor="middle" font-weight="normal" font-family="'Helvetica Neue Condensed', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" style="font-variant-numeric:tabular-nums" >empty</text>
-<path d="M 626.9 235.2 L 629.5 264.0 Q 630.3 268.0 634.9 268.0 L 665.1 268.0 Q 669.7 268.0 670.5 264.0 L 673.1 235.2 Z" fill="none" stroke="#3A3A3A" stroke-width="1.31" stroke-linejoin="round"/>
-<line x1="636.1" y1="237.2" x2="638.6" y2="265.0" stroke="#3A3A3A" stroke-width="0.44" opacity="0.75"/>
-<line x1="645.4" y1="237.2" x2="646.2" y2="265.0" stroke="#3A3A3A" stroke-width="0.44" opacity="0.75"/>
-<line x1="654.6" y1="237.2" x2="653.8" y2="265.0" stroke="#3A3A3A" stroke-width="0.44" opacity="0.75"/>
-<line x1="663.9" y1="237.2" x2="661.4" y2="265.0" stroke="#3A3A3A" stroke-width="0.44" opacity="0.75"/>
-<line x1="627.6" y1="243.4" x2="672.4" y2="243.4" stroke="#3A3A3A" stroke-width="0.44" opacity="0.75"/>
-<line x1="628.2" y1="251.6" x2="671.8" y2="251.6" stroke="#3A3A3A" stroke-width="0.44" opacity="0.75"/>
-<line x1="628.9" y1="259.8" x2="671.1" y2="259.8" stroke="#3A3A3A" stroke-width="0.44" opacity="0.75"/>
-<ellipse cx="650" cy="235.2" rx="23.1" ry="2.1" fill="#3A3A3A"/>
-<path d="M 627.9 234.2 q -3.9 -0.7 -4.4 2.1 q -0.4 1.8 1.7 2.1" fill="none" stroke="#3A3A3A" stroke-width="1.14" stroke-linecap="round"/>
-<path d="M 672.1 234.2 q 3.9 -0.7 4.4 2.1 q 0.4 1.8 -1.7 2.1" fill="none" stroke="#3A3A3A" stroke-width="1.14" stroke-linecap="round"/>
-<path d="M 626.9 235.2 Q 650 211.9 673.1 235.2" fill="none" stroke="#3A3A3A" stroke-width="1.31"/>
-<path d="M 631.5 229.9 Q 650 228.3 668.5 229.9" fill="none" stroke="#3A3A3A" stroke-width="0.44" opacity="0.75"/>
-<path d="M 636.1 224.6 Q 650 223.0 663.9 224.6" fill="none" stroke="#3A3A3A" stroke-width="0.44" opacity="0.75"/>
-<path d="M 640.7 219.3 Q 650 217.7 659.3 219.3" fill="none" stroke="#3A3A3A" stroke-width="0.44" opacity="0.75"/>
-<rect x="647.5" y="203.4" width="5.0" height="10.6" fill="#CFCEC6" stroke="#3A3A3A" stroke-width="0.70"/>
-<rect x="647.0" y="201.6" width="6.0" height="2.0" rx="0.7" fill="#2E6E3A"/>
+<path d="M 631.0 238.3 L 631.0 264.0 Q 631.0 268.0 636.0 268.0 L 664.0 268.0 Q 669.0 268.0 669.0 264.0 L 669.0 238.3 Z" fill="none" stroke="#3A3A3A" stroke-width="1.5" stroke-linejoin="round"/>
+<line x1="640.5" y1="239.8" x2="640.5" y2="266.0" stroke="#3A3A3A" stroke-width="0.5" opacity="0.7"/>
+<line x1="650.0" y1="239.8" x2="650.0" y2="266.0" stroke="#3A3A3A" stroke-width="0.5" opacity="0.7"/>
+<line x1="659.5" y1="239.8" x2="659.5" y2="266.0" stroke="#3A3A3A" stroke-width="0.5" opacity="0.7"/>
+<line x1="631.0" y1="260.6" x2="669.0" y2="260.6" stroke="#3A3A3A" stroke-width="0.5" opacity="0.7"/>
+<line x1="631.0" y1="253.2" x2="669.0" y2="253.2" stroke="#3A3A3A" stroke-width="0.5" opacity="0.7"/>
+<line x1="631.0" y1="245.7" x2="669.0" y2="245.7" stroke="#3A3A3A" stroke-width="0.5" opacity="0.7"/>
+<ellipse cx="650" cy="238.3" rx="19.0" ry="2.6" fill="#3A3A3A"/>
+<path d="M 631.5 237.8 q -4.2 -0.8 -4.6 2.6 q -0.4 2.4 2.0 2.6" fill="none" stroke="#3A3A3A" stroke-width="1.27" stroke-linecap="round"/>
+<path d="M 668.5 237.8 q 4.2 -0.8 4.6 2.6 q 0.4 2.4 -2.0 2.6" fill="none" stroke="#3A3A3A" stroke-width="1.27" stroke-linecap="round"/>
+<path d="M 631.0 238.3 Q 650 212.3 669.0 238.3" fill="#FBFAF7" stroke="#3A3A3A" stroke-width="1.5"/>
+<path d="M 634.8 235.1 Q 650 233.1 665.2 235.1" fill="none" stroke="#3A3A3A" stroke-width="0.5" opacity="0.7"/>
+<path d="M 638.6 231.8 Q 650 229.8 661.4 231.8" fill="none" stroke="#3A3A3A" stroke-width="0.5" opacity="0.7"/>
+<path d="M 642.4 228.6 Q 650 226.6 657.6 228.6" fill="none" stroke="#3A3A3A" stroke-width="0.5" opacity="0.7"/>
+<rect x="647.8" y="217.3" width="4.4" height="9.0" fill="#CFCEC6" stroke="#3A3A3A" stroke-width="0.9"/>
+<rect x="647.1" y="214.7" width="5.8" height="3.0" rx="1" fill="#2E6E3A"/>
 <text x="650" y="294" font-size="15" fill="#1A1A1A" text-anchor="middle" font-weight="bold" font-family="'Helvetica Neue Condensed', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" style="font-variant-numeric:tabular-nums" >3 liters</text>
 <text x="650" y="312" font-size="12.5" fill="#6B6B6B" text-anchor="middle" font-weight="normal" font-family="'Helvetica Neue Condensed', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" style="font-variant-numeric:tabular-nums" >empty</text>
 <line x1="60" y1="348" x2="780" y2="348" stroke="#DAD6CC" stroke-width="1"/>
