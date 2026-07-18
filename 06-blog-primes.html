@@ -226,18 +226,18 @@
 
 							<p>School arithmetic tears open every carton on sight: 3 &times; 2 = 6, done, next exercise. Some months ago I began to wonder what happens if you refuse: if you treat the package, not the number, as the real object. This became a research project, and eventually a paper, and the rest of this post is what fell out.</p>
 
-							<p>The move sounds small and is not. If a multiplication is a packing, the integer is demoted from object to label: the shadow the package casts on a scale. Distinct packings share a label. The number 12 can be assembled as 2 &times; (2 &times; 3), or as (2 &times; 2) &times; 3, or as 3 &times; (2 &times; 2), and so on: six distinct packing histories if you track the order of assembly, two if you do not. Twelve is not one thing. Twelve is a label worn by a small family of structures.</p>
+							<p>The move sounds small and is not. If a multiplication is a packing, the integer is demoted from object to label: the shadow the package casts on a scale. Distinct packings share a label. Take 30 = 2 &times; 3 &times; 5, our running example for the rest of the post. You can pour the bottles in any of six orders, and for each order you can nest either the first pair or the last, so 30 can be assembled in twelve distinct ways: 2 &times; (3 &times; 5), (2 &times; 3) &times; 5, 5 &times; (3 &times; 2), and nine more. Thirty is not one thing. Thirty is a label worn by twelve structures.</p>
 
 							<!-- .featured-image -->
 							<div class="featured-image" style="margin: 24px 0; text-align: center;">
-								<img src="img/note/primes/twelve-histories.svg" alt="The six assembly histories of the number 12, each an AND-tree over its prime factors" style="max-width: 100%; height: auto;">
+								<img src="img/note/primes/twelve-histories.svg" alt="The twelve assembly histories of 30, a 2 by 6 grid of trees over the primes 2, 3, 5" style="max-width: 100%; height: auto;">
 							</div>
 
-							<p>Forgetting is not one act but two, and they can be done in either order. Forget which pair you poured together first, and the six histories collapse to three ordered lists of bottles. Forget the order of the bottles instead, and they collapse to two bare tree shapes. Do both, in whichever sequence, and you land on a single number. The two roads always agree, and that they end at exactly one number is a theorem with a famous name.</p>
+							<p>Forgetting is not one act but two, and they can be done in either order. Forget which pair you nested first, and the twelve histories collapse to six ordered lists of bottles. Forget the order of the bottles instead, and they collapse to three bare tree shapes. Do both, in whichever sequence, and you land on a single number. The two roads always agree, and that they end at exactly one number is a theorem with a famous name.</p>
 
 							<!-- .featured-image -->
 							<div class="featured-image" style="margin: 24px 0; text-align: center;">
-								<img src="img/note/primes/coarse-graining.svg" alt="The number 12 collapsing along two routes: 6 histories to 3 orders to 1, and 6 to 2 shapes to 1" style="max-width: 100%; height: auto;">
+								<img src="img/note/primes/coarse-graining.svg" alt="30 collapsing along two routes: twelve histories to six orders to one, and twelve to three shapes to one" style="max-width: 100%; height: auto;">
 							</div>
 
 							<p>These packing diagrams are trees too, but of the opposite species from the riddle's. The pouring tree branched on OR: each fork a choice between alternative next moves, and possibilities add across branches. A packing tree branches on AND: each split names the parts that must all be present, and counts multiply across children. Computer scientists call these OR-trees and AND-trees. A game is an OR-tree; a molecule is an AND-tree. The two verbs even have their own species of diagram.</p>
@@ -246,15 +246,15 @@
 
 							<p>Information theory is the same counting seen from the receiving end. Shannon's 1948 insight was that the information in a message is the logarithm of the number of alternatives it rules out: a fair coin flip resolves two, and carries one bit. So learning which microstate hides behind a macrostate is worth exactly the entropy in bits: entropy is the number of yes/no questions standing between the label and the thing itself. One quantity, two directions: to the physicist it measures what the macrostate forgot, to the engineer it prices what a message must carry to restore it.</p>
 
-							<p>In this view of arithmetic, then, an integer has an entropy. The entropy of 12 is log 6: about 2.6 bits, between two and three yes/no questions to learn which of its six assembly histories you are holding. Primes are the states of zero entropy, readings with a unique history: seeing the label 7 tells you everything, seeing the label 12 leaves 2.6 bits unsaid.</p>
+							<p>In this view of arithmetic, then, an integer has an entropy. The entropy of 30 is log 12: about 3.6 bits, between three and four yes/no questions to learn which of its twelve assembly histories you are holding. Primes are the states of zero entropy, readings with a unique history: seeing the label 7 tells you everything, seeing the label 30 leaves 3.6 bits unsaid.</p>
 
 							<p>And physics has a machine for processing exactly this data: the partition function, a single sum that weighs every configuration by its size and adds them all up. Let me build it, because the destination is a surprise.</p>
 
-							<p>Give each number a weight that shrinks as the number grows: let 12 count for 1/12<sup>s</sup>, where s is a knob we can turn (a colder gas, larger s, leans harder on the small numbers). Now add up the weights of every integer. If we work at the fully forgotten corner, where each number counts once, the sum is</p>
+							<p>Give each number a weight that shrinks as the number grows: let 30 count for 1/30<sup>s</sup>, where s is a knob we can turn (a colder gas, larger s, leans harder on the small numbers). Now add up the weights of every integer. If we work at the fully forgotten corner, where each number counts once, the sum is</p>
 
-							<p style="text-align:center; font-size:19px; margin:18px 0;">1/1<sup>s</sup> + 1/2<sup>s</sup> + 1/3<sup>s</sup> + 1/4<sup>s</sup> + &middot;&middot;&middot; + 1/12<sup>s</sup> + &middot;&middot;&middot;</p>
+							<p style="text-align:center; font-size:19px; margin:18px 0;">1/1<sup>s</sup> + 1/2<sup>s</sup> + 1/3<sup>s</sup> + 1/4<sup>s</sup> + &middot;&middot;&middot; + 1/30<sup>s</sup> + &middot;&middot;&middot;</p>
 
-							<p>and 12's single drop in that ocean is exactly the "forget everything" corner of its square. Keep the history instead, weigh 12 by its six microstates, and it pours in six times as heavily (6/12<sup>s</sup>): a different, richer sum. Each level of memory gives its own partition function, all built from the same per-number weights.</p>
+							<p>and 30's single drop in that ocean is exactly the "forget everything" corner of its square. Keep the history instead, weigh 30 by its twelve microstates, and it pours in twelve times as heavily (12/30<sup>s</sup>): a different, richer sum. Each level of memory gives its own partition function, all built from the same per-number weights.</p>
 
 							<p>The fully forgotten one is the sum written above, and it has a name that will stop a mathematician in their tracks. That endless sum equals a product, one factor for every prime, and it is the most studied object in all of mathematics: Riemann's zeta function. The primes appear not as terms but as the <em>factors</em> from which the whole sum is woven, which is the AND of our two verbs hiding inside the OR. Written in the language of this post: zeta is the partition function of a gas whose particles are the primes, each carrying energy log p. (The logarithm once more, translating between the two worlds: the numbers multiply, their energies add.) Physicists call it the gas of numbers.</p>
 
@@ -278,22 +278,11 @@
 
 							<p>That is the view once the cartons stay closed: integers with entropy, arithmetic with a temperature, a new spectrum with its own geometry. Proofs, constants, and code are all in the paper linked at the end; every number in this post can be recomputed from an open repository.</p>
 
-							<h2 style="margin-bottom: 20px;">The bug at n = 144</h2>
+							<h2 style="margin-bottom: 20px;">A footnote that turned out to be real</h2>
 
-							<p>Thought experiments are cheap, and stories about temperature can sound like poetry. So let me end with the most concrete thing the packing view produced: a one-unit correction to a reference work.</p>
+							<p>All of this began as a thought experiment, and thought experiments are cheap. So here is the smallest hard thing it produced. When you count the unordered histories carefully, one fussy case decides everything: a number that splits into two identical halves. The count there is not the obvious product but a smaller number, because the two halves cannot be told apart, the same indistinguishability that gave 30 its entropy a moment ago.</p>
 
-							<p>To count unordered packings, you must settle one fussy case: a package that splits into two identical halves. Take n = 144, which splits as 12 &times; 12. Each half, we said, can be packed in 2 unordered ways. How many packings of 144 does the split {12, 12} contribute? If the halves were distinguishable, 2 &times; 2 = 4: two choices on the left, two on the right. But the halves are not distinguishable: left-A with right-B is the same object as left-B with right-A. The true count is 3: both halves packed one way, both the other, or mixed.</p>
-
-							<!-- .featured-image -->
-							<div class="featured-image" style="margin: 24px 0; text-align: center;">
-								<img src="img/note/primes/bug-144.svg" alt="At n = 144, ordered counting gives 4 but unordered gives 3, so 42 was wrong and 41 is right" style="max-width: 100%; height: auto;">
-							</div>
-
-							<p>The Online Encyclopedia of Integer Sequences, the reference where mathematicians register such counts, had an entry for this very sequence (<a href="https://oeis.org/A375120">A375120</a>) whose formula and program made the distinguishable choice, while the entry's own definition promised indistinguishable. The smallest integer where the two conventions part ways happens to be 144, and the entry displayed terms only up to 87. So the error sat in the encyclopedia, invisible, for two years: its formula says 144 has 42 unordered packings; the truth is 41.</p>
-
-							<p>Our count disagreed by that single unit. We reported it with ten thousand computed terms, and the OEIS editors, who are fast and exacting, corrected the entry within a day. The repaired formula, the full table, and a link to the paper now live there.</p>
-
-							<p>One unit, at one number. That is what it looks like when a kitchen thought experiment is carried far enough to become checkable.</p>
+							<p>The Online Encyclopedia of Integer Sequences, where mathematicians register such counts, had this exact sequence recorded with the obvious product, which is wrong. We noticed, sent ten thousand computed terms, and the editors corrected the entry within a day. It now carries the right formula and a link to the paper. A kitchen thought experiment, carried far enough, moved a line in the reference books.</p>
 
 							<h2 style="margin-bottom: 20px;">A toast</h2>
 
