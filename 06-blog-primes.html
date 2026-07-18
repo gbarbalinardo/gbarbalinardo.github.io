@@ -40,6 +40,11 @@
 	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 
+	<!-- KaTeX for LaTeX math -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+		onload="renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]});"></script>
 </head>
 <body>
 
@@ -242,13 +247,31 @@
 
 							<p>These packing diagrams are trees too, but of the opposite species from the riddle's. The pouring tree branched on OR: each fork a choice between alternative next moves, and possibilities add across branches. A packing tree branches on AND: each split names the parts that must all be present, and counts multiply across children. Computer scientists call these OR-trees and AND-trees. The two verbs even have their own species of diagram.</p>
 
-							<p>Physics has an exact name for this situation, attached to the most misunderstood word in science: entropy. Strip away the folklore about disorder and entropy is just counting. When many microscopic configurations share one macroscopic reading, the reading is called a macrostate, the configurations are its microstates, and the entropy is the logarithm of how many there are. That is the entire definition; it is carved on Boltzmann's tombstone, S = k log W. And the logarithm is there for the reason you already know: it is the translator. Independent systems multiply their counts, because configurations combine by AND, but we want a measure that pours like the stuff it describes. Entropy is AND-counting expressed in OR-units.</p>
+							<p>Physics has an exact name for this situation, attached to the most misunderstood word in science: entropy. Strip away the folklore about disorder and entropy is just counting. When many microscopic configurations share one macroscopic reading, the reading is called a macrostate, the configurations are its microstates, and the entropy is the logarithm of how many there are. That is the entire definition, and Boltzmann was so sure of it that he had it carved on his grave:</p>
+
+							<p style="text-align:center; margin:18px 0;">$$S = k \log W$$</p>
+
+							<!-- .featured-image -->
+							<div class="featured-image" style="margin: 24px 0; text-align: center;">
+								<img src="img/note/primes/boltzmann-grave.jpg" alt="Ludwig Boltzmann's grave in Vienna, with S = k log W carved above the bust" style="max-width: 62%; height: auto; border-radius: 4px;">
+								<div style="font-size: 12px; color: #9AA0A6; margin-top: 6px;">Boltzmann&rsquo;s grave, Vienna. Photo: <a href="https://commons.wikimedia.org/wiki/File:Ludwig_Boltzmann_Grave_Zentralfriedhof_Vienna_2022.jpg" style="color:#9AA0A6;">Feldkurat Katz</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" style="color:#9AA0A6;">CC BY-SA 4.0</a>.</div>
+							</div>
+
+							<p>Here $W$ is the number of microstates and $k$ is just a choice of units. The logarithm is there for the reason you already know: it is the translator. Independent systems multiply their counts, because configurations combine by AND, but we want a measure that adds. Entropy is AND-counting expressed in OR-units.</p>
 
 							<p>Information theory is the same counting seen from the receiving end. Shannon's 1948 insight was that the information in a message is the logarithm of the number of alternatives it rules out: a fair coin flip resolves two, and carries one bit. So learning which microstate hides behind a macrostate is worth exactly the entropy in bits: entropy is the number of yes/no questions standing between the label and the thing itself. One quantity, two directions: to the physicist it measures what the macrostate forgot, to the engineer it prices what a message must carry to restore it.</p>
 
 							<p>In this view of arithmetic, then, an integer has an entropy. The entropy of 30 is log 12: about 3.6 bits, between three and four yes/no questions to learn which of its twelve assembly histories you are holding. Primes are the states of zero entropy, readings with a unique history: seeing the label 7 tells you everything, seeing the label 30 leaves 3.6 bits unsaid.</p>
 
-							<p>And physics has a machine for processing exactly this data: the partition function, a single sum that weighs every configuration by its size and adds them all up. Let me build it, because the destination is a surprise.</p>
+							<p>Now for the step that makes the whole thing sing, and the reason entropy and energy are the same story told twice. Physics packages a system into one number, the partition function, a sum over every state weighted by how much energy it costs:</p>
+
+							<p style="text-align:center; margin:16px 0;">$$Z = \sum_{\text{states}} e^{-E/kT}.$$</p>
+
+							<p>Low-energy states count for a lot, high-energy states are suppressed, and everything a thermodynamic system does can be read off from $Z$. The bridge to our world is a single dictionary entry: energy is the logarithm of size. Give a number $n$ the energy $E = \log n$, so that big numbers are expensive, and the Boltzmann weight $e^{-E/kT}$ becomes $n^{-s}$ with $s = 1/kT$. The partition function of the integers is then</p>
+
+							<p style="text-align:center; margin:16px 0;">$$Z(s) = \sum_{n} \frac{g(n)}{n^{s}},$$</p>
+
+							<p>where $g(n)$ counts the histories of $n$, the very entropy we just measured. Energies add exactly when sizes multiply, which is the same logarithm that took counting into entropy a moment ago. Entropy and energy are not an analogy here; they are one quantity seen from two sides, joined by $\log$.</p>
 
 							<p>Give each number a weight that shrinks as the number grows: let 30 count for 1/30<sup>s</sup>, where s is a knob we can turn (a colder gas, larger s, leans harder on the small numbers). Now add up the weights of every integer. If we work at the fully forgotten corner, where each number counts once, the sum is</p>
 
