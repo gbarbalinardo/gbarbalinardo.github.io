@@ -265,13 +265,24 @@
 <line x1="630" y1="210" x2="462" y2="262" stroke="#B8B4AC" stroke-width="2.2"/><path d="M 462 262 L 469.3 255.2 M 462 262 L 471.9 263.5" stroke="#B8B4AC" stroke-width="2.2" fill="none" stroke-linecap="round"/>
 <text x="300" y="238" font-size="12" fill="#6B6B6B" text-anchor="middle" font-weight="normal" font-family="'Helvetica Neue Condensed', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" style="font-variant-numeric:tabular-nums" >tear open and pour</text>
 <text x="548" y="238" font-size="12" fill="#6B6B6B" text-anchor="middle" font-weight="normal" font-family="'Helvetica Neue Condensed', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" style="font-variant-numeric:tabular-nums" >tear open and pour</text>
-<rect x="383.0" y="266.0" width="74" height="52.0" fill="#9E2B25" opacity="0.82"/>
-<line x1="381.0" y1="311.0" x2="386.0" y2="311.0" stroke="#B8B4AC" stroke-width="0.8"/>
-<line x1="381.0" y1="302.0" x2="386.0" y2="302.0" stroke="#B8B4AC" stroke-width="0.8"/>
-<line x1="381.0" y1="293.0" x2="386.0" y2="293.0" stroke="#B8B4AC" stroke-width="0.8"/>
-<line x1="381.0" y1="284.0" x2="386.0" y2="284.0" stroke="#B8B4AC" stroke-width="0.8"/>
-<line x1="381.0" y1="275.0" x2="386.0" y2="275.0" stroke="#B8B4AC" stroke-width="0.8"/>
-<path d="M 381.0 266.0 L 381.0 316 Q 381.0 320 385.0 320 L 455.0 320 Q 459.0 320 459.0 316 L 459.0 266.0" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 398.9 288.2 L 399.5 316.0 Q 400.3 320.0 403.9 320.0 L 436.1 320.0 Q 439.7 320.0 440.5 316.0 L 441.1 288.2 Z" fill="#9E2B25" opacity="0.78"/>
+<path d="M 396.9 287.2 L 399.5 316.0 Q 400.3 320.0 404.9 320.0 L 435.1 320.0 Q 439.7 320.0 440.5 316.0 L 443.1 287.2 Z" fill="none" stroke="#3A3A3A" stroke-width="1.31" stroke-linejoin="round"/>
+<line x1="406.1" y1="289.2" x2="408.6" y2="317.0" stroke="#3A3A3A" stroke-width="0.44" opacity="0.75"/>
+<line x1="415.4" y1="289.2" x2="416.2" y2="317.0" stroke="#3A3A3A" stroke-width="0.44" opacity="0.75"/>
+<line x1="424.6" y1="289.2" x2="423.8" y2="317.0" stroke="#3A3A3A" stroke-width="0.44" opacity="0.75"/>
+<line x1="433.9" y1="289.2" x2="431.4" y2="317.0" stroke="#3A3A3A" stroke-width="0.44" opacity="0.75"/>
+<line x1="397.6" y1="295.4" x2="442.4" y2="295.4" stroke="#3A3A3A" stroke-width="0.44" opacity="0.75"/>
+<line x1="398.2" y1="303.6" x2="441.8" y2="303.6" stroke="#3A3A3A" stroke-width="0.44" opacity="0.75"/>
+<line x1="398.9" y1="311.8" x2="441.1" y2="311.8" stroke="#3A3A3A" stroke-width="0.44" opacity="0.75"/>
+<ellipse cx="420" cy="287.2" rx="23.1" ry="2.1" fill="#3A3A3A"/>
+<path d="M 397.9 286.2 q -3.9 -0.7 -4.4 2.1 q -0.4 1.8 1.7 2.1" fill="none" stroke="#3A3A3A" stroke-width="1.14" stroke-linecap="round"/>
+<path d="M 442.1 286.2 q 3.9 -0.7 4.4 2.1 q 0.4 1.8 -1.7 2.1" fill="none" stroke="#3A3A3A" stroke-width="1.14" stroke-linecap="round"/>
+<path d="M 396.9 287.2 Q 420 263.9 443.1 287.2" fill="none" stroke="#3A3A3A" stroke-width="1.31"/>
+<path d="M 401.5 281.9 Q 420 280.3 438.5 281.9" fill="none" stroke="#3A3A3A" stroke-width="0.44" opacity="0.75"/>
+<path d="M 406.1 276.6 Q 420 275.0 433.9 276.6" fill="none" stroke="#3A3A3A" stroke-width="0.44" opacity="0.75"/>
+<path d="M 410.7 271.3 Q 420 269.7 429.3 271.3" fill="none" stroke="#3A3A3A" stroke-width="0.44" opacity="0.75"/>
+<rect x="417.5" y="255.4" width="5.0" height="10.6" fill="#CFCEC6" stroke="#3A3A3A" stroke-width="0.70"/>
+<rect x="417.0" y="253.6" width="6.0" height="2.0" rx="0.7" fill="#2E6E3A"/>
 <text x="420" y="340" font-size="15" fill="#1A1A1A" text-anchor="middle" font-weight="bold" font-family="'Helvetica Neue Condensed', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" style="font-variant-numeric:tabular-nums" >6 L</text>
 <line x1="40" y1="358" x2="800" y2="358" stroke="#DAD6CC" stroke-width="1"/>
 <text x="40" y="378" font-size="13" fill="#6B6B6B" text-anchor="start" font-weight="normal" style="font-variant-numeric:tabular-nums" >Same shadow, different objects. The pouring is a second, separate act.</text>
