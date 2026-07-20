@@ -8,18 +8,18 @@
     <meta itemprop="name" content="The Best Token for a Bridge">
     <meta itemprop="description"
           content="A language model guesses the next token. What is the next token of a bridge, of a squat, of a simulation? Lean already has a token that cannot lie.">
-    <meta itemprop="image" content="https://giuseppe.barbalinardo.com/img/note/tokens/tokens.png">
+    <meta itemprop="image" content="https://giuseppe.barbalinardo.com/img/note/tokens/cover.png">
     <meta property="og:url" content="https://giuseppe.barbalinardo.com/07-blog-tokens.html">
     <meta property="og:type" content="article">
     <meta property="og:title" content="The Best Token for a Bridge">
     <meta property="og:description"
           content="A language model guesses the next token. What is the next token of a bridge, of a squat, of a simulation? Lean already has a token that cannot lie.">
-    <meta property="og:image" content="https://giuseppe.barbalinardo.com/img/note/tokens/tokens.png">
+    <meta property="og:image" content="https://giuseppe.barbalinardo.com/img/note/tokens/cover.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="The Best Token for a Bridge">
     <meta name="twitter:description"
           content="A language model guesses the next token. What is the next token of a bridge, of a squat, of a simulation? Lean already has a token that cannot lie.">
-    <meta name="twitter:image" content="https://giuseppe.barbalinardo.com/img/note/tokens/tokens.png">
+    <meta name="twitter:image" content="https://giuseppe.barbalinardo.com/img/note/tokens/cover.png">
 
     <meta name="keywords"
           content="Giuseppe Barbalinardo, Next-Token Prediction, Lean 4, Formal Verification, Proof Assistant, Mathlib, Physlib, AI for Science, AI for Mathematics, Simulation, Thermoelectrics">
@@ -121,7 +121,7 @@
 
 							<!-- .featured-image -->
 							<div class="featured-image" style="margin: 24px 0; text-align: center;">
-								<img src="img/note/tokens/tokens.png" alt="Four candidate tokens in a row: a brick, a pose, a physical quantity, a theorem" style="max-width: 100%; height: auto;">
+								<img src="img/note/tokens/cover.png" alt="A truss bridge elevation drawn as an engineering plate, one diagonal member in blue annotated with what it must not do: yield, buckle, resonate" style="max-width: 100%; height: auto;">
 							</div>
 
 							<p>Suppose the thing being continued is not a paragraph but a bridge. What is the machine's next token? A brick is the tempting answer, and it is the wrong one for a precise reason: a brick knows its own shape and nothing else. The bricklayer's next brick is constrained by the course beneath it; the engineer's next element is constrained by every load path in the structure. Continue a bridge brick by brick and you get a pile that looks like a bridge. Continue it member by member, each token carrying what it must not do (yield, buckle, resonate), and you get a bridge. The token of a bridge is not the brick. It is the brick plus statics.</p>
@@ -129,10 +129,20 @@
 							<p>I think about this daily, because my day job is movement. At Tonal we watch strength training through sensors, hundreds of terabytes of it, and the same question sits under everything: what is the next token of a squat? A video frame is the brick answer, dense and true and meaningless on its own. A better token is a pose with a body attached: joint angles that know their ranges, a bar path that knows what fatigue does to it, a rep that knows it belongs to a set, to a workout, to a person with a left knee that has opinions. The moment the token carries physiology, predicting the next one stops being video compression and starts being coaching.</p>
 
 							<p>Set the bridge next to the squat and the rule they share is short: the best token for a domain is the smallest unit that cannot lie about it. Word shards lie fluently; that is what a hallucination is, grammar without ground. A structural member that violates statics is not an awkward sentence, it is a collapse, so the constraint has to live inside the token itself. Load the token with enough constraints and the predictor has nothing left to hallucinate with; whatever it still predicts is design.</p>
+							<!-- .featured-image -->
+							<div class="featured-image" style="margin: 32px 0; text-align: center;">
+								<img src="img/note/tokens/arc.png" alt="A rising staircase: as a token carries more constraints, prediction climbs from word shard and autocomplete through pose, member, and quantity to theorem and discovery with a referee" style="max-width: 100%; height: auto;">
+							</div>
+
 
 							<p>Before movement, my field was heat: I helped build kaldo, a code that simulates how phonons carry heat through crystals. The raw output of such a simulation is a tensor of numbers. Numbers are bricks. The honest token of a simulation is the quantity: a value that carries its dimension, its temperature and boundary conditions, the approximation regime that produced it, and the identity of the code that ran. When two codes disagree about "thermal conductivity" they usually disagree about the token, not the physics: one means the lattice part in the relaxation-time approximation at 300 K, the other means the total. Spell the token out completely and the disagreement either dissolves or becomes a discovery. Both outcomes are science; the shouting in between is not.</p>
 
 							<p>One domain has finished the job. In <a href="https://lean-lang.org/">Lean</a>, a proof assistant, a mathematical statement is a shape and a proof must fit it exactly: in the jargon, the statement is a type and the proof is a term of that type. The kernel checks the term or rejects it, and there is no such thing as a plausible proof. A theorem is a token that cannot lie, not because anyone is vigilant but because the type system makes the lie inexpressible. <a href="https://github.com/leanprover-community/mathlib4">Mathlib</a>, the community library, now holds on the order of two hundred thousand machine-checked theorems, accumulated over a decade by people who were not thinking about language models at all. They built the honest token for its own sake, and it turned out to be the one thing the models could not supply for themselves.</p>
+							<!-- .featured-image -->
+							<div class="featured-image" style="margin: 32px 0; text-align: center;">
+								<img src="img/note/tokens/fit.png" alt="A machinist drawing: a proof drawn as a machined term seating exactly into the notch of a statement, with a rejected near-miss piece struck through and labelled no such thing as a plausible proof" style="max-width: 100%; height: auto;">
+							</div>
+
 
 							<p>Physics is following, quietly. <a href="https://github.com/leanprover-community/physlib">Physlib</a>, which grew out of Joseph Tooby-Smith's HepLean, is doing for physical theory what Mathlib did for mathematics: the entropy of an ideal gas, tight-binding chains, relativity, quantum information, each formalized so that the compiler is the referee. It is patient, unglamorous infrastructure work; so was Mathlib's first decade. I sent the project a first small contribution last week, the thermoelectric figure of merit, and the compiler was the strictest referee I have written for. One boundary is worth respecting: a proof that compiles buys consistency, not reality. The bridge still needs its load test, and a formalized entropy is only as honest as the model behind it. Coherence is the machine's job; the world remains ours.</p>
 
