@@ -1102,41 +1102,25 @@ img {
 }
 
 .header-wrap {
-  min-height: 300px;
-  padding-top: 110px;
+  padding: 130px 20px 34px;
   position: relative;
-  background-image: url(../img/site/header-bg.jpg);
-  background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  background-size: cover;
   text-align: center;
-  background-attachment: fixed;
+  background: #fff;
+  border-bottom: 1px solid #ececec;
   z-index: 1;
 }
 
-.header-wrap:after {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  background: #000;
-  opacity: 0.05;
-  z-index: -1;
-}
-
 .page-title {
-  color: #fff;
-  font-size: 50px;
-  padding-bottom: 15px;
+  color: #1c1e22;
+  font-size: 44px;
+  padding-bottom: 10px;
   font-weight: 600;
 }
 
 .header-nav a {
   font-size: 12px;
   letter-spacing: 0.05em;
-  color: #fff;
+  color: #9aa0a8;
   margin-right: 10px;
   font-weight: 600;
   transition: all 0.4s;
