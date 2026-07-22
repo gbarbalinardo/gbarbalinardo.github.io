@@ -928,6 +928,29 @@ img {
   margin-bottom: 30px;
 }
 
+/* Equal-height cards: each grid row is a flex container, so every card in a
+   row stretches to the height of the tallest one instead of ending where its
+   own text runs out. Scoped to the blog grid; stacked mobile layout is
+   unaffected because wrapped columns keep their natural full width. */
+.blog-section .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.blog-section .row > [class*="col-"] {
+  display: flex;
+}
+
+.blog-section .single-blog-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.blog-section .blog-item-content {
+  flex: 1;
+}
+
 .blog-item-thumb {
   position: relative;
 }
