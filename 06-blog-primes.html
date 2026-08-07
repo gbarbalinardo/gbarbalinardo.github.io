@@ -234,7 +234,7 @@
 
 							<h2 style="margin-bottom: 20px;">Three ways to read a shop of clocks</h2>
 
-							<p>An instrument is one thing; a reader is another, and the rest of this post asks what a reader can extract from a superposition. Every reader anyone has built, as far as I can tell, is one of three: thermal, statistical, or interferometric.</p>
+							<p>An instrument is one thing; a reader is another, and the rest of this post asks what a reader can extract from a superposition. Every reader anyone has built, as far as I can tell, is one of three: thermal, statistical, or interferometric. I will hand the same cast to each in turn: the primes of the running example, 2, 3, and 5, with 7 as understudy.</p>
 
 							<p>All three run one engine. Put the data in an exponent, sum the exponentials, and let the sum sit in the denominator to normalize. An energy over a temperature in the exponent makes the sum a partition function: the thermal reading. Let time turn the exponent and average what the tip does: the statistical reading. An $i$ in the exponent makes the exponentials cancel instead of weight: interference.</p>
 
@@ -242,19 +242,21 @@
 
 							<p>The first reader is the one I meet every working day, because my day job changed: I now lead an AI team, and the arithmetic we ship most is a small formula called softmax. When a transformer decides which earlier words to attend to, each candidate gets a score; softmax exponentiates every score and divides by the sum of the exponentials. That is not an imitation of the Boltzmann distribution; it is the Boltzmann distribution. The scores are energies with the sign flipped, the denominator is a partition function, and the factor $1/\sqrt{d}$ every attention layer applies to its scores sets a temperature. The engine of the previous section, shipped daily by people with no reason to care what it is called.</p>
 
-							<p>Take four scores, say 2.1, 0.3, $-1.0$, 1.2. At temperature 1 the weights are 0.618, 0.102, 0.028, 0.251: a mixture, every candidate heard. Cool to 0.2 and they sharpen to 0.989, 0, 0, 0.011. At 0.05 the list reads 1, 0, 0, 0: the top score takes everything. In the cold limit one competitor outreaches all the others combined: a dominance event. Keep the phrase; it returns twice.</p>
+							<p>Now hand the engine our own cast. Let the candidates be the primes themselves, 2, 3, 5, 7, each scored by its own energy $\log p$, and let the dial be $\sigma$, the same $\sigma$ that shortens the hands in the clock shop. The Boltzmann weights are then $p^{-\sigma}$, the hand lengths, and the partition function in the denominator is the beginning of $P(\sigma)$ itself, the function this whole post studies. At $\sigma = 1.30$ the shares are 47.8, 28.2, 14.5, and 9.4 percent: warm, every prime heard. Stiffen the dial to 2.8 and the 2 holds 70 percent; cool further and it takes everything, slowly, because the energy gaps between primes are gentle. One competitor outreaching all the others combined is a dominance event. Keep the phrase; it returns twice.</p>
 
 							<!-- .anim-figure: softmax-temperature -->
 							<div class="featured-image" style="margin: 24px 0; text-align: center;">
 								<canvas id="animSoft" class="anim-canvas" width="740" height="210"></canvas>
 								<div class="anim-controls">
-									<label>temperature T <input id="softT" type="range" min="-3.9" max="1.1" step="0.01" value="0"></label>
-									<output id="softTv">T = 1.00</output>
+									<label>&sigma; <input id="softT" type="range" min="1.05" max="8" step="0.01" value="1.30"></label>
+									<output id="softTv">&sigma; = 1.30</output>
 									<output id="softZ"></output>
 								</div>
-								<div class="anim-caption">Four fixed scores, one temperature dial: slide it down and the mixture 0.618, 0.102, 0.028, 0.251 freezes into 1, 0, 0, 0.</div>
+								<div class="anim-caption">One dial, two machines: this &sigma; is the clock shop's &sigma;, and the denominator is the first four terms of P(&sigma;). Warm, every prime is heard; cold, the 2 takes everything.</div>
 								<noscript><div class="anim-caption">This figure is interactive; enable JavaScript to run it.</div></noscript>
 							</div>
+
+							<p>The identity runs one level deeper. In thermodynamics, the occupation of a level is the derivative of the free energy with respect to that level's energy. Both machines obey it: on the arithmetic side the free energy is $-\tfrac{1}{s}\log \zeta$, and its derivative is Planck's occupation $1/(p^s - 1)$; on the transformer side the same derivative of logsumexp, a free energy with its sign flipped, is exactly the vector of attention weights. I checked both gradients to six decimals. And the one honest asymmetry is worth naming: a transformer re-tunes its spectrum for every query and every training step, while arithmetic's has been quenched at $\log p$ from the beginning.</p>
 
 							<p>A second overlap is quieter and stranger. A transformer stores more features than it has dimensions by superposing them: give each item a random direction as its key, add everything into one vector, decode by projection. It works, but lossily: when I packed 200 items into 64 dimensions this way, my worst decoding error was 5.6, keys interfering with keys. The integers run the same construction losslessly in one dimension: $\log n = \sum a_p \log p$ is a superposition too, and the exponents come back with error 0, because no whole-number combination of the keys $\log 2, \log 3, \log 5, \ldots$ can imitate another. G&ouml;del packed formulas into integers by this trick; the guarantee is unique factorization once more. Same construction, better basis. A parallel of structure, not substance: nothing in a transformer knows a prime.</p>
 
@@ -272,7 +274,7 @@
 
 							<p>To be precise about what is new here: that counts of this kind grow linearly with height is classical, from the theory of almost periodic functions built by Harald Bohr's school a century ago, which also expresses the slope abstractly. The new part is the evaluation, the slope in closed form as prime-by-prime dominance probabilities, for an equation that, as far as I know, nobody had studied.</p>
 
-							<p>At $\sigma = 1.30$ the tug-of-war goes $q_2 = 0.624$, $q_3 = 0.148$, $q_5 = 0.042$, $q_7 = 0.017$: the 2-hand rules five eighths of the time, and even the 7-hand takes its turns. The naive count stops at the biggest hand: if the 2-hand always dominated, the tip would lap once per revolution, one zero per 9.06 of height, a density of $\log 2 / 2\pi \approx 0.110$. The truth at $\sigma = 1.30$ is $D = 0.1162$, five percent more. The difference is stolen turns: the smaller hands are faster, and each brief win winds in extra zeros. Slide the line left and more primes grow long enough to compete: $D(1.10) = 0.1314$, $D(1.05) = 0.1372$, and at the edge of convergence $D(1) = 0.1436$, one zero for every seven units of height in the entire half-plane. (The densities come from Monte Carlo averages over the phases; four independent seeds pin $D(1)$ with a standard deviation of 0.0001.)</p>
+							<p>At $\sigma = 1.30$ the tug-of-war goes $q_2 = 0.624$, $q_3 = 0.148$, $q_5 = 0.042$, $q_7 = 0.017$: the 2-hand rules five eighths of the time, and even the 7-hand takes its turns. The thermal reader gave the same four a static contest a section ago, 47.8 percent for the 2 at this same $\sigma$; dynamics is harsher on the small hands, because dominance demands outreaching everyone at once. The naive count stops at the biggest hand: if the 2-hand always dominated, the tip would lap once per revolution, one zero per 9.06 of height, a density of $\log 2 / 2\pi \approx 0.110$. The truth at $\sigma = 1.30$ is $D = 0.1162$, five percent more. The difference is stolen turns: the smaller hands are faster, and each brief win winds in extra zeros. Slide the line left and more primes grow long enough to compete: $D(1.10) = 0.1314$, $D(1.05) = 0.1372$, and at the edge of convergence $D(1) = 0.1436$, one zero for every seven units of height in the entire half-plane. (The densities come from Monte Carlo averages over the phases; four independent seeds pin $D(1)$ with a standard deviation of 0.0001.)</p>
 
 							<p>Then the check, which is the part I trust most. The census: 595 zeros with heights up to 5000, each located to fifteen digits. The formula predicts the count in the window to about one percent. The staircase in the figure is the running count against height, climbing at the computed slope, and the mean spacing comes out to 8.39, a shade under the 9.06 beat of the 2-hand: the metronome, quickened by theft.</p>
 
@@ -301,13 +303,32 @@
 								<noscript><div class="anim-caption">This figure is interactive; enable JavaScript to run it.</div></noscript>
 							</div>
 
-							<p>For $N = 15$ and $a = 7$ the period is 4, and the simulated spectrum peaks at exactly $k = 0, 512, 1024, 1536$, probability 0.25 each. A measurement lands on a peak because the aligned chain outreaches every cancelled rival. That is the dominance event a third time: the cold softmax, the dominant hand, the standing peak. One concept, three costumes.</p>
+							<p>Take $N = 15$, which is 30 with its 2 poured off; an even number surrenders its 2 before any quantum machinery is needed. Choose the 2-clock as the base: the powers 2, 4, 8, 1 mod 15 repeat with period 4, and the simulated spectrum peaks at exactly $k = 0, 512, 1024, 1536$, probability 0.25 each. A measurement lands on a peak because the aligned chain outreaches every cancelled rival. That is the dominance event a third time: the cold softmax, the dominant hand, the standing peak. One concept, three costumes.</p>
 
-							<p>From the measured $k$, continued fractions recover $r$; then the algorithm turns classical, and old: from $r = 4$, $\gcd(7^2 - 1, 15)$ and $\gcd(7^2 + 1, 15)$ deliver 3 and 5. The referee of my grandfather's pouring game, the greatest common divisor, walks back in to certify the quantum act. The machine's one job was the interference; the verdict is signed by the same arithmetic that split the wine.</p>
+							<p>From the measured $k$, continued fractions recover $r$; then the algorithm turns classical, and old: from $r = 4$, $\gcd(2^2 - 1, 15)$ and $\gcd(2^2 + 1, 15)$ deliver 3 and 5: the cast of 30, reassembled by interference. The referee of my grandfather's pouring game, the greatest common divisor, walks back in to certify the quantum act. The machine's one job was the interference; the verdict is signed by the same arithmetic that split the wine.</p>
 
 							<p>$N = 21$ is already less kind: with base 2 its period 6 does not divide 2048, so only some peaks land on the frequency grid (sharp at 0.167 against smeared at 0.114 in my run), and my first measurement landed on a sharp peak yet returned the wrong period: its numerator shared a factor with the period, the standard failure a rerun cures; even the failed run's gcd surrendered the factor 3. The engineering is humbler: the largest numbers this algorithm has factored on physical hardware are 15 and 21, and today's machines hold on the order of a thousand physical qubits. Estimates for factoring RSA-2048 have moved from roughly twenty million noisy qubits running for eight hours (Gidney and Eker&aring;, 2019) to under a million for about a week (Gidney, 2025); machines nobody has built.</p>
 
 							<p>Three readers, and beneath all three the same absence. The lossless packing runs on it: the keys $\log p$ admit no imitations. The shares $q_p$ exist because of it: speeds with no common measure equidistribute. The peaks survive because of it: phases aligning at multiples of $Q/r$ and nowhere else. I know of no fourth way, and each of the three draws its power from the refusal that unlocked a wine jug.</p>
+
+							<h2 style="margin-bottom: 20px;">Coda: the readers in motion</h2>
+
+							<p>The thermal reader has one more secret. Run attention not once but continuously, taking the depth of the network as time, and the tokens become particles: each flows toward the softmax-weighted average of the others. Those are trajectory equations, and they cluster. In my simulation, twenty-four tokens on a circle collapse into a single cluster at $\beta = 0.5$, two clusters at $\beta = 2$, four at $\beta = 9$: hot attention melts everyone together, cold attention freezes factions. Mathematicians have recently begun treating transformers exactly this way, as interacting particle systems (Geshkovski, Letrouit, Polyanskiy, and Rigollet), and the contrast with our instrument is the lesson: the hands of $P$ rotate coupled to nothing, which is why their statistics come out quasi-periodic and tame, while rotors coupled through a softmax develop collective phases. A transformer is a shop of clocks that talk to each other.</p>
+
+							<!-- .anim-figure: token-flow -->
+							<div class="featured-image" style="margin: 24px 0; text-align: center;">
+								<canvas id="animFlow" class="anim-canvas" width="740" height="300"></canvas>
+								<div class="anim-controls">
+									<label>&beta; <input id="flowB" type="range" min="0.5" max="9" step="0.1" value="2"></label>
+									<output id="flowBv">&beta; = 2.0</output>
+									<output id="flowT">depth = 0</output>
+									<output id="flowC">clusters: 1</output>
+									<button id="flowR" type="button">restart</button>
+									<button id="flowP" type="button">pause</button>
+								</div>
+								<div class="anim-caption">Tokens as particles, depth as time: each dot drifts toward the softmax-weighted average of the others. Hot &beta; melts them into one cluster; cold &beta; freezes several.</div>
+								<noscript><div class="anim-caption">This figure is interactive; enable JavaScript to run it.</div></noscript>
+							</div>
 
 							<h2 style="margin-bottom: 20px;">The edge of the map</h2>
 
@@ -364,36 +385,39 @@
 		var WINE = '#9E2B25', BLUE = '#2E5E8C', INK = '#1A1A1A', MID = '#6B6B6B', RULE = '#DAD6CC', FAINT = '#B8B4AC';
 		var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-		/* softmax temperature (four scores, matching the text exactly) */
-		var scores = [2.1, 0.3, -1.0, 1.2];
+		/* softmax over the primes' own energies (four bars, dial = sigma) */
 		var softCv = document.getElementById('animSoft');
 		if (softCv) {
+			var sPr = [2, 3, 5, 7];
 			var sc = softCv.getContext('2d');
 			var drawSoft = function () {
-				var T = Math.exp(+document.getElementById('softT').value);
-				document.getElementById('softTv').textContent = 'T = ' + T.toFixed(2);
-				var w = scores.map(function (s) { return Math.exp(s / T); });
+				var sig = +document.getElementById('softT').value;
+				document.getElementById('softTv').textContent = '\u03C3 = ' + sig.toFixed(2);
+				var w = sPr.map(function (p2) { return Math.pow(p2, -sig); });
 				var Z = w.reduce(function (a, b) { return a + b; }, 0);
-				document.getElementById('softZ').textContent = 'Z = ' + Z.toFixed(3);
+				document.getElementById('softZ').textContent = 'Z = P\u2084(\u03C3) = ' + Z.toFixed(3);
 				sc.clearRect(0, 0, 740, 210);
 				var bw = 120, gap = 45, x0 = 65, base = 168, wmax = Math.max.apply(null, w);
-				for (var i = 0; i < scores.length; i++) {
-					var p = w[i] / Z, x = x0 + i * (bw + gap);
+				for (var i = 0; i < sPr.length; i++) {
+					var pr = w[i] / Z, x = x0 + i * (bw + gap);
 					sc.fillStyle = (w[i] === wmax) ? WINE : BLUE;
 					sc.globalAlpha = 0.9;
-					sc.fillRect(x, base - p * 135, bw, p * 135);
+					sc.fillRect(x, base - pr * 135, bw, pr * 135);
 					sc.globalAlpha = 1;
 					sc.fillStyle = MID; sc.font = '12px sans-serif'; sc.textAlign = 'center';
-					sc.fillText('score ' + scores[i].toFixed(1), x + bw / 2, base + 18);
+					sc.fillText('p = ' + sPr[i] + '   energy ' + Math.log(sPr[i]).toFixed(2), x + bw / 2, base + 18);
 					sc.fillStyle = INK;
-					sc.fillText((100 * p).toFixed(1) + '%', x + bw / 2, base - p * 135 - 6);
+					sc.fillText((100 * pr).toFixed(1) + '%', x + bw / 2, base - pr * 135 - 6);
 				}
 				sc.strokeStyle = RULE; sc.beginPath(); sc.moveTo(40, base); sc.lineTo(700, base); sc.stroke();
+				if (sig > 2.5973851271346716) {
+					sc.fillStyle = MID; sc.font = 'italic 12px sans-serif'; sc.textAlign = 'left';
+					sc.fillText("past the clock shop's wall \u03C3* = 2.597", 40, 24);
+				}
 			};
 			document.getElementById('softT').addEventListener('input', drawSoft);
 			drawSoft();
 		}
-
 		/* clock shop */
 		var clockCv = document.getElementById('animClock');
 		if (clockCv) {
@@ -555,6 +579,70 @@
 				sweeping = !sweeping; this.textContent = sweeping ? 'pause sweep' : 'resume sweep';
 			});
 			requestAnimationFrame(shorStep);
+		}
+
+		/* token flow: tokens as interacting particles on a circle */
+		var flowCv = document.getElementById('animFlow');
+		if (flowCv) {
+			var fc = flowCv.getContext('2d');
+			var FN = 24, fBeta = 2.0, fPaused = reduced, depth = 0, fTh = [];
+			var FCX = 370, FCY = 152, FR = 112;
+			var fRestart = function () {
+				fTh = []; depth = 0;
+				for (var i = 0; i < FN; i++) fTh.push(Math.random() * 2 * Math.PI);
+			};
+			fRestart();
+			var fStep = function () {
+				if (!fPaused) {
+					for (var s3 = 0; s3 < 2; s3++) {
+						var xs = fTh.map(function (a) { return [Math.cos(a), Math.sin(a)]; });
+						var nth = [];
+						for (var i = 0; i < FN; i++) {
+							var Zf = 0, fx = 0, fy = 0;
+							for (var j = 0; j < FN; j++) {
+								var wf = Math.exp(fBeta * (xs[i][0] * xs[j][0] + xs[i][1] * xs[j][1]));
+								Zf += wf; fx += wf * xs[j][0]; fy += wf * xs[j][1];
+							}
+							fx /= Zf; fy /= Zf;
+							var dotf = fx * xs[i][0] + fy * xs[i][1];
+							var tx = fx - dotf * xs[i][0], ty = fy - dotf * xs[i][1];
+							var nx = xs[i][0] + 0.1 * tx, ny = xs[i][1] + 0.1 * ty;
+							nth.push(Math.atan2(ny, nx));
+						}
+						fTh = nth; depth += 0.1;
+					}
+				}
+				fc.clearRect(0, 0, 740, 300);
+				fc.strokeStyle = RULE; fc.lineWidth = 1;
+				fc.beginPath(); fc.arc(FCX, FCY, FR, 0, 7); fc.stroke();
+				for (var i2 = 0; i2 < FN; i2++) {
+					fc.fillStyle = BLUE; fc.globalAlpha = 0.85;
+					fc.beginPath();
+					fc.arc(FCX + FR * Math.cos(fTh[i2]), FCY - FR * Math.sin(fTh[i2]), 5, 0, 7);
+					fc.fill();
+				}
+				fc.globalAlpha = 1;
+				var a2 = fTh.map(function (v) { var m = v % (2 * Math.PI); return m < 0 ? m + 2 * Math.PI : m; }).sort(function (x, y) { return x - y; });
+				var cl = 0;
+				for (var g = 0; g < a2.length; g++) {
+					var gap = (a2[(g + 1) % a2.length] - a2[g] + 2 * Math.PI) % (2 * Math.PI);
+					if (gap > 0.2) cl++;
+				}
+				cl = Math.max(1, cl);
+				document.getElementById('flowT').textContent = 'depth = ' + depth.toFixed(0);
+				document.getElementById('flowC').textContent = 'clusters: ' + cl;
+				requestAnimationFrame(fStep);
+			};
+			document.getElementById('flowB').addEventListener('input', function (e) {
+				fBeta = +e.target.value;
+				fRestart();
+				document.getElementById('flowBv').textContent = '\u03B2 = ' + fBeta.toFixed(1);
+			});
+			document.getElementById('flowR').addEventListener('click', fRestart);
+			document.getElementById('flowP').addEventListener('click', function () {
+				fPaused = !fPaused; this.textContent = fPaused ? 'play' : 'pause';
+			});
+			requestAnimationFrame(fStep);
 		}
 	})();
 	</script>
