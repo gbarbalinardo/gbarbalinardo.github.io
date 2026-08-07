@@ -203,13 +203,18 @@
 							<div class="featured-image" style="margin: 24px 0; text-align: center;">
 								<canvas id="animClock" class="anim-canvas" width="740" height="420"></canvas>
 								<div class="anim-controls">
+									<label>hands <input id="clockHands" type="text" value="2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97" style="width:min(480px,78vw); font-size:12px; padding:2px 6px; border:1px solid #DAD6CC; border-radius:3px; color:#1A1A1A;"></label>
+								</div>
+								<div class="anim-controls">
 									<label>&sigma; <input id="clockS" type="range" min="1.05" max="2.8" step="0.01" value="1.30"></label>
 									<output id="clockSv">&sigma; = 1.30</output>
+									<label>speed <input id="clockSpeed" type="range" min="1" max="25" step="1" value="6" style="width:110px;"></label>
 									<output id="clockT">t = 0.0</output>
 									<output id="clockN">conspiracies: 0</output>
+									<button id="clockR" type="button">reset</button>
 									<button id="clockP" type="button">pause</button>
 								</div>
-								<div class="anim-caption">The chain of hands, live, at &sigma; = 1.30: drag &sigma; right and the hands shorten; past 2.597 the chain can no longer reach the origin, and zeros become impossible.</div>
+								<div class="anim-caption">The chain of hands, live, at &sigma; = 1.30: drag &sigma; right and the hands shorten; past 2.597 the chain can no longer reach the origin, and zeros become impossible. Edit the hands to build your own pendulum: try just 2, 3.</div>
 								<noscript><div class="anim-caption">This figure is interactive; enable JavaScript to run it.</div></noscript>
 							</div>
 
@@ -392,32 +397,52 @@
 		/* clock shop */
 		var clockCv = document.getElementById('animClock');
 		if (clockCv) {
-			var primes = [2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97];
-			var logs = primes.map(Math.log);
 			var cc = clockCv.getContext('2d');
-			var t = 0, sigma = 1.30, trail = [], cPaused = reduced, closeN = 0, wasClose = false;
+			var trailCv = document.createElement('canvas');
+			trailCv.width = 740; trailCv.height = 420;
+			var tc = trailCv.getContext('2d');
+			var t = 0, sigma = 1.30, cPaused = reduced, closeN = 0, wasClose = false, cSpeed = 6;
 			var CX = 445, CY = 210, S = 310;
+			var hands = [2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97];
+			var logs = hands.map(Math.log), prevTip = null;
+			var tipAt = function (tt) {
+				var re = -0.25, im = 0;
+				for (var i = 0; i < hands.length; i++) {
+					var L = Math.pow(hands[i], -sigma);
+					re += L * Math.cos(-tt * logs[i]);
+					im += L * Math.sin(-tt * logs[i]);
+				}
+				return [re, im];
+			};
+			var clearTrail = function () { tc.clearRect(0, 0, 740, 420); prevTip = null; };
+			var resetClock = function () { t = 0; closeN = 0; wasClose = false; clearTrail(); };
 			var clockStep = function () {
-				if (!cPaused) t += 0.02;
+				if (!cPaused) {
+					var dt = 0.02 * cSpeed, sub = Math.max(1, Math.ceil(dt / 0.02));
+					for (var s2 = 0; s2 < sub; s2++) {
+						t += dt / sub;
+						var tp = tipAt(t);
+						var px = CX + tp[0] * S, py = CY - tp[1] * S;
+						if (prevTip) {
+							tc.strokeStyle = 'rgba(46,94,140,0.30)'; tc.lineWidth = 1;
+							tc.beginPath(); tc.moveTo(prevTip[0], prevTip[1]); tc.lineTo(px, py); tc.stroke();
+						}
+						prevTip = [px, py];
+						var rr2 = Math.hypot(tp[0], tp[1]);
+						if (rr2 < 0.035 && !wasClose) closeN++;
+						wasClose = rr2 < 0.035;
+					}
+				}
 				var re = -0.25, im = 0, pts = [[-0.25, 0]];
-				for (var i = 0; i < primes.length; i++) {
-					var L = Math.pow(primes[i], -sigma);
+				for (var i = 0; i < hands.length; i++) {
+					var L = Math.pow(hands[i], -sigma);
 					re += L * Math.cos(-t * logs[i]);
 					im += L * Math.sin(-t * logs[i]);
 					pts.push([re, im]);
 				}
-				if (!cPaused) { trail.push([re, im]); if (trail.length > 1400) trail.shift(); }
 				var r = Math.hypot(re, im);
-				if (r < 0.035 && !wasClose) closeN++;
-				wasClose = r < 0.035;
-
 				cc.clearRect(0, 0, 740, 420);
-				cc.beginPath();
-				for (var j = 0; j < trail.length; j++) {
-					var px = CX + trail[j][0] * S, py = CY - trail[j][1] * S;
-					j ? cc.lineTo(px, py) : cc.moveTo(px, py);
-				}
-				cc.strokeStyle = 'rgba(46,94,140,0.35)'; cc.lineWidth = 1.2; cc.stroke();
+				cc.drawImage(trailCv, 0, 0);
 				cc.strokeStyle = FAINT; cc.lineWidth = 1;
 				cc.beginPath(); cc.moveTo(CX - 12, CY); cc.lineTo(CX + 12, CY);
 				cc.moveTo(CX, CY - 12); cc.lineTo(CX, CY + 12); cc.stroke();
@@ -442,22 +467,35 @@
 					cc.fillText('conspiracy', CX + 22, CY - 18);
 				}
 				cc.fillStyle = MID; cc.font = '12px sans-serif';
-				cc.fillText('2-hand (longest, slowest)', 18, 24);
-				cc.fillStyle = WINE; cc.fillRect(148, 18, 14, 3);
+				cc.fillText('slowest hand', 18, 24);
+				cc.fillStyle = WINE; cc.fillRect(96, 18, 14, 3);
 				document.getElementById('clockT').textContent = 't = ' + t.toFixed(1);
 				document.getElementById('clockN').textContent = 'conspiracies: ' + closeN;
 				requestAnimationFrame(clockStep);
 			};
 			document.getElementById('clockS').addEventListener('input', function (e) {
-				sigma = +e.target.value; trail = [];
+				sigma = +e.target.value; clearTrail();
 				document.getElementById('clockSv').textContent = '\u03C3 = ' + sigma.toFixed(2);
 			});
+			document.getElementById('clockSpeed').addEventListener('input', function (e) {
+				cSpeed = +e.target.value;
+			});
+			document.getElementById('clockHands').addEventListener('change', function () {
+				var list = this.value.split(/[\s,;]+/).map(Number).filter(function (v) {
+					return isFinite(v) && v === Math.floor(v) && v >= 2;
+				});
+				if (list.length) {
+					hands = list; logs = hands.map(Math.log);
+					this.value = list.join(', ');
+					resetClock();
+				}
+			});
+			document.getElementById('clockR').addEventListener('click', resetClock);
 			document.getElementById('clockP').addEventListener('click', function () {
 				cPaused = !cPaused; this.textContent = cPaused ? 'play' : 'pause';
 			});
 			requestAnimationFrame(clockStep);
 		}
-
 		/* Shor phasors */
 		var shorCv = document.getElementById('animShor');
 		if (shorCv) {
