@@ -22,7 +22,7 @@
     <meta name="twitter:image" content="https://giuseppe.barbalinardo.com/img/note/primes/zeros.png">
 
     <meta name="keywords"
-          content="Giuseppe Barbalinardo, Prime Numbers, Prime Zeta Function, Mathematics, Statistical Mechanics, Number Theory, OEIS, Riemann Zeta">
+          content="Giuseppe Barbalinardo, Prime Numbers, Prime Zeta Function, Mathematics, Statistical Mechanics, Number Theory, OEIS, Riemann Zeta, Attention, Shor">
 
 	<!-- Favicon -->
 	<link href="img/site/favicon.ico" rel="shortcut icon"/>
@@ -34,6 +34,15 @@
 	<link rel="stylesheet" href="css/owl.carousel.css"/>
 	<link rel="stylesheet" href="css/animate.min.css"/>
 	<link rel="stylesheet" href="css/style.css"/>
+
+	<style>
+		.anim-controls { display:flex; justify-content:center; align-items:center; gap:12px; margin-top:8px; font-size:13px; color:#6B6B6B; flex-wrap:wrap; }
+		.anim-controls input[type=range] { width:200px; accent-color:#9E2B25; }
+		.anim-controls button { font-size:12px; border:1px solid #DAD6CC; background:#fff; border-radius:3px; padding:3px 10px; cursor:pointer; color:#1A1A1A; }
+		.anim-controls output { color:#1A1A1A; font-variant-numeric:tabular-nums; }
+		.anim-canvas { max-width:100%; border:1px solid #DAD6CC; border-radius:3px; background:#fff; }
+		.anim-caption { font-size:13px; color:#6B6B6B; margin-top:6px; font-style:italic; }
+	</style>
 
 	<!--[if lt IE 9]>
 	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -111,7 +120,7 @@
 						<header class="entry-header">
 							<!-- .entry-meta -->
 							<div class="entry-meta">
-								<span class="entry-date">July 18, 2026</span>
+								<span class="entry-date">August 6, 2026</span>
 								<span class="cat-links"><a href="#">Giuseppe Barbalinardo</a></span>
 							</div>
 						</header>
@@ -125,7 +134,7 @@
 								<img src="img/note/primes/riddle-setup.svg" alt="Three jugs of 8, 5, and 3 liters; the eight-liter jug is full" style="max-width: 100%; height: auto;">
 							</div>
 
-							<p>The solution is a dance of seven pours, and I will not spoil it here. What matters for this post is why a solution exists at all: five and three share no common measure. No number bigger than one divides both, and that absence is what unlocks the jugs; patient pouring can isolate any whole number of liters from zero to eight. Give him jugs of six and two instead and the wine never leaves the even numbers. An odd liter becomes unreachable, not for lack of cleverness but by law. What a pouring game can reach is decided by what its jugs fail to share.</p>
+							<p>The solution is a dance of seven pours, and I will not spoil it here. What matters for this post is why a solution exists at all: five and three share no common measure. No number bigger than one divides both, and that absence is what unlocks the jugs; patient pouring can isolate any whole number of liters from zero to eight. Give him jugs of six and two instead and the wine never leaves the even numbers. An odd liter becomes unreachable, not for lack of cleverness but by law. What a pouring game can reach is refereed by what its jugs fail to share.</p>
 
 							<p>He asked it as a puzzle about wine. I have come to hear it as a puzzle about absence: the useful thing that happens when two quantities refuse to share a measure. This post follows that absence to full strength, into the primes themselves. The lengths $\log 2, \log 3, \log 5, \ldots$ refuse more thoroughly than any jugs: stack copies of one forever and you never land exactly on a stack of copies of another. That refusal will scatter the zeros of a certain function off every line that might hold them, and then, in return, write the exact formula that counts the zeros anyway. The function lives one door down from Riemann's zeta, and the story has to start with the neighbor.</p>
 
@@ -140,7 +149,7 @@
 
 							<p>The real parts scatter from 1.2615 to 2.5679. No line holds them, vertical or otherwise, and this is not numerical fog: each position is computed to fifteen digits. Where Riemann's zeros are believed to align and cannot be proved to, these demonstrably refuse.</p>
 
-							<p>The refusal is not the story. The story is what survives it: the cloud has an exact density. By the end I will write down a formula for the number of zeros per unit height, in which every prime appears weighted by the probability that it outruns all the other primes combined, check it against the 595 dots to about one percent, and tell how a check along the way corrected a reference book by exactly one. First, where the equation comes from.</p>
+							<p>The refusal is not the story. The story is what survives it: the cloud has an exact density. By the end I will write down a formula for the number of zeros per unit height, in which every prime appears weighted by the probability that it outruns all the other primes combined, check it against the 595 dots to about one percent, watch the same machinery surface in a transformer and in Shor's algorithm, and tell how a check along the way corrected a reference book by exactly one. First, where the equation comes from.</p>
 
 							<h2 style="margin-bottom: 20px;">Where the equation comes from</h2>
 
@@ -163,7 +172,7 @@
 
 							<p style="text-align:center; margin:16px 0;">$$\zeta(s) = \prod_p \frac{1}{1 - p^{-s}},$$</p>
 
-							<p>is, symbol for symbol, the partition function of a Bose gas whose modes are the primes with energies $\log p$: the exponent of $p$ in a factorization is an occupation number, and its average, $1/(p^s - 1)$, is Planck's distribution. Bernard Julia called it the free Riemann gas in 1990, and the folklore is older still. My day job is computing heat transport in crystals, where the same product appears with $\hbar\omega$ in place of $\log p$, so this formula and I were already acquainted.</p>
+							<p>is, symbol for symbol, the partition function of a Bose gas whose modes are the primes with energies $\log p$: the exponent of $p$ in a factorization is an occupation number, and its average, $1/(p^s - 1)$, is Planck's distribution. Bernard Julia called it the free Riemann gas in 1990, and the folklore is older still. My day job, for years, was computing heat transport in crystals, where the same product appears with $\hbar\omega$ in place of $\log p$, so this formula and I were already acquainted.</p>
 
 							<!-- .featured-image -->
 							<div class="featured-image" style="margin: 24px 0; text-align: center;">
@@ -190,6 +199,20 @@
 
 							<p>Fix the real part $\sigma$ and climb, letting the height $t$ run. Each prime contributes to $P$ the term $p^{-\sigma - it}$: a hand of fixed length $p^{-\sigma}$ turning at constant speed $\log p$. Chain the hands tip to tail and anchor the chain at the point $-\tfrac14$; the free end then traces out $P - \tfrac14$. A zero is a moment when the chain folds exactly back onto the origin. Every hand in the right place at once: a conspiracy.</p>
 
+							<!-- .anim-figure: clock-shop -->
+							<div class="featured-image" style="margin: 24px 0; text-align: center;">
+								<canvas id="animClock" class="anim-canvas" width="740" height="420"></canvas>
+								<div class="anim-controls">
+									<label>&sigma; <input id="clockS" type="range" min="1.05" max="2.8" step="0.01" value="1.30"></label>
+									<output id="clockSv">&sigma; = 1.30</output>
+									<output id="clockT">t = 0.0</output>
+									<output id="clockN">conspiracies: 0</output>
+									<button id="clockP" type="button">pause</button>
+								</div>
+								<div class="anim-caption">The chain of hands, live, at &sigma; = 1.30: drag &sigma; right and the hands shorten; past 2.597 the chain can no longer reach the origin, and zeros become impossible.</div>
+								<noscript><div class="anim-caption">This figure is interactive; enable JavaScript to run it.</div></noscript>
+							</div>
+
 							<p>The 2-hand is the longest and the slowest, one revolution per $2\pi/\log 2 \approx 9.06$ units of height; the hands of the larger primes are shorter and quicker. The configuration never repeats. Repetition would need two speeds with a common measure, positive integers $a$ and $b$ with $a \log 2 = b \log 3$, say; but that equation says $2^a = 3^b$, one number with two different prime factorizations, precisely what unique factorization forbids. The theorem schoolchildren use to reduce fractions is the reason these clocks never revisit a configuration.</p>
 
 							<p>Never repeating is not lawlessness. Rotations with incommensurable speeds sweep their possible configurations evenly (Weyl's equidistribution theorem, which needs exactly this absence of rational relations), so the fraction of time the hands spend in any arrangement is a definite number. No period, and exact statistics.</p>
@@ -204,15 +227,43 @@
 								</div>
 							</div>
 
-							<h2 style="margin-bottom: 20px;">An exact formula for disorder</h2>
+							<h2 style="margin-bottom: 20px;">Three ways to read a shop of clocks</h2>
 
-							<p>Here is how clocks count zeros. Stand on the line $\operatorname{Re}\, s = \sigma$ and watch the tip while $t$ climbs. By the argument principle, the accountant of complex analysis, every net lap the tip makes around the origin registers one zero lying to the right of your line. Density of zeros equals winding rate. And winding is something a dominant hand does.</p>
+							<p>An instrument is one thing; a reader is another, and the rest of this post asks what a reader can extract from a superposition. Every reader anyone has built, as far as I can tell, is one of three: thermal, statistical, or interferometric.</p>
+
+							<p>All three run one engine. Put the data in an exponent, sum the exponentials, and let the sum sit in the denominator to normalize. An energy over a temperature in the exponent makes the sum a partition function: the thermal reading. Let time turn the exponent and average what the tip does: the statistical reading. An $i$ in the exponent makes the exponentials cancel instead of weight: interference.</p>
+
+							<h2 style="margin-bottom: 20px;">The thermal reader</h2>
+
+							<p>The first reader is the one I meet every working day, because my day job changed: I now lead an AI team, and the arithmetic we ship most is a small formula called softmax. When a transformer decides which earlier words to attend to, each candidate gets a score; softmax exponentiates every score and divides by the sum of the exponentials. That is not an imitation of the Boltzmann distribution; it is the Boltzmann distribution. The scores are energies with the sign flipped, the denominator is a partition function, and the factor $1/\sqrt{d}$ every attention layer applies to its scores sets a temperature. The engine of the previous section, shipped daily by people with no reason to care what it is called.</p>
+
+							<p>Take four scores, say 2.1, 0.3, $-1.0$, 1.2. At temperature 1 the weights are 0.618, 0.102, 0.028, 0.251: a mixture, every candidate heard. Cool to 0.2 and they sharpen to 0.989, 0, 0, 0.011. At 0.05 the list reads 1, 0, 0, 0: the top score takes everything. In the cold limit one competitor outreaches all the others combined: a dominance event. Keep the phrase; it returns twice.</p>
+
+							<!-- .anim-figure: softmax-temperature -->
+							<div class="featured-image" style="margin: 24px 0; text-align: center;">
+								<canvas id="animSoft" class="anim-canvas" width="740" height="210"></canvas>
+								<div class="anim-controls">
+									<label>temperature T <input id="softT" type="range" min="-3.9" max="1.1" step="0.01" value="0"></label>
+									<output id="softTv">T = 1.00</output>
+									<output id="softZ"></output>
+								</div>
+								<div class="anim-caption">Four fixed scores, one temperature dial: slide it down and the mixture 0.618, 0.102, 0.028, 0.251 freezes into 1, 0, 0, 0.</div>
+								<noscript><div class="anim-caption">This figure is interactive; enable JavaScript to run it.</div></noscript>
+							</div>
+
+							<p>A second overlap is quieter and stranger. A transformer stores more features than it has dimensions by superposing them: give each item a random direction as its key, add everything into one vector, decode by projection. It works, but lossily: when I packed 200 items into 64 dimensions this way, my worst decoding error was 5.6, keys interfering with keys. The integers run the same construction losslessly in one dimension: $\log n = \sum a_p \log p$ is a superposition too, and the exponents come back with error 0, because no whole-number combination of the keys $\log 2, \log 3, \log 5, \ldots$ can imitate another. G&ouml;del packed formulas into integers by this trick; the guarantee is unique factorization once more. Same construction, better basis. A parallel of structure, not substance: nothing in a transformer knows a prime.</p>
+
+							<h2 style="margin-bottom: 20px;">The statistical reader: an exact formula for disorder</h2>
+
+							<p>The second reader is classical, and the one this post was built to reach. Here is how clocks count zeros. Stand on the line $\operatorname{Re}\, s = \sigma$ and watch the tip while $t$ climbs. By the argument principle, the accountant of complex analysis, every net lap the tip makes around the origin registers one zero lying to the right of your line. Density of zeros equals winding rate. And winding is something a dominant hand does.</p>
 
 							<p>Suppose, at some moment, one hand is longer than the anchor and all the other hands combined. Then the tip has no choice: it circles the origin at that hand's speed, because the rest of the chain is too short to pull it away. While the dominance lasts, that prime drives the winding; when no hand dominates, the tip wanders without net progress. Averaged over the equidistributed phases (the mean motion theorem of Jessen and Tornehave makes the average exact), each prime drives for a definite share of the time, $q_p(\sigma)$: the probability that the $p$-hand outreaches the anchored sum of everything else. The density follows:</p>
 
 							<p style="text-align:center; margin:16px 0;">$$D(\sigma) = \frac{1}{2\pi} \sum_p (\log p)\, q_p(\sigma),$$</p>
 
 							<p>zeros per unit height to the right of the line at $\sigma$. Each prime's speed, times its share of the time, summed. Nothing else survives the averaging.</p>
+
+							<p>This is the dominance event planted in the cold softmax. The $p$-hand outreaching the anchor and every rival combined is winner-take-all retrieval among the primes: structurally, hard attention, each prime a key with payload $\log p$, and $D(\sigma)$ totals the payloads weighted by how often each key wins. Structurally, I insist; the two systems share only the shape of the event. But the shape does real work in both.</p>
 
 							<p>To be precise about what is new here: that counts of this kind grow linearly with height is classical, from the theory of almost periodic functions built by Harald Bohr's school a century ago, which also expresses the slope abstractly. The new part is the evaluation, the slope in closed form as prime-by-prime dominance probabilities, for an equation that, as far as I know, nobody had studied.</p>
 
@@ -225,13 +276,39 @@
 								<img src="img/note/primes/staircase.png" alt="The running count of zeros against height climbs along the predicted straight line" style="max-width: 100%; height: auto;">
 							</div>
 
-							<p>The spacings hold more structure than the count, and I state it carefully. Their statistics are neither the Poisson behavior of independent random points nor the random-matrix repulsion conjectured for Riemann's zeros. They show what the theory of almost periodic functions says to expect: a quasi-periodic skeleton paced by the 9.06 beat, dressed with defects where the lesser primes intervene. On 595 points this is a measurement, not a theorem, and I hold it loosely.</p>
-
 							<p>Step back and notice the trade; it is the whole point. The incommensurability of $\log 2, \log 3, \log 5, \ldots$ is what scatters the zeros: phases that never lock cannot hold a line. The same incommensurability is what counts them: phases that never lock equidistribute, equidistribution turns time shares into probabilities, and the probabilities assemble into an exact density. One fact about the integers, unique factorization, both denies the order and writes the law for the disorder.</p>
+
+							<h2 style="margin-bottom: 20px;">The interference reader</h2>
+
+							<p>The third reader reads by cancellation; it is the famous one. Shor's algorithm factors a number $N$ by refusing to hunt for factors. Pick a base $a$; the powers $a, a^2, a^3, \ldots$ reduced mod $N$ repeat with some period $r$; know $r$ and the factors follow. A classical machine extracts $r$ by trudging through the powers; a quantum machine reads it as a frequency.</p>
+
+							<p>The machine prepares a superposition of tick counts $x$ from 0 to $Q - 1$ ($Q = 2048$ in my simulation), computes $a^x \bmod N$ alongside, and applies the quantum Fourier transform, which is an interferometer. For each candidate frequency $k$ it chains arrows of equal length tip to tail, each rotated a step further at a rate set by $k$; the probability of reading $k$ is the square of the chain's reach. This is the clock shop's picture again; I did not choose the rhyme, the mathematics did. When $k$ is a multiple of $Q/r$ the arrows align and the chain runs straight; anywhere else it curls into a closed loop and the reach is nothing.</p>
+
+							<!-- .anim-figure: shor-phasors -->
+							<div class="featured-image" style="margin: 24px 0; text-align: center;">
+								<canvas id="animShor" class="anim-canvas" width="740" height="300"></canvas>
+								<div class="anim-controls">
+									<label>frequency k <input id="shorK" type="range" min="0" max="255" step="0.25" value="0"></label>
+									<output id="shorKv">k = 0</output>
+									<button id="shorP" type="button">pause sweep</button>
+								</div>
+								<div class="anim-caption">The QFT as chained arrows, the clock shop replayed: at multiples of Q/r the chain runs straight and a peak stands; elsewhere it closes and cancels. (Q = 256 in this figure for visibility; the runs quoted in the text used Q = 2048.)</div>
+								<noscript><div class="anim-caption">This figure is interactive; enable JavaScript to run it.</div></noscript>
+							</div>
+
+							<p>For $N = 15$ and $a = 7$ the period is 4, and the simulated spectrum peaks at exactly $k = 0, 512, 1024, 1536$, probability 0.25 each. A measurement lands on a peak because the aligned chain outreaches every cancelled rival. That is the dominance event a third time: the cold softmax, the dominant hand, the standing peak. One concept, three costumes.</p>
+
+							<p>From the measured $k$, continued fractions recover $r$; then the algorithm turns classical, and old: from $r = 4$, $\gcd(7^2 - 1, 15)$ and $\gcd(7^2 + 1, 15)$ deliver 3 and 5. The referee of my grandfather's pouring game, the greatest common divisor, walks back in to certify the quantum act. The machine's one job was the interference; the verdict is signed by the same arithmetic that split the wine.</p>
+
+							<p>$N = 21$ is already less kind: with base 2 its period 6 does not divide 2048, so only some peaks land on the frequency grid (sharp at 0.167 against smeared at 0.114 in my run), and my first measurement landed on a sharp peak yet returned the wrong period: its numerator shared a factor with the period, the standard failure a rerun cures; even the failed run's gcd surrendered the factor 3. The engineering is humbler: the largest numbers this algorithm has factored on physical hardware are 15 and 21, and today's machines hold on the order of a thousand physical qubits. Estimates for factoring RSA-2048 have moved from roughly twenty million noisy qubits running for eight hours (Gidney and Eker&aring;, 2019) to under a million for about a week (Gidney, 2025); machines nobody has built.</p>
+
+							<p>Three readers, and beneath all three the same absence. The lossless packing runs on it: the keys $\log p$ admit no imitations. The shares $q_p$ exist because of it: speeds with no common measure equidistribute. The peaks survive because of it: phases aligning at multiples of $Q/r$ and nowhere else. I know of no fourth way, and each of the three draws its power from the refusal that unlocked a wine jug.</p>
 
 							<h2 style="margin-bottom: 20px;">The edge of the map</h2>
 
-							<p>The census window stops at real part 1.25; the zeros do not. Sweeps below the window's edge keep finding them, drifting toward $\operatorname{Re}\, s = 1$ as the density formula says they should. And at $\operatorname{Re}\, s = 1$ the water deepens. To the left the series for $P$ diverges, and its analytic continuation carries an inheritance: every zero $\rho$ of Riemann's zeta plants a branch point at $\rho/k$, for every positive integer $k$, and the imaginary axis is a natural boundary past which no continuation exists at all. Follow the scattered zeros left and they lead toward the country governed by the aligned ones. What the level set does there I do not know. The spacing statistics are measured, not proved, and the defects missing from them are most likely hiding just left of the window; the two open ends may be one.</p>
+							<p>Back at the census, the spacings hold more structure than the count, and I state it carefully. Their statistics are neither the Poisson behavior of independent random points nor the random-matrix repulsion conjectured for Riemann's zeros. They show what the theory of almost periodic functions says to expect: a quasi-periodic skeleton paced by the 9.06 beat, dressed with defects where the lesser primes intervene. On 595 points this is a measurement, not a theorem, and I hold it loosely.</p>
+
+							<p>The census window stops at real part 1.25; the zeros do not. Sweeps below the window's edge keep finding them, drifting toward $\operatorname{Re}\, s = 1$ as the density formula says they should. And at $\operatorname{Re}\, s = 1$ the water deepens. To the left the series for $P$ diverges, and its analytic continuation carries an inheritance: every zero $\rho$ of Riemann's zeta plants a branch point at $\rho/k$, for every squarefree $k$, and the imaginary axis is a natural boundary past which no continuation exists at all. Follow the scattered zeros left and they lead toward the country governed by the aligned ones. What the level set does there I do not know. The spacing statistics are measured, not proved, and the defects missing from them are most likely hiding just left of the window; the two open ends may be one.</p>
 
 							<blockquote style="border-left: 3px solid #9E2B25; margin: 8px 0 24px 0; padding: 4px 0 4px 20px; color: #444; font-style: italic;">
 								<p style="margin:0 0 4px 0;">&ldquo;The theory works perfectly.&rdquo;</p>
@@ -242,7 +319,7 @@
 
 							<p>Checking against the numbers is where this project left its one small mark on the reference books. While tabulating the unordered histories, the ladder's middle rung, I compared my counts with the Online Encyclopedia of Integer Sequences. Entry A375120 carried a published formula; at $n = 144$ it said 42 where my code said 41. I assumed I was wrong: an encyclopedia is checked by many eyes, my program only by mine, so I went hunting for my bug. There was no bug. The trouble was the subtlety promised back at 30: 144 splits as $12 \times 12$, two identical halves, and identical halves cannot be told apart, so the formula counted one assembly twice. I sent the editors my count and ten thousand computed terms; within a day they had confirmed the error, and the corrected entry went live the following week. The full table is attached to it now.</p>
 
-							<p>That settles the two promises from the top: an exact formula for the thickness of a cloud of zeros that demonstrably will not line up, checked against a census to about one percent, and one digit in one reference book, now right. Everything else is open, beginning a hair to the left of everything I computed. A line would have been tidier. What exists instead is a scatter with a law, and an edge past which the level set is unexplored.</p>
+							<p>That settles the promises from the top: an exact formula for the thickness of a cloud of zeros that demonstrably will not line up, checked against a census to about one percent; the same engine read three ways, in a chip, a clock shop, an interferometer; and one digit in one reference book, now right. Everything else is open, beginning a hair to the left of everything I computed. A line would have been tidier. What exists instead is a scatter with a law, and an edge past which the level set is unexplored.</p>
 
 							<p><em>The paper: <a href="https://doi.org/10.5281/zenodo.21252898">Prime-Leaf Tree Theory</a>. Code and data: <a href="https://github.com/gbarbalinardo/primeleaf">github.com/gbarbalinardo/primeleaf</a>. The corrected entry: <a href="https://oeis.org/A375120">OEIS A375120</a>.</em></p>
 
@@ -275,5 +352,173 @@
 	<script src="js/jquery.nav.js"></script>
 	<script src="js/wow.min.js"></script>
 	<script src="js/scripts.js"></script>
+
+	<!-- ==== Article animations (self-contained, no dependencies) ==== -->
+	<script>
+	(function () {
+		var WINE = '#9E2B25', BLUE = '#2E5E8C', INK = '#1A1A1A', MID = '#6B6B6B', RULE = '#DAD6CC', FAINT = '#B8B4AC';
+		var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+		/* softmax temperature (four scores, matching the text exactly) */
+		var scores = [2.1, 0.3, -1.0, 1.2];
+		var softCv = document.getElementById('animSoft');
+		if (softCv) {
+			var sc = softCv.getContext('2d');
+			var drawSoft = function () {
+				var T = Math.exp(+document.getElementById('softT').value);
+				document.getElementById('softTv').textContent = 'T = ' + T.toFixed(2);
+				var w = scores.map(function (s) { return Math.exp(s / T); });
+				var Z = w.reduce(function (a, b) { return a + b; }, 0);
+				document.getElementById('softZ').textContent = 'Z = ' + Z.toFixed(3);
+				sc.clearRect(0, 0, 740, 210);
+				var bw = 120, gap = 45, x0 = 65, base = 168, wmax = Math.max.apply(null, w);
+				for (var i = 0; i < scores.length; i++) {
+					var p = w[i] / Z, x = x0 + i * (bw + gap);
+					sc.fillStyle = (w[i] === wmax) ? WINE : BLUE;
+					sc.globalAlpha = 0.9;
+					sc.fillRect(x, base - p * 135, bw, p * 135);
+					sc.globalAlpha = 1;
+					sc.fillStyle = MID; sc.font = '12px sans-serif'; sc.textAlign = 'center';
+					sc.fillText('score ' + scores[i].toFixed(1), x + bw / 2, base + 18);
+					sc.fillStyle = INK;
+					sc.fillText((100 * p).toFixed(1) + '%', x + bw / 2, base - p * 135 - 6);
+				}
+				sc.strokeStyle = RULE; sc.beginPath(); sc.moveTo(40, base); sc.lineTo(700, base); sc.stroke();
+			};
+			document.getElementById('softT').addEventListener('input', drawSoft);
+			drawSoft();
+		}
+
+		/* clock shop */
+		var clockCv = document.getElementById('animClock');
+		if (clockCv) {
+			var primes = [2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97];
+			var logs = primes.map(Math.log);
+			var cc = clockCv.getContext('2d');
+			var t = 0, sigma = 1.30, trail = [], cPaused = reduced, closeN = 0, wasClose = false;
+			var CX = 445, CY = 210, S = 310;
+			var clockStep = function () {
+				if (!cPaused) t += 0.02;
+				var re = -0.25, im = 0, pts = [[-0.25, 0]];
+				for (var i = 0; i < primes.length; i++) {
+					var L = Math.pow(primes[i], -sigma);
+					re += L * Math.cos(-t * logs[i]);
+					im += L * Math.sin(-t * logs[i]);
+					pts.push([re, im]);
+				}
+				if (!cPaused) { trail.push([re, im]); if (trail.length > 1400) trail.shift(); }
+				var r = Math.hypot(re, im);
+				if (r < 0.035 && !wasClose) closeN++;
+				wasClose = r < 0.035;
+
+				cc.clearRect(0, 0, 740, 420);
+				cc.beginPath();
+				for (var j = 0; j < trail.length; j++) {
+					var px = CX + trail[j][0] * S, py = CY - trail[j][1] * S;
+					j ? cc.lineTo(px, py) : cc.moveTo(px, py);
+				}
+				cc.strokeStyle = 'rgba(46,94,140,0.35)'; cc.lineWidth = 1.2; cc.stroke();
+				cc.strokeStyle = FAINT; cc.lineWidth = 1;
+				cc.beginPath(); cc.moveTo(CX - 12, CY); cc.lineTo(CX + 12, CY);
+				cc.moveTo(CX, CY - 12); cc.lineTo(CX, CY + 12); cc.stroke();
+				var ax = CX - 0.25 * S;
+				cc.fillStyle = INK; cc.fillRect(ax - 3, CY - 3, 6, 6);
+				cc.fillStyle = MID; cc.font = '12px sans-serif'; cc.textAlign = 'left';
+				cc.fillText('anchor \u22121\u20444', ax - 30, CY + 22);
+				cc.lineWidth = 1.6;
+				for (var i2 = 0; i2 < pts.length - 1; i2++) {
+					cc.strokeStyle = i2 === 0 ? WINE : (i2 < 4 ? INK : FAINT);
+					cc.beginPath();
+					cc.moveTo(CX + pts[i2][0] * S, CY - pts[i2][1] * S);
+					cc.lineTo(CX + pts[i2 + 1][0] * S, CY - pts[i2 + 1][1] * S);
+					cc.stroke();
+				}
+				var tx = CX + re * S, ty = CY - im * S;
+				cc.fillStyle = WINE; cc.beginPath(); cc.arc(tx, ty, 4, 0, 7); cc.fill();
+				if (r < 0.035) {
+					cc.strokeStyle = WINE; cc.lineWidth = 2;
+					cc.beginPath(); cc.arc(CX, CY, 16, 0, 7); cc.stroke();
+					cc.fillStyle = WINE; cc.font = 'bold 13px sans-serif';
+					cc.fillText('conspiracy', CX + 22, CY - 18);
+				}
+				cc.fillStyle = MID; cc.font = '12px sans-serif';
+				cc.fillText('2-hand (longest, slowest)', 18, 24);
+				cc.fillStyle = WINE; cc.fillRect(148, 18, 14, 3);
+				document.getElementById('clockT').textContent = 't = ' + t.toFixed(1);
+				document.getElementById('clockN').textContent = 'conspiracies: ' + closeN;
+				requestAnimationFrame(clockStep);
+			};
+			document.getElementById('clockS').addEventListener('input', function (e) {
+				sigma = +e.target.value; trail = [];
+				document.getElementById('clockSv').textContent = '\u03C3 = ' + sigma.toFixed(2);
+			});
+			document.getElementById('clockP').addEventListener('click', function () {
+				cPaused = !cPaused; this.textContent = cPaused ? 'play' : 'pause';
+			});
+			requestAnimationFrame(clockStep);
+		}
+
+		/* Shor phasors */
+		var shorCv = document.getElementById('animShor');
+		if (shorCv) {
+			var Q = 256, rr = 6, x0s = 1, comb = [];
+			for (var x = x0s; x < Q; x += rr) comb.push(x);
+			var spec = [];
+			for (var k = 0; k < Q; k++) {
+				var sre = 0, sim = 0;
+				for (var m = 0; m < comb.length; m++) {
+					var ph = 2 * Math.PI * comb[m] * k / Q;
+					sre += Math.cos(ph); sim += Math.sin(ph);
+				}
+				spec.push(sre * sre + sim * sim);
+			}
+			var smax = Math.max.apply(null, spec);
+			var hc = shorCv.getContext('2d');
+			var kNow = 0, sweeping = !reduced;
+			var shorStep = function () {
+				if (sweeping) { kNow += 0.22; if (kNow > 255) kNow = 0;
+					document.getElementById('shorK').value = kNow; }
+				else kNow = +document.getElementById('shorK').value;
+				document.getElementById('shorKv').textContent = 'k = ' + kNow.toFixed(1);
+				hc.clearRect(0, 0, 740, 300);
+				var px = 120, py = 218, L = 5.0, re = 0, im = 0;
+				hc.lineWidth = 1.5;
+				for (var m2 = 0; m2 < comb.length; m2++) {
+					var ph2 = 2 * Math.PI * comb[m2] * kNow / Q;
+					var nre = re + Math.cos(ph2), nim = im + Math.sin(ph2);
+					hc.strokeStyle = m2 % 2 ? BLUE : INK;
+					hc.beginPath(); hc.moveTo(px + re * L, py - im * L);
+					hc.lineTo(px + nre * L, py - nim * L); hc.stroke();
+					re = nre; im = nim;
+				}
+				var amp = Math.hypot(re, im) / comb.length;
+				hc.fillStyle = MID; hc.font = '12px sans-serif'; hc.textAlign = 'left';
+				hc.fillText('phasor chain, ' + comb.length + ' ticks', 26, 26);
+				hc.fillStyle = amp > 0.8 ? WINE : INK;
+				hc.fillText('|sum| / max = ' + amp.toFixed(2) + (amp > 0.8 ? '   ALIGNED' : ''), 26, 44);
+				var bx = 305, bw2 = 410, bh = 210, by = 262;
+				hc.strokeStyle = RULE; hc.strokeRect(bx, by - bh, bw2, bh);
+				for (var k2 = 0; k2 < Q; k2++) {
+					var h = bh * spec[k2] / smax;
+					hc.fillStyle = BLUE; hc.globalAlpha = 0.85;
+					hc.fillRect(bx + k2 * (bw2 / Q), by - h, Math.max(1, bw2 / Q - 0.4), h);
+				}
+				hc.globalAlpha = 1;
+				var mk = bx + kNow * (bw2 / Q);
+				hc.strokeStyle = WINE; hc.lineWidth = 1.5;
+				hc.beginPath(); hc.moveTo(mk, by - bh - 8); hc.lineTo(mk, by); hc.stroke();
+				hc.fillStyle = MID;
+				hc.fillText('spectrum |A(k)|\u00B2, peaks every Q/r = 256/6 = 42.7', bx, 26);
+				requestAnimationFrame(shorStep);
+			};
+			document.getElementById('shorK').addEventListener('input', function () { sweeping = false;
+				document.getElementById('shorP').textContent = 'resume sweep'; });
+			document.getElementById('shorP').addEventListener('click', function () {
+				sweeping = !sweeping; this.textContent = sweeping ? 'pause sweep' : 'resume sweep';
+			});
+			requestAnimationFrame(shorStep);
+		}
+	})();
+	</script>
 </body>
 </html>
