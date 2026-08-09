@@ -200,6 +200,14 @@
 
 							<p>Primes sit at exactly zero: seeing 7 tells you everything there is to know about how 7 was made. The 42 histories of 64 are pure nesting, its six bottles all identical, so only the tree shapes count. And 1024 hides twelve bits behind four digits. Keep an eye on 144; it is the number this story will end on.</p>
 
+							<p>And here is the whole landscape at once, every number up to 2048:</p>
+
+							<!-- .featured-image -->
+							<div class="featured-image" style="margin: 24px 0; text-align: center;">
+								<img src="img/note/primes/entropy-density.png" alt="Scatter plot of the entropy of every integer up to 2048: a floor of zeros, horizontal bands, and a ragged rising top edge" style="max-width: 100%; height: auto;">
+								<div class="anim-caption">The entropy of every integer up to 2048. Primes sit on the floor at zero bits, and so do their squares, each with a single history. Numbers sharing an exponent pattern share a height, so the plot stacks into bands. The ragged top belongs to the smoothest numbers; the champion here is 1728, the cube of 12, hiding 16.9 bits.</div>
+							</div>
+
 							<p>Physics has a machine for labels that hide bits. Give the number $n$ an energy $\log n$; the logarithm is the tool that turns multiplying into adding, so energies add exactly when sizes multiply. Then weight each microstate by the Boltzmann factor physics always writes, $e^{-\beta E}$ with $\beta = (kT)^{-1}$ the inverse temperature (Boltzmann's constant $k$ set to 1 from here on). For this gas the role of $\beta$ is played by our variable $s$: the factor is $e^{-s \log n} = n^{-s}$. Sum:</p>
 
 							<p style="text-align:center; margin:16px 0;">$$Z(s) = \sum_n \frac{g(n)}{n^s},$$</p>
