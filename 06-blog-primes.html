@@ -393,10 +393,8 @@
 							<p>The census window stops at real part 1.25; the zeros do not. Sweeps below the window's edge keep finding them, drifting toward $\operatorname{Re}\, s = 1$ as the density formula says they should. And at $\operatorname{Re}\, s = 1$ the water deepens. To the left the series for $P$ diverges, and its analytic continuation carries an inheritance: every zero $\rho$ of Riemann's zeta plants a branch point at $\rho/k$, for every squarefree $k$, and the imaginary axis is a natural boundary past which no continuation exists at all. Follow the scattered zeros left and they lead toward the country governed by the aligned ones. What the level set does there I do not know. The defects missing from the spacing statistics are most likely hiding just left of the window; the two open ends may be one.</p>
 
 							<blockquote style="border-left: 3px solid #9E2B25; margin: 8px 0 24px 0; padding: 4px 0 4px 20px; color: #444; font-style: italic;">
-								<p style="margin:0 0 4px 0;">&ldquo;The theory works perfectly.&rdquo;</p>
-								<p style="margin:0 0 4px 0;">&ldquo;Have you checked it against the numbers?&rdquo;</p>
-								<p style="margin:0;">&ldquo;Let us not ruin a perfectly good theory.&rdquo;</p>
-								<p style="margin:8px 0 0 0; font-style: normal; font-size: 13px; color: #9AA0A6;">An exchange every theorist has had, apocryphally</p>
+								<p style="margin:0;">&ldquo;If it disagrees with experiment, it is wrong.&rdquo;</p>
+								<p style="margin:8px 0 0 0; font-style: normal; font-size: 13px; color: #9AA0A6;">Richard Feynman, <em>The Character of Physical Law</em>, 1965</p>
 							</blockquote>
 
 							<p>Checking against the numbers is where this project left its one small mark on the reference books. While tabulating the unordered histories, the ladder's middle rung, I compared my counts with the Online Encyclopedia of Integer Sequences. Entry A375120 carried a published formula; at $n = 144$ it said 42 where my code said 41. I assumed I was wrong: an encyclopedia is checked by many eyes, my program only by mine, so I went hunting for my bug. There was no bug. The trouble was the subtlety promised back at 30: 144 splits as $12 \times 12$, two identical halves, and identical halves cannot be told apart, so the formula counted one assembly twice. I sent the editors my count and ten thousand computed terms; within a day they had confirmed the error, and the corrected entry went live the following week. The full table is attached to it now.</p>
