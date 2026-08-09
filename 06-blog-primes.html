@@ -308,6 +308,21 @@
 
 							<p>zeros per unit height to the right of the line at $\sigma$. Each prime's speed, times its share of the time, summed. Nothing else survives the averaging.</p>
 
+							<!-- .anim-figure: dominance-ledger -->
+							<div class="featured-image" style="margin: 24px 0; text-align: center;">
+								<canvas id="animDom" class="anim-canvas" width="740" height="420"></canvas>
+								<div class="anim-controls">
+									<label>speed <input id="domSpeed" type="range" min="1" max="25" step="1" value="8" style="width:110px;"></label>
+									<output id="domT">t = 0.0</output>
+									<output id="domL">zeros booked: 0</output>
+									<output id="domR">rate so far: &mdash;</output>
+									<button id="domReset" type="button">reset</button>
+									<button id="domP" type="button">pause</button>
+								</div>
+								<div class="anim-caption">The statistical reader at work, &sigma; = 1.30: a badge names whichever hand currently outreaches the anchor and everyone else, each completed lap of the tip books one zero, and the running time-shares drift toward the predicted q values: 62.4, 14.8, 4.2, 1.7 percent.</div>
+								<noscript><div class="anim-caption">This figure is interactive; enable JavaScript to run it.</div></noscript>
+							</div>
+
 							<p>This is the dominance event planted in the cold softmax. The $p$-hand outreaching the anchor and every rival combined is winner-take-all retrieval among the primes: structurally, hard attention, each prime a key with payload $\log p$, and $D(\sigma)$ totals the payloads weighted by how often each key wins. Structurally, I insist; the two systems share only the shape of the event. But the shape does real work in both.</p>
 
 							<p>To be precise about what is new here: that counts of this kind grow linearly with height is classical, from the theory of almost periodic functions built by Harald Bohr's school a century ago, which also expresses the slope abstractly. The new part is the evaluation, the slope in closed form as prime-by-prime dominance probabilities, for an equation that, as far as I know, nobody had studied.</p>
@@ -669,6 +684,111 @@
 			requestAnimationFrame(shorStep);
 		}
 
+
+		/* dominance ledger: winding + time shares at sigma = 1.30 */
+		var domCv = document.getElementById('animDom');
+		if (domCv) {
+			var dc = domCv.getContext('2d');
+			var dPr = [2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97];
+			var dLg = dPr.map(Math.log), dSig = 1.30;
+			var dLen = dPr.map(function (p2) { return Math.pow(p2, -dSig); });
+			var Q_TARGET = { 2: 0.624, 3: 0.148, 5: 0.042, 7: 0.017 };
+			var DCOL = { 2: WINE, 3: BLUE, 5: '#2E6E3A', 7: '#B8860B' };
+			var dT = 0, dW = 0, dPhiPrev = null, dPaused = reduced, dSpeed = 8;
+			var dShare = { 2: 0, 3: 0, 5: 0, 7: 0, none: 0 };
+			var dReset = function () {
+				dT = 0; dW = 0; dPhiPrev = null;
+				dShare = { 2: 0, 3: 0, 5: 0, 7: 0, none: 0 };
+			};
+			var dStep = function () {
+				if (!dPaused) {
+					var dt = 0.02 * dSpeed, sub = Math.max(1, Math.ceil(dt / 0.02));
+					for (var s4 = 0; s4 < sub; s4++) {
+						dT += dt / sub;
+						var re = -0.25, im = 0, terms = [];
+						for (var i = 0; i < dPr.length; i++) {
+							var tx2 = dLen[i] * Math.cos(-dT * dLg[i]);
+							var ty2 = dLen[i] * Math.sin(-dT * dLg[i]);
+							re += tx2; im += ty2; terms.push([tx2, ty2]);
+						}
+						var phi = Math.atan2(im, re);
+						if (dPhiPrev !== null) {
+							var dphi = phi - dPhiPrev;
+							if (dphi > Math.PI) dphi -= 2 * Math.PI;
+							if (dphi < -Math.PI) dphi += 2 * Math.PI;
+							dW += dphi;
+						}
+						dPhiPrev = phi;
+						var winner = 'none';
+						for (var j = 0; j < 4; j++) {
+							var rr2 = Math.hypot(re - terms[j][0], im - terms[j][1]);
+							if (dLen[j] > rr2) { winner = dPr[j]; break; }
+						}
+						dShare[winner] += dt / sub;
+					}
+				}
+				dc.clearRect(0, 0, 740, 420);
+				/* left: mini chain */
+				var CX2 = 190, CY2 = 205, S2 = 210;
+				var re2 = -0.25, im2 = 0, pts2 = [[-0.25, 0]], win2 = 'none', winIdx = -1;
+				var terms2 = [];
+				for (var i2 = 0; i2 < dPr.length; i2++) {
+					var a2 = dLen[i2] * Math.cos(-dT * dLg[i2]);
+					var b2 = dLen[i2] * Math.sin(-dT * dLg[i2]);
+					re2 += a2; im2 += b2; pts2.push([re2, im2]); terms2.push([a2, b2]);
+				}
+				for (var j2 = 0; j2 < 4; j2++) {
+					var rr3 = Math.hypot(re2 - terms2[j2][0], im2 - terms2[j2][1]);
+					if (dLen[j2] > rr3) { win2 = dPr[j2]; winIdx = j2; break; }
+				}
+				dc.strokeStyle = FAINT; dc.lineWidth = 1;
+				dc.beginPath(); dc.moveTo(CX2 - 10, CY2); dc.lineTo(CX2 + 10, CY2);
+				dc.moveTo(CX2, CY2 - 10); dc.lineTo(CX2, CY2 + 10); dc.stroke();
+				dc.lineWidth = 1.6;
+				for (var i3 = 0; i3 < pts2.length - 1; i3++) {
+					dc.strokeStyle = (i3 === winIdx) ? (DCOL[dPr[i3]] || INK) : (i3 < 4 ? INK : FAINT);
+					dc.beginPath();
+					dc.moveTo(CX2 + pts2[i3][0] * S2, CY2 - pts2[i3][1] * S2);
+					dc.lineTo(CX2 + pts2[i3 + 1][0] * S2, CY2 - pts2[i3 + 1][1] * S2);
+					dc.stroke();
+				}
+				dc.fillStyle = win2 === 'none' ? MID : DCOL[win2];
+				dc.beginPath(); dc.arc(CX2 + re2 * S2, CY2 - im2 * S2, 4, 0, 7); dc.fill();
+				dc.font = 'bold 14px sans-serif'; dc.textAlign = 'left';
+				dc.fillText(win2 === 'none' ? 'no hand dominates' : 'the ' + win2 + '-hand leads', 24, 34);
+				dc.fillStyle = MID; dc.font = '12px sans-serif';
+				dc.fillText('σ = 1.30, first 25 hands', 24, 52);
+				/* right: share meters */
+				var mx = 420, mw = 260, my0 = 70, mh = 16, gap2 = 44;
+				dc.fillText('share of time in the lead   (tick = predicted q)', mx, 44);
+				var keys = [2, 3, 5, 7];
+				for (var m3 = 0; m3 < 4; m3++) {
+					var pk = keys[m3], yb2 = my0 + m3 * gap2;
+					var frac = dT > 0 ? dShare[pk] / dT : 0;
+					dc.strokeStyle = RULE; dc.strokeRect(mx, yb2, mw, mh);
+					dc.fillStyle = DCOL[pk]; dc.globalAlpha = 0.85;
+					dc.fillRect(mx, yb2, mw * Math.min(1, frac), mh);
+					dc.globalAlpha = 1;
+					var tx3 = mx + mw * Q_TARGET[pk];
+					dc.strokeStyle = INK; dc.lineWidth = 1.5;
+					dc.beginPath(); dc.moveTo(tx3, yb2 - 4); dc.lineTo(tx3, yb2 + mh + 4); dc.stroke();
+					dc.fillStyle = INK; dc.font = '12px sans-serif';
+					dc.fillText(pk + ':  ' + (100 * frac).toFixed(1) + '%  (q = ' + (100 * Q_TARGET[pk]).toFixed(1) + ')', mx, yb2 - 7);
+				}
+				var laps = Math.floor(Math.abs(dW) / (2 * Math.PI));
+				document.getElementById('domT').textContent = 't = ' + dT.toFixed(1);
+				document.getElementById('domL').textContent = 'zeros booked: ' + laps;
+				document.getElementById('domR').textContent = dT > 30
+					? 'rate so far: ' + (laps / dT).toFixed(3) + '  (predicted 0.116)' : 'rate so far: warming up';
+				requestAnimationFrame(dStep);
+			};
+			document.getElementById('domSpeed').addEventListener('input', function (e) { dSpeed = +e.target.value; });
+			document.getElementById('domReset').addEventListener('click', dReset);
+			document.getElementById('domP').addEventListener('click', function () {
+				dPaused = !dPaused; this.textContent = dPaused ? 'play' : 'pause';
+			});
+			requestAnimationFrame(dStep);
+		}
 		/* token flow: tokens as interacting particles on a circle */
 		var flowCv = document.getElementById('animFlow');
 		if (flowCv) {
