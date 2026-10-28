@@ -37,12 +37,18 @@
 	<link rel="stylesheet" href="css/style.css"/>
 
 	<style>
-		.anim-controls { display:flex; justify-content:center; align-items:center; gap:12px; margin-top:8px; font-size:13px; color:#6B6B6B; flex-wrap:wrap; }
-		.anim-controls input[type=range] { width:200px; accent-color:#9E2B25; }
-		.anim-controls button { font-size:12px; border:1px solid #DAD6CC; background:#fff; border-radius:3px; padding:3px 10px; cursor:pointer; color:#1A1A1A; }
-		.anim-controls output { color:#1A1A1A; font-variant-numeric:tabular-nums; }
-		.anim-canvas { max-width:100%; border:1px solid #DAD6CC; border-radius:3px; background:#fff; }
-		.anim-caption { font-size:13px; color:#6B6B6B; margin-top:6px; font-style:italic; }
+		.fig { margin: 34px auto; max-width: 740px; }
+		.fig img, .fig canvas { display: block; width: 100%; height: auto; margin: 0 auto; border: 1px solid #E4E0D6; border-radius: 4px; background: #FBFAF7; }
+		.fig-cap { font-size: 13.5px; line-height: 1.55; color: #6B6B6B; margin-top: 10px; text-align: left; }
+		.fig-cap .fig-n { color: #1A1A1A; font-weight: 600; }
+		.fig-cap .fig-live { color: #9E2B25; font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin: 0 4px 0 2px; }
+		.fig-cap a { color: #6B6B6B; text-decoration: underline; }
+		.fig-cap .katex { font-size: 1.04em; }
+		.anim-controls label { font-weight: 400; margin: 0; display: inline-flex; align-items: center; gap: 6px; }
+		.anim-controls { display: flex; justify-content: center; align-items: center; gap: 12px; margin-top: 8px; font-size: 13px; color: #6B6B6B; flex-wrap: wrap; }
+		.anim-controls input[type=range] { width: 200px; accent-color: #9E2B25; }
+		.anim-controls button { font-size: 12px; border: 1px solid #DAD6CC; background: #FBFAF7; border-radius: 3px; padding: 3px 10px; cursor: pointer; color: #1A1A1A; }
+		.anim-controls output { color: #1A1A1A; font-variant-numeric: tabular-nums; }
 	</style>
 
 	<!--[if lt IE 9]>
@@ -128,25 +134,26 @@
 						<!-- .blog-content -->
 						<div class="entry-content">
 
-							<p>My grandfather had a riddle he liked to ask over wine, poured from the damigiana, the fat glass demijohn in its straw cage that lived in his cellar. You have eight liters of wine in one unmarked jug; two more unmarked jugs hold five and three. A pour stops only when the source runs empty or the target runs full, and no eyeballing. Divide the wine into four liters and four liters.</p>
+							<p>My grandfather had a riddle he liked to ask over wine, poured from the damigiana, the fat glass demijohn in its straw cage that lived in his cellar. You have eight liters of wine in one unmarked jug; two more unmarked jugs, both empty, can hold five and three. A pour stops only when the source runs empty or the target runs full, and no eyeballing. Divide the wine into four liters and four liters.</p>
 
-							<!-- .featured-image -->
-							<div class="featured-image" style="margin: 24px 0; text-align: center;">
-								<img src="img/note/primes/riddle-setup.svg" alt="Three jugs of 8, 5, and 3 liters; the eight-liter jug is full" style="max-width: 100%; height: auto;">
-							</div>
+							<figure class="fig">
+								<img src="img/note/primes/riddle.svg" alt="Three unmarked jugs of 8, 5 and 3 liters. At the start only the 8 is full; the goal is 4 liters in the 8 and 4 in the 5." width="740" height="280" loading="lazy">
+								<figcaption class="fig-cap"><span class="fig-n">Figure 1.</span> The puzzle. Three unmarked jugs can hold 8, 5, and 3 liters, and only the 8 is full. Pour from one jug into another, stopping only when the source is empty or the target is full, until the wine is split into 4 and 4.</figcaption>
+							</figure>
 
-							<p>The solution is a dance of seven pours, and I will not spoil it here. What matters for this post is why a solution exists at all: five and three share no common measure. No number bigger than one divides both, and that absence is what unlocks the jugs; patient pouring can isolate any whole number of liters from zero to eight. Give him jugs of six and two instead and the wine never leaves the even numbers. An odd liter becomes unreachable, not for lack of cleverness but by law. What a pouring game can reach is refereed by what its jugs fail to share.</p>
+							<p>The solution takes seven pours, and I will leave it to you. I care more about why a solution exists at all. Five and three have no common divisor: no whole number bigger than 1 divides both. Because of that, patient pouring can measure out any whole number of liters from 0 to 8. Give him jugs of 6 and 2 instead and the wine never leaves the even numbers. Every pour then moves an even amount, so an odd liter can never appear, however clever you are. What a pouring game can reach is decided by the greatest common divisor (gcd) of the two jugs, the largest whole number that divides both. It is 1 for 5 and 3, and 2 for 6 and 2. (A quantum factoring algorithm near the end of this post also finishes with a gcd.)</p>
 
-							<p>He asked it as a puzzle about wine. I have come to hear it as a puzzle about absence: the useful thing that happens when two quantities refuse to share a measure. This post follows that absence to full strength, into the primes themselves, where the refusal is total: multiply 2 by itself as long as you like and you will never land on a power of 3, or of 5, or of any other prime. That refusal will scatter the zeros of a certain function off every line that might hold them, and then, in return, write the exact formula that counts the zeros anyway. The function lives one door down from Riemann's zeta, and the story has to start with the neighbor.</p>
+							<p>Over the years I have come to see his wine puzzle as a puzzle about what numbers do not share. This post follows that idea to the primes, where nothing is shared at all: multiply 2 by itself as many times as you like and you will never land on a power of 3, or of 5, or of any other prime. That one fact scatters the zeros of a certain function (the points where it equals zero) so that no line can hold them, and it also gives an exact formula that counts them anyway. The function is a close relative of Riemann's zeta function, so I start with zeta.</p>
 
-							<p>The most famous unsolved problem in mathematics is a claim about alignment. It concerns a function built from the humblest series there is, one term for every integer:</p>
+							<p>The most famous unsolved problem in mathematics is a claim that certain points line up. The points belong to a function built from the simplest series there is, one term for every whole number:</p>
 
 							<p style="text-align:center; margin:16px 0;">$$\zeta(s) = \frac{1}{1^s} + \frac{1}{2^s} + \frac{1}{3^s} + \cdots$$</p>
 
-							<p>For real $s > 1$ this is just a number. Let $s$ be complex, $s = \sigma + it$, and each term acquires a direction as well as a size. The series itself only converges for $\sigma > 1$, but the function it defines extends uniquely to almost the whole plane (standard, if not obvious), and the extension has zeros: points where it vanishes exactly. A well-understood family of them sits tamely on the negative real axis; the rest are called nontrivial, and in 1859 Riemann conjectured that every nontrivial zero sits on one vertical line of the complex plane, $\operatorname{Re}\, s = \tfrac12$, the critical line. Every such zero anyone has ever computed does sit there. Nobody can prove they must. The order is overwhelming, and unexplained.</p>
+							<p>If $s$ is a real number bigger than 1, this sum adds up to a finite number; for $s = 2$ it is $\pi^2/6$. The interesting move is to let $s$ be complex. A complex number is a point in a plane. The number $s = \sigma + it$ sits $\sigma$ units to the right and $t$ units up, where $i$ is the square root of $-1$. I will call $\sigma$ the real part of $s$, written $\operatorname{Re}\, s$, and $t$ its height. With a complex $s$, each term of the sum becomes an arrow in that plane, with a length and a direction, and adding the terms means placing the arrows tip to tail. The length of an arrow is written with bars, as in $|\zeta|$.</p>
 
-							<!-- .anim-figure: zeta-line -->
-							<div class="featured-image" style="margin: 24px 0; text-align: center;">
+							<p>The sum still only makes sense when $\sigma &gt; 1$, and further left it never settles on a value. But there is a standard way to extend the function to almost the whole plane, and only one way. The extended function has zeros, points where its value is exactly zero. Some are easy: they sit at $-2, -4, -6, \ldots$ and are called trivial. The rest are called nontrivial, and in 1859 Riemann conjectured that all of them lie on a single vertical line, $\operatorname{Re}\, s = \tfrac12$, now called the critical line. Trillions of them have been computed, and every one sits on that line, yet nobody can prove that all of them must, or explain why they do.</p>
+
+							<figure class="fig">
 								<canvas id="animZeta" class="anim-canvas" width="740" height="420"></canvas>
 								<div class="anim-controls">
 									<output id="zetaT">t = 0.0</output>
@@ -154,37 +161,37 @@
 									<button id="zetaR" type="button">replay</button>
 									<button id="zetaP" type="button">pause</button>
 								</div>
-								<div class="anim-caption">Riemann's zeros landing on their line: the trace is $\tfrac12 + |\zeta(\tfrac12 + it)|$, computed from real values, and each touch of the line is a zero. Thirteen land below height 60, every one of them on the line.</div>
-								<noscript><div class="anim-caption">This figure is interactive; enable JavaScript to run it.</div></noscript>
-							</div>
+								<figcaption class="fig-cap"><span class="fig-n">Figure 2.</span> <span class="fig-live">live</span> Climbing the critical line. The curve sits to the right of the line by the size of $\zeta$ there, $|\zeta(\tfrac12 + it)|$, so it touches the line exactly where $\zeta$ is zero. The values are computed from the function itself: thirteen touches below height 60, all of them on the line.</figcaption>
+								<noscript><div class="fig-cap">This figure is interactive; enable JavaScript to run it.</div></noscript>
+							</figure>
 
-							<p>This post is about a cousin whose zeros do the opposite. Thin the series to the primes alone,</p>
+							<p>This post is about a relative whose zeros do the opposite. Keep only the prime terms of the series:</p>
 
-							<p style="text-align:center; margin:16px 0;">$$P(s) = \sum_p \frac{1}{p^s} = \frac{1}{2^s} + \frac{1}{3^s} + \frac{1}{5^s} + \cdots,$$</p>
+							<p style="text-align:center; margin:16px 0;">$$P(s) = \sum_p \frac{1}{p^s} = \frac{1}{2^s} + \frac{1}{3^s} + \frac{1}{5^s} + \cdots$$</p>
 
-							<p>the prime zeta function. Instead of asking where $P$ vanishes, ask where it lands exactly on the value $\tfrac14$: the solutions of $P(s) = \tfrac14$. They are the zeros of $P - \tfrac14$, and zeros is what I will call them. Why a quarter, of all numbers, is the business of the next section; it is not arbitrary. Below are all 595 solutions in a computational window: real part $\sigma$ between 1.25 and 2.72, height $t$ from 0.3 up to 5000.</p>
+							<p>This is the prime zeta function; the symbol $\sum_p$ means "add over every prime $p$". Instead of asking where $P$ is zero, I will ask where it equals exactly one quarter: the solutions of $P(s) = \tfrac14$. They are the zeros of $P - \tfrac14$, so they count as zeros here. The next section shows where the quarter comes from. Figure 3 is my census of them: all 595 in the region I searched, with real part $\sigma$ between 1.26 and 2.72 and height $t$ from 0.3 to 5000.</p>
 
-							<!-- .featured-image -->
-							<div class="featured-image" style="margin: 24px 0; text-align: center;">
-								<img src="img/note/primes/zeros.png" alt="The 595 solutions of P(s) equals one quarter up to height 5000: a scatter in a vertical band, on no line" style="max-width: 100%; height: auto;">
-							</div>
+							<figure class="fig">
+								<img src="img/note/primes/zeros.svg" alt="The 595 solutions of P(s) = 1/4 up to height 5000: a scattered band between real parts 1.26 and 2.57, on no line, with nothing right of 2.597." width="740" height="470" loading="lazy">
+								<figcaption class="fig-cap"><span class="fig-n">Figure 3.</span> The census: all 595 solutions of $P(s) = \tfrac14$ in the search window (real part 1.26 to 2.72, height 0.3 to 5000). They fill a band without lining up. No solution can exist to the right of the red line at 2.597, a wall called $\sigma^*$ that is explained below; to the left, the band continues past the window toward $\operatorname{Re}\, s = 1$.</figcaption>
+							</figure>
 
-							<p>The real parts scatter from 1.2615 to 2.5679. No line holds them, vertical or otherwise, and this is not numerical fog: each position is computed to fifteen digits. Where Riemann's zeros are believed to align and cannot be proved to, these demonstrably refuse.</p>
+							<p>Their real parts are spread between 1.2615 and 2.5679. No line holds them, vertical or slanted, and rounding cannot be the cause, since every position is known to fifteen digits. Riemann's zeros are only believed to line up, and these can be shown not to.</p>
 
-							<p>The refusal is not the story. The story is what survives it: the cloud has an exact density. By the end I will write down a formula for the number of zeros per unit height, in which every prime appears weighted by the probability that it outruns all the other primes combined, check it against the 595 dots to about one percent, watch the same machinery surface in a transformer and in Shor's algorithm, and tell how a check along the way corrected a reference book by exactly one. First, where the equation comes from.</p>
+							<p>Still, the cloud has an exact density. Later I write down a formula for the number of zeros per unit of height, in which every prime is weighted by how often it beats all the other primes, plus the quarter, put together, in a sense made precise there. Checked against the census, the formula predicts 594 zeros where I found 595. The same machinery also turns up inside a transformer, the architecture behind today's AI language models, and inside Shor's quantum factoring algorithm. A side check along the way fixed a number in a reference book that was off by exactly one.</p>
 
 							<h2 style="margin-bottom: 20px;">Where the equation comes from</h2>
 
-							<p>It begins with a refusal of my own: do not simplify $2 \cdot 3 \cdot 5$ to 30. Keep the assembly. Multiplication joins two numbers at a time, so building 30 from its primes means choosing an order for 2, 3, 5 (six ways) and choosing which join happens first (two ways): twelve assembly histories, all wearing the label 30.</p>
+							<p>The quarter falls out of counting trees, and the trees start with a small act of stubbornness, leaving $2 \cdot 3 \cdot 5$ unsimplified and remembering how 30 was built. Multiplication joins two numbers at a time, so building 30 from its primes takes two choices. One is the order of 2, 3, and 5 (six ways). The other is whether the first pair or the last pair is joined first, as in $(2 \cdot 3) \cdot 5$ against $2 \cdot (3 \cdot 5)$ (two ways); I will call this second choice the nesting. That makes twelve assembly histories, all with the same label, 30. Each one can be drawn as a small tree, with the primes as leaves and a fork wherever two pieces are joined.</p>
 
-							<!-- .featured-image -->
-							<div class="featured-image" style="margin: 24px 0; text-align: center;">
-								<img src="img/note/primes/twelve-histories.svg" alt="The twelve assembly histories of 30, a 2 by 6 grid of trees over the primes 2, 3, 5" style="max-width: 100%; height: auto;">
-							</div>
+							<figure class="fig">
+								<img src="img/note/primes/histories-30.svg" alt="The twelve assembly histories of 30 drawn as trees: six orders of the primes 2, 3, 5, times two ways of nesting." width="740" height="334" loading="lazy">
+								<figcaption class="fig-cap"><span class="fig-n">Figure 4.</span> The twelve ways to build 30. The columns are the six orders of the primes 2, 3, and 5; the rows give the nesting, which pair is joined first. The small numbers show what each fork has built so far, and every tree ends at 30.</figcaption>
+							</figure>
 
-							<p>Here the story crosses from wine into physics, because physics has spent a century and a half on precisely this: many hidden configurations behind one visible reading. A thermometer in this room reads one number, but countless different arrangements of the air's molecules would produce exactly that reading; the reading is called a macrostate, each hidden arrangement a microstate. The number 30 is the reading; its twelve assembly histories are the arrangements. Forget the nesting and the twelve collapse to six; forget the order instead and they collapse to three; forget everything and you hold the bare number. The forgetting is measurable: twelve histories hide behind the label, so learning which one you hold is worth $\log_2 12 \approx 3.6$ bits; call that the entropy of 30. (For a squarefree number like 30 these counts depend only on how many primes appear; repeated primes make the counting subtler, a detail that returns at the end.)</p>
+							<p>For a century and a half physicists have studied cases where many hidden arrangements sit behind one visible reading. A thermometer in this room shows one number, but countless different arrangements of the air's molecules would produce the same reading. Physicists call the reading a macrostate and each hidden arrangement a microstate, so 30 is a macrostate with twelve microstates, its histories. You can also forget part of a history. Forget the nesting and keep only the order of the primes, and the twelve collapse to six. Forget the order instead and keep only which two primes were joined first, so that $2 \cdot 3$ and $3 \cdot 2$ count as the same, and they collapse to three: 2 with 3 first, 2 with 5 first, or 3 with 5 first. Forget both and only the bare number is left. What the label hides is measured in bits, a bit being the information in one yes-or-no answer, and picking one item out of twelve takes $\log_2 12 \approx 3.6$ of them (2 raised to the power 3.6 is about 12), so 3.6 bits is the entropy of 30. For a number like 30, with no prime repeated, these counts depend only on how many primes it has; repeated primes make the counting subtler.</p>
 
-							<p>Here is that spread across a few numbers worth meeting, ordered by how much their labels hide:</p>
+							<p>Here are the same counts for a few more numbers, in order of how much their label hides:</p>
 
 							<table style="margin: 18px auto; border-collapse: collapse; font-size: 14px; font-variant-numeric: tabular-nums;">
 								<tr style="border-bottom: 1px solid #DAD6CC; color: #6B6B6B;"><th style="padding: 4px 16px; font-weight: normal; text-align: left;">number</th><th style="padding: 4px 16px; font-weight: normal; text-align: left;">built from</th><th style="padding: 4px 16px; font-weight: normal; text-align: right;">histories</th><th style="padding: 4px 16px; font-weight: normal; text-align: right;">entropy</th></tr>
@@ -198,50 +205,46 @@
 								<tr><td style="padding: 3px 16px; text-align: left;">1024</td><td style="padding: 3px 16px; text-align: left;">$2^{10}$</td><td style="padding: 3px 16px; text-align: right;">4862</td><td style="padding: 3px 16px; text-align: right;">12.2</td></tr>
 							</table>
 
-							<p>Primes sit at exactly zero: seeing 7 tells you everything there is to know about how 7 was made. The 42 histories of 64 are pure nesting, its six bottles all identical, so only the tree shapes count. And 1024 hides twelve bits behind four digits. Keep an eye on 144; it is the number this story will end on.</p>
+							<p>Primes sit at zero bits, since seeing 7 tells you everything about how 7 was made. The 42 histories of 64 are all nesting. Its six factors are all 2s, so reordering them changes nothing, and only the 42 possible tree shapes count. The number 1024 hides twelve bits behind four digits, and 144 gets a story of its own in the last section. Figure 5 plots every number up to 2048 at once.</p>
 
-							<p>And here is the whole landscape at once, every number up to 2048:</p>
+							<figure class="fig">
+								<img src="img/note/primes/entropy-landscape.svg" alt="Entropy of every whole number from 2 to 2048: a floor at zero bits, horizontal bands, and a ragged top reaching 16.9 bits at 1728." width="740" height="440" loading="lazy">
+								<figcaption class="fig-cap"><span class="fig-n">Figure 5.</span> The entropy of every whole number from 2 to 2048. Primes sit on the floor at zero bits, and so do squares of primes, which have a single history each. Numbers with the same pattern of exponents, like $12 = 2^2 \cdot 3$ and $18 = 2 \cdot 3^2$, have the same entropy, so the dots form horizontal bands. The ragged top belongs to numbers built from many small primes; the highest is 1728, the cube of 12, hiding 16.9 bits.</figcaption>
+							</figure>
 
-							<!-- .featured-image -->
-							<div class="featured-image" style="margin: 24px 0; text-align: center;">
-								<img src="img/note/primes/entropy-density.png" alt="Scatter plot of the entropy of every integer up to 2048: a floor of zeros, horizontal bands, and a ragged rising top edge" style="max-width: 100%; height: auto;">
-								<div class="anim-caption">The entropy of every integer up to 2048. Primes sit on the floor at zero bits, and so do their squares, each with a single history. Numbers sharing an exponent pattern share a height, so the plot stacks into bands. The ragged top belongs to the smoothest numbers; the champion here is 1728, the cube of 12, hiding 16.9 bits.</div>
-							</div>
-
-							<p>Physics has a machine for labels that hide bits. Give the number $n$ an energy $\log n$; the logarithm is the tool that turns multiplying into adding, so energies add exactly when sizes multiply. Then weight each microstate by the Boltzmann factor physics always writes, $e^{-\beta E}$ with $\beta = (kT)^{-1}$ the inverse temperature (Boltzmann's constant $k$ set to 1 from here on). For this gas the role of $\beta$ is played by our variable $s$: the factor is $e^{-s \log n} = n^{-s}$. Sum:</p>
+							<p>Physicists handle situations like this with a standard method built on energy. Energy is additive: put two systems together and their energies add. For numbers, the quantity that adds when you multiply is the logarithm, since $\log(2 \cdot 3) = \log 2 + \log 3$. From here on, log means the natural logarithm, the one built on the number $e \approx 2.718$, so that $e^{\log n} = n$. Give the number $n$ the energy $\log n$, and joining two trees adds their energies, as it should. Physics weights each state by its energy. In a gas at temperature $T$, a state of energy $E$ turns up with a weight proportional to $e^{-E/kT}$, where $k$ is a fixed conversion factor called Boltzmann's constant. This is the Boltzmann factor: high-energy states are rare, and rarer the colder it gets. Physicists usually write it as $e^{-\beta E}$, with $\beta = (kT)^{-1}$ the inverse temperature; I set $k$ to 1 from here on. Treat the histories of all the whole numbers as the states of a gas, and let $s$ play the role of $\beta$. The weight of a history of $n$ is then $e^{-s \log n} = n^{-s}$, which is just the term $1/n^s$ of the zeta series. Adding up the weights of all the states gives</p>
 
 							<p style="text-align:center; margin:16px 0;">$$Z(s) = \sum_n \frac{g(n)}{n^s},$$</p>
 
-							<p>where $g(n)$ counts the histories of $n$; physics calls such a sum of Boltzmann weights a partition function. Each level of forgetting keeps its own count $g$ and so gets its own partition function; stack the levels by how much they remember and you get a ladder, full histories at the top, the bare number at the bottom.</p>
+							<p>where $g(n)$ counts the histories of $n$. Physicists call this sum the partition function, and it is the most useful object in their subject, because nearly every average property of the gas can be read off from it. Each of the ways of forgetting from a moment ago counts histories differently, so each has its own $g$ and its own partition function. That gives four gases, which form a ladder: the bare numbers at the bottom, then the order alone, then the nesting alone, and the full histories at the top. (For 30 the order keeps more histories than the nesting, six against three, but repeated primes favor the nesting: for 64 the order keeps 1 and the nesting 6.)</p>
 
-							<p>At the bottom every label has exactly one state, itself: $g = 1$, and $Z$ is Riemann's zeta, the sum over every integer from the top of this post. That reading is not mine and not new. Euler's product,</p>
+							<p>At the bottom rung each number has exactly one state, itself, so $g = 1$ and $Z$ is Riemann's zeta, the very series this post opened with. Reading zeta as a gas is an old idea, and not mine. It starts from Euler's product, which rewrites the same sum as a product with one factor per prime ($\prod_p$ means "multiply over every prime $p$"):</p>
 
-							<p style="text-align:center; margin:16px 0;">$$\zeta(s) = \prod_p \frac{1}{1 - p^{-s}},$$</p>
+							<p style="text-align:center; margin:16px 0;">$$\zeta(s) = \prod_p \frac{1}{1 - p^{-s}}$$</p>
 
-							<p>is, symbol for symbol, the partition function of a Bose gas, the kind of gas light itself forms, whose modes, the notes it can ring, are the primes with energies $\log p$: the exponent of $p$ in a factorization is an occupation number, and its average, $1/(p^s - 1)$ (in physics letters $1/(e^{\beta \varepsilon} - 1)$ with $\varepsilon = \log p$), is Planck's distribution. Bernard Julia called it the free Riemann gas in 1990, and the folklore is older still. My day job, for years, was computing heat transport in crystals, where the same product appears with $\hbar\omega$ in place of $\log p$, so this formula and I were already acquainted.</p>
+							<p>Each factor is shorthand for $1 + p^{-s} + p^{-2s} + \cdots$, one term per power of $p$. Multiply all the factors out and every whole number appears once, because each is built from primes in only one way (mathematicians call this unique factorization). Read with a physicist's eyes, this product is the partition function of a Bose gas: a gas of particles that are allowed to pile up in the same state, like the particles of light. Each prime is a mode, a slot those particles can occupy, with energy $\log p$, and a number's factorization says how many particles sit in each slot. For example, $12 = 2^2 \cdot 3$ puts two particles in the 2-slot and one in the 3-slot. The average number in the $p$-slot works out to $1/(p^s - 1)$, which is Planck's famous formula for light, $1/(e^{\beta \varepsilon} - 1)$, with $\varepsilon = \log p$ and $\beta = s$, since $e^{s \log p} = p^s$. Bernard Julia named this the free Riemann gas in 1990 (free because its particles ignore each other), and Donald Spector found the same idea independently that year. For years my own job was computing how heat flows through crystals, where the same product appears with $\hbar\omega$, the energy of one quantum of vibration at frequency $\omega$, in place of $\log p$, so I knew this formula long before I met it in number theory.</p>
 
-							<p>At the fully remembered top sit the full histories. Drawn, each history is a small tree, primes at the leaves, joins at the branch points, so call this the tree gas. And every such tree is one of exactly two things. Either it is a bare prime, finished before it started, the way the whole history of 7 is just 7. Or its final step joined two smaller trees, the way every history of 30 ends by joining a history of one factor with a history of the other: 6 with 5, 2 with 15, 10 with 3. Said in one breath, a tree is a prime or a pair of trees, and the sentence translates directly with the dictionary we already have: an or adds Boltzmann weights, a join multiplies them, because energies add when trees combine. So the sentence is an equation:</p>
+							<p>At the top rung sit the full histories, and I will call that gas the tree gas. Every tree in it is one of two things. Either it is a single prime, with nothing to join, the way the whole history of 7 is just 7. Or its last step joined two smaller trees, the way every history of 30 ends by joining a history of one factor with a history of the other: 6 with 5, 2 with 15, or 10 with 3. So a tree is a prime or a pair of trees, and two rules we already have turn that sentence into an equation. When a state can be one thing or another, the weights of the alternatives add, as in any sum over states. When two trees are joined, their energies add ($\log 6 + \log 5 = \log 30$), so their weights multiply ($30^{-s} = 6^{-s} \times 5^{-s}$). Summing over all trees therefore gives the tree gas's partition function, which I write $Z_T$, with T for tree:</p>
 
 							<p style="text-align:center; margin:16px 0;">$$Z_T(s) = P(s) + Z_T(s)^2$$</p>
 
-							<p>The first term is the primes' own sum $P$; the squared term is the pairs, two smaller trees chosen independently. Solving the quadratic gives $Z_T = \tfrac12\left(1 - \sqrt{1 - 4P}\right)$, and the square root, the same one that appears in every count of binary trees since Catalan, fails exactly where $P(s) = \tfrac14$. On the real axis this happens once, at $\sigma^* = 2.5973851271346716$, where $Z_T = \tfrac12$ exactly. Every rung of the forgetting ladder has such a ceiling, an inverse limiting temperature: 1 for zeta, then 1.3994, 1.9885, 2.5974 as memory is restored.</p>
+							<p>The first term is the single primes, whose weights add up to $P$. The second is the pairs: two smaller trees, each ranging over all trees, so $Z_T$ times $Z_T$. Multiplying out $(a + b + \cdots)(a + b + \cdots)$ gives one term for every pair, first piece times second piece, which is one term for every way to join two trees. This is a quadratic equation, and its solution is $Z_T = \tfrac12\left(1 - \sqrt{1 - 4P}\right)$. A square root breaks down where the quantity under it passes through zero. Just past that point the quantity turns negative, and among ordinary numbers the root no longer exists. Here that happens where $1 - 4P = 0$, which is to say where $P(s) = \tfrac14$, and that is where the quarter comes from. (The same square root appears in the classic count of binary trees, trees whose every fork splits in two, which gives the Catalan numbers; the 42 and 4862 in the table are two of them.) On the real axis, the horizontal line where $s$ is an ordinary number, this happens once, at $s = \sigma^* = 2.5973851271346716$, where $Z_T$ equals exactly $\tfrac12$. This real solution sits at height 0, below the census window, so it is not one of the 595. For $s$ below $\sigma^*$ (a smaller inverse temperature, so a hotter gas), the sum over all trees grows without limit. So $\sigma^*$ marks the hottest the tree gas can get, its limiting temperature, written as an inverse temperature. Every rung of the ladder has such a limit: $s = 1$ for the bare numbers, 1.3994 for the order alone, 1.9885 for the nesting alone, and 2.5974 for full histories. The faster a gas's states multiply, the colder the point at which its sum gives out. Full histories multiply fastest, and the nesting eventually outgrows the order, even though for 30 it keeps fewer histories (three against six), because for numbers built from many primes the nestings far outnumber the orders.</p>
 
-							<p>In the complex plane, the condition $P(s) = \tfrac14$ marks the singular points of the tree gas. Those are the 595 dots of the opening figure. Here the literature goes quiet. Zeta's zeros are among the most studied objects in mathematics; the zeros of $P$ have a thin literature; its level sets, the curves where the function holds one fixed value, had never been studied at all, as far as I could find, and I searched hard. The first questions were the crude ones: where, and how many?</p>
+							<p>In the complex plane the same condition, $P(s) = \tfrac14$, marks the points where the tree gas's formula breaks. Among complex numbers a square root always exists, but it has two values, a plus and a minus, and where the quantity under it is zero the two meet, so the formula cannot follow one of them smoothly. Mathematicians call such a point a branch point. The 595 dots of Figure 3 are such branch points. With the equation in hand, I looked for papers. Riemann's zeros are among the most studied objects in mathematics, and the zeros of $P$ itself have a small literature, but the points where $P$ takes some other fixed value, such as $\tfrac14$, had not been studied at all, as far as I could find, and I searched hard. The first things to ask were where they are and how many there are.</p>
 
 							<h2 style="margin-bottom: 20px;">The band</h2>
 
-							<p>The right edge of the cloud is exact. On the real axis every term of $P$ points the same way, so $P(\sigma)$ is the largest $|P|$ can be anywhere on that vertical line. Past $\sigma^* = 2.597\ldots$, even perfect alignment of every term leaves $|P|$ short of $\tfrac14$; solutions there are impossible. The rightmost zero in the census sits at 2.5679, close under the wall.</p>
+							<p>The right edge of the cloud is exact, and the arrows show why. On the real axis every term of $P$ is an arrow pointing the same way, to the right, so their lengths add up fully. Anywhere else on the same vertical line, the arrows point in different directions and partly cancel. So the real value $P(\sigma)$ is the longest $P$ can ever be on that line. To the right of $\sigma^* = 2.597\ldots$, even that best case falls short of $\tfrac14$, so no solution can exist there. The rightmost zero in the census sits at 2.5679, just inside the wall.</p>
 
-							<p>The left edge is soft. Moving left the terms grow, cancellations of every depth become available, and the zeros keep coming; nothing stops them before the edge of convergence at $\operatorname{Re}\, s = 1$. The window was cut at 1.25 for practical reasons. I will come back to what lies beyond.</p>
+							<p>On the left there is no such wall. Moving left, the arrows get longer, there is more room for them to cancel in more ways, and zeros keep appearing. Nothing stops them until $\operatorname{Re}\, s = 1$, where the total length of the arrows becomes infinite. My census stops at 1.26 to keep the computation manageable, and the last section looks past it.</p>
 
-							<p>Why no line? A line is usually what a symmetry buys, and zeta has one: a functional equation that reflects the plane about the critical line, which is part of why a line there is even plausible. $P - \tfrac14$ has no such reflection, and inside the band no vertical line is distinguished from its neighbors. My first reaction to the scatter was disappointment: the object had failed to be like the famous one. It took me longer to see the trade. Zeta's order is conjectured and unexplained; this disorder is demonstrable, and it obeys a law. To find the law you need the right picture of $P$, which is a shop full of clocks.</p>
+							<p>A line of zeros usually comes from a symmetry, and zeta has one: an equation that links its values on the two sides of the critical line, as if the line were a mirror. That symmetry is part of why a line of zeros there is even plausible. $P - \tfrac14$ has no such mirror, and inside the band no vertical line is special. My first reaction to the scatter was disappointment, because the object had failed to behave like zeta. Only later did I see that the scatter, which I could show was real, still obeys a law. To find that law I needed a better picture of $P$, as a shop full of clocks.</p>
 
 							<h2 style="margin-bottom: 20px;">The clocks</h2>
 
-							<p>Fix the real part $\sigma$ and climb, letting the height $t$ run. Each prime contributes to $P$ the term $p^{-\sigma - it}$. The real part of the exponent sets a size, $p^{-\sigma}$; the imaginary part only steers, because raising a number to an imaginary power rotates instead of stretching, at a rate given by the number's logarithm. So each prime is a hand of fixed length $p^{-\sigma}$ turning at constant speed $\log p$: the energy of the mode, moonlighting as a rotation rate. There is nothing loose about that double duty: $e^{-it \log p}$ is the standard quantum phase $e^{-iEt}$ of a state with energy $\log p$, so the height $t$ is time in the quantum sense, and a zero, when it comes, is a destructive-interference event. Chain the hands tip to tail and anchor the chain at the point $-\tfrac14$; the free end then traces out $P - \tfrac14$. A zero is a moment when the chain folds exactly back onto the origin. Every hand in the right place at once: a conspiracy.</p>
+							<p>Pick a real part $\sigma$ and walk up the vertical line, letting the height $t$ grow. Each prime contributes one term to $P$, and that term splits into two factors, $p^{-\sigma - it} = p^{-\sigma} \cdot p^{-it}$. The first factor is a fixed length, $p^{-\sigma}$. The second always has length 1 and only sets a direction, and as $t$ grows that direction turns at a steady rate of $\log p$ radians per unit of height (radians measure angle; a full turn is $2\pi \approx 6.28$ radians). Euler's formula says that $e$ raised to $i$ times an angle is the point at that angle on a circle of radius 1, so $p^{-it} = e^{-it \log p}$ is a point going around that circle. Each prime is therefore the hand of a clock, with length $p^{-\sigma}$ and speed $\log p$. Chain the hands tip to tail, starting from the point $-\tfrac14$, the anchor. The free end of the chain then sits at $P - \tfrac14$, and a zero is a point where the free end lands exactly on the origin, the point 0. That takes every hand in the right place at once, a total cancellation that physicists call destructive interference. On a single vertical line it almost never happens exactly, because the zeros are scattered; a near miss means a zero lies close by, just to one side.</p>
 
-							<!-- .anim-figure: clock-shop -->
-							<div class="featured-image" style="margin: 24px 0; text-align: center;">
+							<figure class="fig">
 								<canvas id="animClock" class="anim-canvas" width="740" height="420"></canvas>
 								<div class="anim-controls">
 									<label>hands <input id="clockHands" type="text" value="2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97" style="width:min(480px,78vw); font-size:12px; padding:2px 6px; border:1px solid #DAD6CC; border-radius:3px; color:#1A1A1A;"></label>
@@ -251,68 +254,63 @@
 									<output id="clockSv">&sigma; = 1.30</output>
 									<label>speed <input id="clockSpeed" type="range" min="1" max="25" step="1" value="6" style="width:110px;"></label>
 									<output id="clockT">t = 0.0</output>
-									<output id="clockN">conspiracies: 0</output>
+									<output id="clockN">close passes: 0</output>
 									<button id="clockR" type="button">reset</button>
 									<button id="clockP" type="button">pause</button>
 								</div>
-								<div class="anim-caption">The chain of hands, live, at &sigma; = 1.30: drag &sigma; right and the hands shorten; past 2.597 the chain can no longer reach the origin, and zeros become impossible. Edit the hands to build your own pendulum: try just 2, 3.</div>
-								<noscript><div class="anim-caption">This figure is interactive; enable JavaScript to run it.</div></noscript>
-							</div>
+								<figcaption class="fig-cap"><span class="fig-n">Figure 6.</span> <span class="fig-live">live</span> The clock shop at $\sigma = 1.30$: the first 25 primes as hands, chained from the anchor at $-\tfrac14$. The counter tallies close passes, where the free end brushes the origin and a zero lies close by (a rough tally; Figure 9 counts properly, by laps). Drag $\sigma$ right and the hands shorten; past 2.597 the chain can no longer reach the origin. Edit the list of primes to build your own clock. Try just 2, 3, and watch the free end trace a path that never closes, because no power of 2 equals a power of 3.</figcaption>
+								<noscript><div class="fig-cap">This figure is interactive; enable JavaScript to run it.</div></noscript>
+							</figure>
 
-							<p>The 2-hand is the longest and the slowest, one revolution per $2\pi/\log 2 \approx 9.06$ units of height; the hands of the larger primes are shorter and quicker. The configuration never repeats. Repetition would need two speeds with a common measure, positive integers $a$ and $b$ with $a \log 2 = b \log 3$, say; but that equation says $2^a = 3^b$, a power of 2 landing exactly on a power of 3, the collision the opening promised would never happen: one number with two different prime factorizations, precisely what unique factorization forbids. The theorem schoolchildren use to reduce fractions is the reason these clocks never revisit a configuration.</p>
+							<p>The 2-hand is the longest, because 2 is the smallest prime and so $2^{-\sigma}$ is the biggest term. It is also the slowest: one full turn takes $2\pi/\log 2 \approx 9.06$ units of height. The hands of larger primes are shorter and faster. And the arrangement as a whole never repeats. For the 2-hand and the 3-hand to return together to positions they both held before, there would have to be a stretch of height in which the 2-hand makes exactly $a$ full turns and the 3-hand exactly $b$. Turns are speed times height, so $a/b = \log 2/\log 3$, that is, $a \log 3 = b \log 2$. Since $a \log 3$ is $\log 3$ added $a$ times, which is $\log 3^a$, this says $3^a = 2^b$, a power of 3 equal to a power of 2. That never happens, because a power of 2 is even and a power of 3 is odd. The same goes for any number of hands, because of unique factorization: 12 breaks into primes only one way, as $2 \cdot 2 \cdot 3$. A balance like $2 \log 2 + \log 3 = \log 5 + \log 7$ would say $2^2 \cdot 3 = 5 \cdot 7$, and no such balance ever holds. Call such a balance a whole-number relation; the logs of the primes have none, so no configuration of these clocks ever comes around twice.</p>
 
-							<p>Never repeating is not lawlessness. Rotations with incommensurable speeds sweep their possible configurations evenly (Weyl's equidistribution theorem, which needs exactly this absence of rational relations), so the fraction of time the hands spend in any arrangement is a definite number. No period, and exact statistics.</p>
+							<p>The motion does follow strict rules, though. Hands whose speeds have no whole-number relations pass arbitrarily close to every possible arrangement, and in the long run they spend their time evenly among them all. This is Weyl's equidistribution theorem, and it relies on the missing relations. So even without a period (a time after which everything repeats), the fraction of time the hands spend in any given range of arrangements is a definite number, the same as if each hand's angle were picked at random.</p>
 
-							<p>This is where my grandfather's riddle came back to mind, promoted. Five and three refusing a common divisor unlocked his jugs; the primes' rotation speeds refusing every common measure unlock something stranger, rhythms that never repeat and are never disordered. The man himself poured by eye, and no two of his pours were ever quite the same, and none was careless. He would have shrugged at the theorem and recognized the fact.</p>
+							<p>Weyl's theorem brought my grandfather's riddle back to me. His jugs worked because five and three have no common divisor. The primes' speeds have no common measure at all. Their motion never repeats, which is stranger, and yet its averages are exact. At his own table he poured by eye, against the rules of his riddle; every pour came out a little different, and he was careful with each one. He would have shrugged at Weyl's theorem, I think, and said that was just how he poured.</p>
 
-							<!-- .featured-image -->
-							<div class="featured-image" style="margin: 24px 0; text-align: center;">
-								<img src="img/note/primes/wine-hero.jpg" alt="Hands pouring red wine into a glass" style="max-width: 100%; height: auto; border-radius: 4px;">
-								<div style="font-size: 12px; color: #9AA0A6; margin-top: 6px; text-align: right;">
-									Photo: <a href="https://commons.wikimedia.org/wiki/File:Wine_being_poured_into_a_glass.jpg" style="color:#9AA0A6;">Fabio Ingrosso</a>, <a href="https://creativecommons.org/licenses/by/2.0" style="color:#9AA0A6;">CC BY 2.0</a>, via Wikimedia Commons
-								</div>
-							</div>
+							<figure class="fig">
+								<img src="img/note/primes/cellar.jpg" alt="Black-and-white photograph of a Tuscan wine cellar: large barrels and rows of straw-caged demijohns." width="740" height="400" loading="lazy">
+								<figcaption class="fig-cap"><span class="fig-n">Figure 7.</span> Damigiane (the plural of damigiana) in their straw cages, in a wine cellar in Carmignano, Tuscany. Photo: <a href="https://commons.wikimedia.org/wiki/File:Carmignano_barrels.jpg">Giovanni</a>, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, via Wikimedia Commons (cropped and toned).</figcaption>
+							</figure>
 
 							<h2 style="margin-bottom: 20px;">Three ways to read a shop of clocks</h2>
 
-							<p>An instrument is one thing; a reader is another, and the rest of this post asks what a reader can extract from a superposition, which is all the chain of hands is: many rotations added into one moving tip. Every reader anyone has built, as far as I can tell, is one of three: thermal, statistical, or interferometric. I will hand the same cast to each in turn: the primes of the running example, 2, 3, and 5, with 7 as understudy.</p>
+							<p>The chain of hands is a superposition: many rotations added into one moving tip. I know of three ways to read information out of such a sum, and the law for the zeros comes from one of them. A thermal reading runs inside every AI language model and a reading by interference inside Shor's quantum algorithm, while a statistical one will count our zeros. I start with the thermal one because it introduces the idea of one term dominating the others, which the zero count needs, and seeing the three side by side makes each easier to follow. All three work on the primes of 30, which are 2, 3, and 5, with 7 as a spare.</p>
 
-							<p>All three run one engine. Put the data in an exponent, sum the exponentials, and let the sum sit in the denominator to normalize. An energy over a temperature in the exponent makes the sum a partition function: the thermal reading. Let time turn the exponent and average what the tip does: the statistical reading. An $i$ in the exponent makes the exponentials cancel instead of weight: interference. Said with the phases in view: the thermal reader discards them, the statistical reader averages them, which works because our frequencies never share a measure, and the interference reader aligns them, which works only when they do.</p>
+							<p>All three start from the same kind of sum, with one exponential, $e$ raised to some power, per term. Only the exponent changes. If it is real, an energy times $-\beta$, the terms are Boltzmann weights with no angle in them, the sum is a partition function, and dividing each term by the sum turns the weights into probabilities. That is the thermal reading. If the exponent is imaginary, $i$ times an energy times a time, the terms are turning arrows that can cancel, as in the clock shop. The statistical reader lets them turn and averages what the sum does over a long time, which works because our speeds have no whole-number relations. The interference reader arranges for the arrows to line up at chosen moments, which works only when the speeds do have such relations. Our $P$ has both kinds at once, as the clock shop showed: a real part that sets each hand's length and an imaginary part that turns it. This is why $\sigma$ acts as a temperature dial and $t$ as a clock. The clock is a quantum one, too. In quantum mechanics a state with energy $E$ carries a phase, an arrow of length 1 written $e^{-iEt}$, that turns at rate $E$ as time $t$ passes. Each hand's speed, $\log p$, is the prime's energy from the gas picture, so $P$ is a sum of quantum phases with the height $t$ as time.</p>
 
 							<h2 style="margin-bottom: 20px;">The thermal reader</h2>
 
-							<p>The first reader is the one I meet every working day, because my day job changed: I now lead an AI team, and the arithmetic we ship most is a small formula called softmax. When a transformer decides which earlier words to attend to, each candidate gets a score. The trade's vocabulary is inherited from the search and database systems that came before: a query is what you are looking for, keys are the index entries it is scored against, values are the payloads handed back; attention is a key-value lookup gone soft, returning a weighted blend instead of a single entry. Softmax makes the weights: it exponentiates every score and divides by the sum of the exponentials. That is not an imitation of the Boltzmann distribution; it is the Boltzmann distribution. The scores are energies with the sign flipped, the denominator is a partition function, and the factor $1/\sqrt{d}$ that every attention layer applies to its scores, $d$ being the width of the vectors compared, sets a temperature: in our letters, $\beta = 1/\sqrt{d}$. The engine of the previous section, shipped daily by people with no reason to care what it is called.</p>
+							<p>The first reader is the one I meet every working day. I changed jobs and now lead an AI team, and the formula we run more than any other is called softmax. A transformer reads text as a sequence of word-pieces, and at each step it decides how much attention to pay to each earlier piece. The words used to describe attention come from the search engines and databases that came before it. A query is what you are looking for, keys are the index entries it is compared against, and values are the contents handed back. In a transformer each word-piece carries all three, each a list of numbers called a vector, and a match score multiplies a query and a key entry by entry and adds up the results. Attention is a soft version of the old lookup. Instead of returning the single best match, it returns a blend of all the values, weighted by how well each key matches the query. Softmax makes the weights. It raises $e$ to the power of each match score and divides by the sum of all the results. That is the Boltzmann distribution, term for term: the scores are energies with the sign flipped, and the denominator is a partition function. A standard attention layer also multiplies its scores by $1/\sqrt{d}$, where $d$ is the number of entries in each vector, and that factor is an inverse temperature; in our letters, $\beta = 1/\sqrt{d}$. People who run softmax every day have no reason to know it is the Boltzmann weighting that built the tree gas.</p>
 
-							<p>Now hand the engine our own cast. Let the candidates be the primes themselves, 2, 3, 5, 7, each scored by its own energy $\log p$, and let the dial be $\sigma$, the same $\sigma$ that shortens the hands in the clock shop; in physics costume $\sigma$ is $\beta$, the inverse temperature again, and stiffening it is cooling. The Boltzmann weights are then $p^{-\sigma}$, the hand lengths, and the partition function in the denominator is the beginning of $P(\sigma)$ itself, the function this whole post studies. At $\sigma = 1.30$ the shares are 47.8, 28.2, 14.5, and 9.4 percent: warm, every prime heard. Stiffen the dial to 2.8 and the 2 holds 70 percent; cool further and it takes everything, slowly, because the energy gaps between primes are gentle. One competitor outreaching all the others combined is a dominance event. Keep the phrase; it returns twice.</p>
+							<p>Feed softmax the primes 2, 3, 5, and 7 as candidates, each with its own energy $\log p$, and let the dial be $\sigma$, the $\sigma$ that also sets the hand lengths in the clock shop. Since $\sigma$ is the real part of the $s$ that played the inverse temperature, turning it up means cooling. The Boltzmann weights are then $p^{-\sigma}$, the hand lengths themselves, and the partition function in the denominator is the first four terms of $P(\sigma)$. At $\sigma = 1.30$ the shares are 47.8, 28.2, 14.5, and 9.4 percent, a warm mixture in which every prime gets a share. Turn the dial to 2.8 and the 2 holds 70 percent; keep cooling and it takes everything, slowly, because the energy gaps between primes are small. When one candidate's weight is bigger than all the others put together, I will call it dominant, and the clock shop and Shor's algorithm both have dominant terms of their own.</p>
 
-							<!-- .anim-figure: softmax-temperature -->
-							<div class="featured-image" style="margin: 24px 0; text-align: center;">
+							<figure class="fig">
 								<canvas id="animSoft" class="anim-canvas" width="740" height="210"></canvas>
 								<div class="anim-controls">
 									<label>&sigma; <input id="softT" type="range" min="1.05" max="8" step="0.01" value="1.30"></label>
 									<output id="softTv">&sigma; = 1.30</output>
 									<output id="softZ"></output>
 								</div>
-								<div class="anim-caption">One dial, two machines: this &sigma; is the clock shop's &sigma;, and the denominator is the first four terms of P(&sigma;). Warm, every prime is heard; cold, the 2 takes everything.</div>
-								<noscript><div class="anim-caption">This figure is interactive; enable JavaScript to run it.</div></noscript>
-							</div>
+								<figcaption class="fig-cap"><span class="fig-n">Figure 8.</span> <span class="fig-live">live</span> Softmax on the primes. This $\sigma$ is the clock shop's $\sigma$, and the denominator $Z$ is the first four terms of $P(\sigma)$. Warm, every prime gets a share; as it cools, the 2 takes everything.</figcaption>
+								<noscript><div class="fig-cap">This figure is interactive; enable JavaScript to run it.</div></noscript>
+							</figure>
 
-							<p>The identity runs one level deeper, and this is the densest paragraph in the post: take it on faith if you like, because every claim in it checks numerically to six decimals. In thermodynamics, the occupation of a level is the derivative of the free energy, $F = -\tfrac{1}{\beta} \log Z$, with respect to that level's energy. Both machines obey it: on the arithmetic side $\beta$ is $s$, so the free energy is $-\tfrac{1}{s}\log \zeta$, and its derivative is Planck's occupation $1/(p^s - 1)$; on the transformer side the same derivative of logsumexp, the logarithm of that same sum of exponentials, a free energy with its sign flipped, is exactly the vector of attention weights. And the one honest asymmetry is worth naming: a transformer re-tunes its spectrum for every query and every training step, while arithmetic's has been quenched at $\log p$ from the beginning.</p>
+							<p>The match also holds for rates of change. This is the densest paragraph in the post, and you can skim it; every claim in it checks numerically to six decimal places. Physics packs a whole gas into one number, the free energy $F = -\tfrac{1}{\beta} \log Z$. Nudge the energy of one slot, and the rate at which $F$ changes is the average number of particles in that slot. For the integers $\beta$ is $s$, so the free energy is $-\tfrac{1}{s} \log \zeta$, and nudging the energy of the prime $p$ returns Planck's $1/(p^s - 1)$ from earlier. A transformer works the same way. Its counterpart of the free energy is logsumexp, the logarithm of the sum in the softmax denominator, which is a free energy with the sign flipped, and nudging one score changes it at a rate equal to that candidate's attention weight. The two answers look different because a softmax spreads one unit of attention over its candidates, while the Riemann gas can pile many particles into each slot, but the rule that turns a free energy into how full each slot is on average is the same. The other real difference is that a transformer re-tunes its energies for every query and every step of training, whereas the energies of arithmetic, $\log p$, never change.</p>
 
-							<p>A second overlap is quieter and stranger. A transformer stores more features than it has dimensions by superposing them: give each item a random direction as its key, add everything into one vector, decode by projection. It works, but lossily: when I packed 200 items into 64 dimensions this way, my worst decoding error was 5.6, keys interfering with keys. The integers run the same construction losslessly in one dimension: $\log n = \sum a_p \log p$ is a superposition too, and the exponents come back with error 0, because no whole-number combination of the keys $\log 2, \log 3, \log 5, \ldots$ can imitate another. G&ouml;del packed formulas into integers by this trick; the guarantee is unique factorization once more. Same construction, better basis. A parallel of structure, not substance: nothing in a transformer knows a prime.</p>
+							<p>A second overlap between transformers and the primes has to do with superposition, and I find it stranger. Transformers appear to store more features (separate facts they track) than their vectors have entries, by superposing them: give each item a random direction as its key, add everything into one vector, and read each item back by measuring how far the sum extends along its key. It works, though noisily. When I packed 200 counts, each 0, 1, or 2, into 64 numbers this way, the counts came back off by about 2 on average and by as much as 6, and even after snapping each one to the nearest of 0, 1, or 2, fewer than half came back right, because the keys interfere with each other. The integers run the same construction inside a single number, with no noise at all. Taking the log of a factorization, as in $\log 12 = 2 \log 2 + 1 \log 3$, or in general $\log n = \sum a_p \log p$ with $a_p$ the exponent of $p$ in $n$, is a superposition too, with the exponents as the counts and $\log 2, \log 3, \log 5, \ldots$ as the keys. The counts come back exactly because of unique factorization: no whole-number combination of these keys can imitate another. Gödel used this trick to turn formulas into single numbers: the list (1, 2, 4, 6) becomes $2^1 \cdot 3^2 \cdot 5^4 \cdot 7^6 = 1{,}323{,}551{,}250$, and factoring gets the list back. The integers do the transformer's trick with keys that never interfere, but they share only its structure: no prime appears inside a transformer.</p>
 
 							<h2 style="margin-bottom: 20px;">The statistical reader: an exact formula for disorder</h2>
 
-							<p>The second reader is classical, and the one this post was built to reach. Here is how clocks count zeros. Stand on the line $\operatorname{Re}\, s = \sigma$ and watch the tip while $t$ climbs. By the argument principle, the accountant of complex analysis, every net lap the tip makes around the origin registers one zero lying to the right of your line. Density of zeros equals winding rate. And winding is something a dominant hand does.</p>
+							<p>The second reader uses the clocks to count zeros, and it leads to the main result of this post. Stand on the vertical line $\operatorname{Re}\, s = \sigma$ and watch the free end of the chain while $t$ climbs. The bookkeeping uses an old rule of complex analysis, the argument principle. Every complete lap the free end makes around the origin, counted with its direction, means one zero lying to the right of your line. The rule compares your line with one far to the right, past the wall, where the hands are so short that the free end just jiggles near the anchor and never circles the origin; every zero between the two lines shows up as one extra lap on yours. Each zero adds one lap, since near it the direction of the free end from the origin copies your direction from the zero, turned by a fixed angle, so one walk around the zero turns the free end once around the origin. Walking up your line and back down the far one is a loop around every zero between them, and the far line adds no laps. So counting zeros per unit of height becomes counting laps per unit of height, and laps come from dominant hands.</p>
 
-							<p>Suppose, at some moment, one hand is longer than the anchor and all the other hands combined. Then the tip has no choice: it circles the origin at that hand's speed, because the rest of the chain is too short to pull it away. While the dominance lasts, that prime drives the winding; when no hand dominates, the tip wanders without net progress. Averaged over the equidistributed phases (the mean motion theorem of Jessen and Tornehave makes the average exact), each prime drives for a definite share of the time, $q_p(\sigma)$: the probability that the $p$-hand outreaches the anchored sum of everything else. The density follows:</p>
+							<p>Arrows can be added in any order, so move one hand to the end of the chain. Suppose that at some moment it is longer than the distance from the origin to where it is now attached, that is, longer than the arrow you get by adding the anchor and all the other hands, cancellations included. Then, as the hand turns, its tip sweeps a circle around the origin, and while this lasts the free end circles the origin at that hand's speed. The hand outreaches the anchor and all the other hands combined, so it is dominant in the softmax's sense, with two changes: the anchor joins the others, and the others combine as arrows and partly cancel, which helps a long hand win. A dominant hand is a winner-take-all choice among the primes, what machine-learning people call hard attention. Each hand adds laps, on average, only while it dominates. Two hands can dominate at once, and sometimes none does; the formula simply adds up each hand's share. Call the fraction of time the $p$-hand dominates $q_p(\sigma)$. Because the hands' angles behave like random ones (Weyl again, made exact for infinitely many hands by a theorem of Jessen and Tornehave), this fraction is also a probability: the chance that the $p$-hand outreaches everything else when every angle is picked at random. The density follows:</p>
 
 							<p style="text-align:center; margin:16px 0;">$$D(\sigma) = \frac{1}{2\pi} \sum_p (\log p)\, q_p(\sigma),$$</p>
 
-							<p>zeros per unit height to the right of the line at $\sigma$. Each prime's speed, times its share of the time, summed. Nothing else survives the averaging.</p>
+							<p>the number of zeros per unit of height to the right of the line at $\sigma$. Read it term by term: each prime's speed in laps per unit of height, $\log p / 2\pi$, times the fraction of time it is in charge, added up over all primes, with nothing else left after averaging. In attention language, each prime is a key whose value is its speed $\log p$, and $D(\sigma)$ adds up the values, weighted by how often each key wins, though the match is only in form.</p>
 
-							<!-- .anim-figure: dominance-ledger -->
-							<div class="featured-image" style="margin: 24px 0; text-align: center;">
+							<figure class="fig">
 								<canvas id="animDom" class="anim-canvas" width="740" height="420"></canvas>
 								<div class="anim-controls">
 									<label>speed <input id="domSpeed" type="range" min="1" max="25" step="1" value="8" style="width:110px;"></label>
@@ -322,57 +320,63 @@
 									<button id="domReset" type="button">reset</button>
 									<button id="domP" type="button">pause</button>
 								</div>
-								<div class="anim-caption">The statistical reader at work, &sigma; = 1.30: a badge names whichever hand currently outreaches the anchor and everyone else, each completed lap of the tip books one zero, and the running time-shares drift toward the predicted q values: 62.4, 14.8, 4.2, 1.7 percent.</div>
-								<noscript><div class="anim-caption">This figure is interactive; enable JavaScript to run it.</div></noscript>
-							</div>
+								<figcaption class="fig-cap"><span class="fig-n">Figure 9.</span> <span class="fig-live">live</span> The statistical reader at work, at $\sigma = 1.30$. The headline names the hands that currently dominate (sometimes none, sometimes two), each completed lap of the free end books one zero, and the bars show each prime's running share of time in charge, drifting toward the predicted values marked by the ticks: 62.4, 14.8, 4.2, and 1.7 percent.</figcaption>
+								<noscript><div class="fig-cap">This figure is interactive; enable JavaScript to run it.</div></noscript>
+							</figure>
 
-							<p>This is the dominance event planted in the cold softmax. The $p$-hand outreaching the anchor and every rival combined is winner-take-all retrieval among the primes: structurally, hard attention, each prime a key with payload $\log p$, and $D(\sigma)$ totals the payloads weighted by how often each key wins. Structurally, I insist; the two systems share only the shape of the event. But the shape does real work in both.</p>
+							<p>At $\sigma = 1.30$ the tug-of-war comes out $q_2 = 0.624$, $q_3 = 0.148$, $q_5 = 0.042$, $q_7 = 0.017$, so the 2-hand rules about five eighths of the time, and even the 7-hand gets its turns. Compare the softmax at the same $\sigma$, which gave the 2 only 47.8 percent of the weight, not enough to dominate (with every prime in the denominator, its share would be only 34 percent). In the clock shop the other hands partly cancel as they turn, so the long 2-hand often outreaches what is left of them, while a short hand wins only when everything else, the 2-hand included, nearly cancels. The 3 gets 14.8 percent of the time, against 28.2 percent of the softmax weight.</p>
 
-							<p>To be precise about what is new here: that counts of this kind grow linearly with height is classical, from the theory of almost periodic functions built by Harald Bohr's school a century ago, which also expresses the slope abstractly. The new part is the evaluation, the slope in closed form as prime-by-prime dominance probabilities, for an equation that, as far as I know, nobody had studied.</p>
+							<p>The naive guess is that the 2-hand is always in charge, so the free end laps once per turn of the 2-hand, one zero every 9.06 units of height, a density of $\log 2 / 2\pi \approx 0.110$. The true density at $\sigma = 1.30$ is $D = 0.1162$, five percent more. The difference comes from turns stolen by the shorter hands, which belong to faster clocks, so each brief win of theirs winds in extra laps. Slide the line left and more primes grow long enough to compete: $D(1.10) = 0.1314$, $D(1.05) = 0.1372$, and at $\operatorname{Re}\, s = 1$, the left edge of the band, $D(1) = 0.1436$, about one zero every seven units of height.</p>
 
-							<p>At $\sigma = 1.30$ the tug-of-war goes $q_2 = 0.624$, $q_3 = 0.148$, $q_5 = 0.042$, $q_7 = 0.017$: the 2-hand rules five eighths of the time, and even the 7-hand takes its turns. The thermal reader gave the same four a static contest a section ago, 47.8 percent for the 2 at this same $\sigma$; dynamics is harsher on the small hands, because dominance demands outreaching everyone at once. The naive count stops at the biggest hand: if the 2-hand always dominated, the tip would lap once per revolution, one zero per 9.06 of height, a density of $\log 2 / 2\pi \approx 0.110$. The truth at $\sigma = 1.30$ is $D = 0.1162$, five percent more. The difference is stolen turns: the smaller hands are faster, and each brief win winds in extra zeros. Slide the line left and more primes grow long enough to compete: $D(1.10) = 0.1314$, $D(1.05) = 0.1372$, and at the edge of convergence $D(1) = 0.1436$, one zero for every seven units of height in the entire half-plane. (The densities come from Monte Carlo averages over the phases; four independent seeds pin $D(1)$ with a standard deviation of 0.0001.)</p>
+							<p>The formula is exact; only the chances $q_p$ inside it are estimated, the way you estimate the odds of a dice game by rolling many times. Here that means setting every hand to a random angle a million times or so and counting how often each one dominates; independent runs agree on $D(1)$ to within about half a percent.</p>
 
-							<p>Then the check, which is the part I trust most. The census: 595 zeros at heights between 0.3 and 5000, each located to fifteen digits. The formula predicts the count in the window to about one percent. The staircase in the figure is the running count against height, climbing at the computed slope, and the mean spacing comes out to 8.39, a shade under the 9.06 beat of the 2-hand: the metronome, quickened by theft.</p>
+							<p>Then the check, the part I trust most. The census found 595 zeros between heights 0.3 and 5000. Since $D(\sigma)$ counts every zero to the right of the line at $\sigma$, and the census covers everything from 1.26 to past the wall, the number to compare is $D(1.26) = 0.1188$, which predicts $0.1188 \times 5000 \approx 594$ zeros. Figure 10 plots the running count against height, and the census climbs right along the predicted line. The average gap between consecutive zeros is 8.39 units of height, a little less than the 2-hand's 9.06 beat, because of those stolen turns.</p>
 
-							<!-- .featured-image -->
-							<div class="featured-image" style="margin: 24px 0; text-align: center;">
-								<img src="img/note/primes/staircase.png" alt="The running count of zeros against height climbs along the predicted straight line" style="max-width: 100%; height: auto;">
-							</div>
+							<figure class="fig">
+								<img src="img/note/primes/staircase.svg" alt="Running count of zeros against height: the census climbs along the predicted line to 595 at height 5000, against 594 predicted." width="740" height="450" loading="lazy">
+								<figcaption class="fig-cap"><span class="fig-n">Figure 10.</span> The census against the formula. The blue staircase counts the zeros found up to each height; the red line is the prediction, 0.1188 zeros per unit of height; the gray line is the naive guess of one zero per turn of the 2-hand. At height 5000 the census has 595 and the formula 594.</figcaption>
+							</figure>
 
-							<p>Step back and notice the trade; it is the whole point. The incommensurability of $\log 2, \log 3, \log 5, \ldots$ is what scatters the zeros: phases that never lock cannot hold a line. The same incommensurability is what counts them: phases that never lock equidistribute, equidistribution turns time shares into probabilities, and the probabilities assemble into an exact density. One fact about the integers, unique factorization, both denies the order and writes the law for the disorder.</p>
+							<p>That counts like this grow in proportion to height has long been known. It comes from the theory of almost periodic functions, sums of rotations that never quite repeat, like our clock shop, which Harald Bohr's school built a century ago, and that theory also describes the slope, how fast the count climbs with height, in abstract terms. What is new is the evaluation, the slope written as an explicit formula built from prime-by-prime dominance probabilities, for an equation that, to my knowledge, nobody had studied.</p>
+
+							<p>The part I care about most is that the scatter and its law come from the same fact: each whole number has only one prime factorization. That fact leaves no whole-number relations between $\log 2, \log 3, \log 5, \ldots$, so the hands never fall into step and never repeat an arrangement. Each zero is made by a fresh arrangement and lands at its own real part, and with no mirror like zeta's to pin them, nothing lines them up. The missing relations are also why the zeros can be counted. Hands that never fall into step spread their time evenly, which turns each hand's share of time into a probability, and those probabilities add up to an exact density.</p>
 
 							<h2 style="margin-bottom: 20px;">The interference reader</h2>
 
-							<p>The third reader reads by cancellation; it is the famous one. Shor's algorithm factors a number $N$ by refusing to hunt for factors. Pick a base $a$; the powers $a, a^2, a^3, \ldots$ reduced mod $N$ (keep only the remainder after dividing by $N$) repeat with some period $r$; know $r$ and the factors follow. A classical machine extracts $r$ by trudging through the powers; a quantum machine reads it as a frequency.</p>
+							<p>The third reader reads by cancellation, and it is the best known of the three. Shor's algorithm is the quantum algorithm that, on a large enough quantum computer, would break much of the encryption that protects the internet. It factors a number $N$ without ever searching for factors. Pick a base $a$ and list its powers $a, a^2, a^3, \ldots$, keeping only the remainder after dividing by $N$ (this is arithmetic mod $N$). The list repeats with some period $r$, and once you know $r$ the factors usually follow. An ordinary computer finds $r$ by grinding through the powers one by one; a quantum computer reads it off as a frequency.</p>
 
-							<p>The machine prepares a superposition of tick counts $x$ from 0 to $Q - 1$ ($Q = 2048$ in my simulation), computes $a^x \bmod N$ alongside, and applies the quantum Fourier transform, which is an interferometer. One detail makes everything work: reading the mod-$N$ register first collapses the ticks to those sharing a single remainder, and those survivors are spaced exactly $r$ apart, a comb. For each candidate frequency $k$ the transform chains one arrow per surviving tick, equal lengths tip to tail, each rotated a step further at a rate set by $k$; the probability of reading $k$ is the square of the chain's reach. This is the clock shop's picture again; I did not choose the rhyme, the mathematics did. When $k$ is a multiple of $Q/r$ the arrows align and the chain runs straight; anywhere else it curls into a closed loop and the reach is nothing.</p>
+							<p>Take $N = 15$, which is 30 with its 2 poured off. An even number gives up its factor 2 without any quantum machinery, so Shor's algorithm only ever has to deal with odd ones. Choose $a = 2$. Its powers are 2, 4, 8, 16, and 16 leaves remainder 1 when divided by 15, so the list starts over: 2, 4, 8, 1, 2, 4, 8, 1, with period 4.</p>
 
-							<!-- .anim-figure: shor-phasors -->
-							<div class="featured-image" style="margin: 24px 0; text-align: center;">
+							<p>The machine prepares a superposition of every exponent $x$ from 0 to $Q - 1$ at once (think of each exponent as one tick of a clock), where $Q$ is how many ticks it holds, chosen much larger than the period ($Q = 2048$ in my simulation). It computes $2^x \bmod 15$ for all of them together and then measures that remainder. Suppose it comes out 2. Then only the ticks whose power leaves remainder 2 survive, $x = 1, 5, 9, \ldots$, and because the powers repeat every $r$ steps, the survivors are spaced exactly $r$ apart, a comb with a tooth every $r$ ticks.</p>
+
+							<p>Next comes the quantum Fourier transform, which works like an interferometer, an instrument that measures by making waves add up or cancel. For each candidate frequency $k$, a whole number from 0 to $Q - 1$ and a possible outcome of the final measurement, it chains one arrow per tooth, all the same length, tip to tail, each turned a little further than the last: frequency $k$ turns the arrow $k/Q$ of a full turn per tick, so from one tooth to the next, $r$ ticks later, it has turned $kr/Q$ of a full turn. The probability of measuring $k$ is the squared length of the finished chain (quantum mechanics turns lengths into probabilities by squaring them), and the list of these probabilities over all $k$ is called the spectrum. The Fourier transform is built this way, so the clock shop appears again without my arranging it. When $k$ is a multiple of $Q/r$, that is a whole number of full turns, so the arrows all point the same way and the chain runs straight. Anywhere else the chain curls up on itself, and its length is nothing.</p>
+
+							<figure class="fig">
 								<canvas id="animShor" class="anim-canvas" width="740" height="300"></canvas>
 								<div class="anim-controls">
 									<label>frequency k <input id="shorK" type="range" min="0" max="255" step="0.25" value="0"></label>
 									<output id="shorKv">k = 0</output>
 									<button id="shorP" type="button">pause sweep</button>
 								</div>
-								<div class="anim-caption">The QFT as chained arrows, the clock shop replayed: at multiples of Q/r the chain runs straight and a peak stands; elsewhere it closes and cancels. (Here r = 4, the period of the N = 15 example, and Q = 256 for visibility; the runs quoted in the text used Q = 2048.)</div>
-								<noscript><div class="anim-caption">This figure is interactive; enable JavaScript to run it.</div></noscript>
-							</div>
+								<figcaption class="fig-cap"><span class="fig-n">Figure 11.</span> <span class="fig-live">live</span> The quantum Fourier transform as a chain of arrows, the clock shop replayed. At multiples of $Q/r$ the arrows line up, the chain runs straight, and a peak stands in the spectrum; elsewhere the chain closes up and cancels. Here $r = 4$, the period of the $N = 15$ example, with $Q = 256$ for visibility; the runs in the text used $Q = 2048$.</figcaption>
+								<noscript><div class="fig-cap">This figure is interactive; enable JavaScript to run it.</div></noscript>
+							</figure>
 
-							<p>Take $N = 15$, which is 30 with its 2 poured off; an even number surrenders its 2 before any quantum machinery is needed. Choose the 2-clock as the base: the powers 2, 4, 8, 1 mod 15 repeat with period 4, and the simulated spectrum peaks at exactly $k = 0, 512, 1024, 1536$, probability 0.25 each. A measurement lands on a peak because the aligned chain outreaches every cancelled rival. That is the dominance event a third time: the cold softmax, the dominant hand, the standing peak. One concept, three costumes.</p>
+							<p>In my simulation the spectrum has peaks at exactly $k = 0, 512, 1024, 1536$, the multiples of $2048/4$, each with probability 0.25. A measurement lands on a peak because the straight chain is far longer than any curled-up one, so one term outweighs the rest, as in the cold softmax and the dominant hand.</p>
 
-							<p>From a lucky measured $k$ ($k = 0$ says nothing, and reruns are cheap), continued fractions recover $r$; then the algorithm turns classical, and old: from $r = 4$, the greatest common divisors $\gcd(2^2 - 1, 15)$ and $\gcd(2^2 + 1, 15)$ deliver 3 and 5: the cast of 30, reassembled by interference. The referee of my grandfather's pouring game walks back in to certify the quantum act. The machine's one job was the interference; the verdict is signed by the same arithmetic that split the wine.</p>
+							<p>Peaks sit at multiples of $Q/r$, so $k/Q$ is a fraction with $r$ underneath, and a lucky $k$ gives the period by reducing a fraction: $k = 512$ gives $512/2048 = 1/4$, and the 4 underneath is the period. ($k = 0$ says nothing, $k = 1024$ gives $1/2$ and too small a period, for a reason the next example shows, and reruns are cheap.) From there the rest is ordinary arithmetic, and old. A period of 4 means that $2^4$ leaves remainder 1, so 15 divides $2^4 - 1$. That splits by the school rule $y^2 - 1 = (y - 1)(y + 1)$, with $y = 2^2$, as $(2^2 - 1)(2^2 + 1) = 3 \times 5$, and each piece shares a factor with 15. For big numbers the pieces are huge and share only part of themselves with $N$, and the greatest common divisor, which Euclid's ancient method finds in a few quick steps, pulls that part out. Here $\gcd(3, 15) = 3$ and $\gcd(5, 15) = 5$. So two primes of 30 turn up again, from interference and then a gcd, the rule that also decided my grandfather's pouring game. The quantum machine did only the interference.</p>
 
-							<p>$N = 21$ is already less kind: with base 2 its period 6 does not divide 2048, so only some peaks land on the frequency grid (sharp at 0.167 against smeared at 0.114 in my run), and my first measurement landed on a sharp peak yet returned the wrong period: the measured frequency, read as a fraction of $Q$, had a numerator sharing a factor with the period, the standard failure a rerun cures; even the failed run's gcd surrendered the factor 3. The engineering is humbler: the largest numbers this algorithm has factored on physical hardware are 15 and 21, and today's machines hold on the order of a thousand physical qubits. Estimates for factoring RSA-2048 (the 2048-bit keys that guard much of the internet) have moved from roughly twenty million noisy qubits running for eight hours (Gidney and Eker&aring;, 2019) to under a million for about a week (Gidney, 2025); machines nobody has built.</p>
+							<p>$N = 21$ is less kind. With $a = 2$ the period is 6, so the peaks belong at multiples of $2048/6 \approx 341.3$; only 0 and 1024 are whole numbers, and the rest fall between possible values of $k$. In my run the two peaks at whole numbers were sharp, with probability 0.167, and the ones in between were smeared down to 0.114. My first measurement landed on the sharp peak at $k = 1024$ and still gave the wrong period. The fraction $1024/2048$ reduces to $1/2$, which is really $3/6$ in disguise: the 3 on top shares a factor with the period 6, so the fraction reduces too far and reports a period of 2. This is the standard failure, and a rerun fixes it. Even the failed run turned up the factor 3, since a claimed period of 2 makes $y = 2^1$ in the school rule, and $y + 1 = 3$, with $\gcd(3, 21) = 3$.</p>
 
-							<p>Three readers, and beneath all three the same absence. The lossless packing runs on it: the keys $\log p$ admit no imitations. The shares $q_p$ exist because of it: speeds with no common measure equidistribute. The peaks survive because of it: phases aligning at multiples of $Q/r$ and nowhere else. I know of no fourth way, and each of the three draws its power from the refusal that unlocked a wine jug.</p>
+							<p>Everything above ran in simulation on an ordinary computer. Real quantum hardware is far behind: Shor's algorithm has factored only 15 and 21 on it, and those runs used simplified circuits that relied on knowing the answer in advance. Today's machines have on the order of a thousand physical qubits, the quantum version of bits; physical means raw and noisy, and many must work together to make one reliable qubit. Estimates of the machine needed to factor RSA-2048, the 2048-bit keys that guard much of the internet (a key length, unrelated to my $Q$), have fallen from roughly twenty million noisy qubits running for eight hours (Gidney and Ekerå, 2019) to under a million running for about a week (Gidney, 2025). Nobody has built such a machine.</p>
 
-							<h2 style="margin-bottom: 20px;">Coda: the readers in motion</h2>
+							<p>Each of the three readers turns on my grandfather's question of what two quantities share. The thermal reader throws the angles away and so does not care, though the packing trick in its section works because the keys $\log p$ share no whole-number relation, and the statistical reader's exact shares $q_p$ exist for the same reason. Shor's algorithm, by contrast, needs its comb to have a period, so the arrows line up only at multiples of $Q/r$, and its last step is a gcd that finds what 15 shares with 3 and with 5.</p>
 
-							<p>The thermal reader has one more secret. Run attention not once but continuously, taking the depth of the network as time, and the tokens, the word-pieces a transformer actually moves, become particles: each flows toward the softmax-weighted average of the others, with the inverse temperature $\beta$ now setting the coupling. Those are trajectory equations, and they cluster. In my simulation, twenty-four tokens on a circle collapse into a single cluster at $\beta = 0.5$, two clusters at $\beta = 2$, four at $\beta = 9$: hot attention melts everyone together, cold attention freezes factions. Mathematicians have recently begun treating transformers exactly this way, as interacting particle systems (Geshkovski, Letrouit, Polyanskiy, and Rigollet), and the contrast with our instrument is the lesson: the hands of $P$ rotate coupled to nothing, which is why their statistics come out quasi-periodic and tame, while rotors coupled through a softmax develop collective phases. A transformer is a shop of clocks that talk to each other.</p>
+							<h2 style="margin-bottom: 20px;">Attention in motion</h2>
 
-							<!-- .anim-figure: token-flow -->
-							<div class="featured-image" style="margin: 24px 0; text-align: center;">
+							<p>One last contrast explains why the clock shop is so orderly. A transformer applies attention many times, once in every layer, so its tokens keep pulling on each other, something the hands of $P$ never do. Treat the layer number as time and shrink the steps until they blur into a smooth flow, and the tokens, the word-pieces a transformer actually moves around, become particles. Each one drifts toward the softmax-weighted average of all the tokens, with the inverse temperature $\beta$ setting how picky each token is: a large $\beta$ makes it pull almost only toward its nearest neighbors. Those are rules of motion, and their solutions cluster. In my simulation, a toy version where each token is just a point on a circle, twenty-four evenly spaced tokens, after 20 layers, have merged into a single cluster at $\beta = 0.5$, into two at $\beta = 2$, and usually into four at $\beta = 9$, so hot attention melts everyone together and cold attention freezes them into factions. The factions are not permanent. Run the flow long enough and they merge too, but the colder the attention, the longer they hold out. Mathematicians have recently begun to study transformers in this way, as systems of interacting particles (Geshkovski, Letrouit, Polyanskiy, and Rigollet). The hands of our clock shop, by contrast, turn independently, each ignoring the others, which is why their statistics come out regular and predictable. In a transformer the particles are coupled through a softmax and pull each other into groups, like a shop of clocks that talk to each other.</p>
+
+							<figure class="fig">
 								<canvas id="animFlow" class="anim-canvas" width="740" height="300"></canvas>
 								<div class="anim-controls">
 									<label>&beta; <input id="flowB" type="range" min="0.5" max="9" step="0.1" value="2"></label>
@@ -382,24 +386,24 @@
 									<button id="flowR" type="button">restart</button>
 									<button id="flowP" type="button">pause</button>
 								</div>
-								<div class="anim-caption">Tokens as particles, depth as time: each dot drifts toward the softmax-weighted average of the others. Hot &beta; melts them into one cluster; cold &beta; freezes several.</div>
-								<noscript><div class="anim-caption">This figure is interactive; enable JavaScript to run it.</div></noscript>
-							</div>
+								<figcaption class="fig-cap"><span class="fig-n">Figure 12.</span> <span class="fig-live">live</span> Tokens as particles, with depth (the layer number) as time: each dot drifts toward the softmax-weighted average of all the dots. Hot (small $\beta$) melts them into one cluster; cold (large $\beta$) freezes several, which merge only slowly. At $\beta = 2$, watch two clusters form by depth 20 and merge by about depth 100.</figcaption>
+								<noscript><div class="fig-cap">This figure is interactive; enable JavaScript to run it.</div></noscript>
+							</figure>
 
 							<h2 style="margin-bottom: 20px;">The edge of the map</h2>
 
-							<p>Back at the census, the spacings hold more structure than the count, and I state it carefully. Their statistics are neither the Poisson behavior of independent random points nor the random-matrix repulsion conjectured for Riemann's zeros. They show what the theory of almost periodic functions says to expect: a quasi-periodic skeleton paced by the 9.06 beat, though dressed with fewer defects than the lesser hands ought to provide. On 595 points this is a measurement, not a theorem, and I hold it loosely.</p>
+							<p>Back at the census, the gaps between consecutive zeros hold more structure than the count. Points dropped independently at random would have gaps of every size, many of them tiny. Riemann's zeros are conjectured to space themselves like the energy levels of a heavy atomic nucleus (in mathematical terms, the eigenvalues of a large random matrix), which push each other apart. Our zeros do neither. Their gaps look like what one expects from the zeros of an almost periodic function: a nearly regular rhythm set by the 2-hand's 9.06 beat, interrupted by occasional defects, gaps much shorter than the beat, where a shorter hand steals a turn. Nine gaps in ten fall within 20 percent of the 9.06 beat, and only 8 percent are shorter than half the average gap, against about 39 percent for points dropped at random. This rests on only 595 points and has no proof behind it, so I hold it loosely.</p>
 
-							<p>The census window stops at real part 1.25; the zeros do not. Sweeps below the window's edge keep finding them, drifting toward $\operatorname{Re}\, s = 1$ as the density formula says they should. And at $\operatorname{Re}\, s = 1$ the water deepens. To the left the series for $P$ diverges, and its analytic continuation carries an inheritance: every zero $\rho$ of Riemann's zeta plants a branch point at $\rho/k$, for every squarefree $k$, and the imaginary axis is a natural boundary past which no continuation exists at all. Follow the scattered zeros left and they lead toward the country governed by the aligned ones. What the level set does there I do not know. The defects missing from the spacing statistics are most likely hiding just left of the window; the two open ends may be one.</p>
+							<p>The census stops at real part 1.26, but the zeros do not. Sweeps to the left of the window keep finding them, drifting toward $\operatorname{Re}\, s = 1$ just as the density formula says they should. At $\operatorname{Re}\, s = 1$ the water gets deep. Left of that line the sum for $P$ no longer adds up, and the only way forward is to extend $P$ the way zeta was extended. That extension inherits Riemann's zeros as branch points of its own: each zero $\rho$ of zeta creates one at $\rho/m$ for every squarefree whole number $m$ (one with no repeated prime factor, like 6 or 30). Further left, at the imaginary axis (the vertical line $\operatorname{Re}\, s = 0$), the extension hits a barrier it cannot cross at all, called a natural boundary. Going left, the scattered zeros enter a region shaped by Riemann's zeros, which are believed to line up. What our zeros do there, I do not know. The zeros just left of the census, at real parts below 1.26, are among the defects, so leaving them out can only make the rhythm look more regular than it is. So both open questions sit in the strip just left of the census, what the zeros do near $\operatorname{Re}\, s = 1$ and how irregular their rhythm really is, and they may be one question.</p>
 
 							<blockquote style="border-left: 3px solid #9E2B25; margin: 8px 0 24px 0; padding: 4px 0 4px 20px; color: #444; font-style: italic;">
 								<p style="margin:0;">&ldquo;If it disagrees with experiment, it is wrong.&rdquo;</p>
 								<p style="margin:8px 0 0 0; font-style: normal; font-size: 13px; color: #9AA0A6;">Richard Feynman, <em>The Character of Physical Law</em>, 1965</p>
 							</blockquote>
 
-							<p>Checking against the numbers is where this project left its one small mark on the reference books. While tabulating the unordered histories, the ladder's middle rung, I compared my counts with the Online Encyclopedia of Integer Sequences. Entry A375120 carried a published formula; at $n = 144$ it said 42 where my code said 41. I assumed I was wrong: an encyclopedia is checked by many eyes, my program only by mine, so I went hunting for my bug. There was no bug. The trouble was the subtlety promised back at 30: 144 splits as $12 \times 12$, two identical halves, and identical halves cannot be told apart, so the formula counted one assembly twice. I sent the editors my count and ten thousand computed terms; within a day they had confirmed the error, and the corrected entry went live the following week. The full table is attached to it now.</p>
+							<p>Checking against the numbers also let me make one small correction to the reference books. While tabulating the unordered histories, the rung that keeps the nesting and forgets the order, I compared my counts with the Online Encyclopedia of Integer Sequences, the standard catalog of number sequences. Entry A375120 carried a published formula, and at $n = 144$ it said 42 where my code said 41. I assumed I was wrong. An encyclopedia is checked by many eyes and my program only by mine, so I went hunting for my bug. There was no bug. The trouble was repeated primes, the subtlety I flagged next to 30. Because 144 repeats its primes, it can split as $12 \times 12$, two identical halves, and identical halves cannot be told apart, so the formula counted one assembly twice. I sent the editors my count and ten thousand computed terms; within a day they had confirmed the error, and the corrected entry went live the following week. The full table is attached to it now.</p>
 
-							<p>That settles the promises from the top: an exact formula for the thickness of a cloud of zeros that demonstrably will not line up, checked against a census to about one percent; the same engine read three ways, in a chip, a clock shop, an interferometer; and one digit in one reference book, now right. Everything else is open, beginning a hair to the left of everything I computed. A line would have been tidier. What exists instead is a scatter with a law, and an edge past which the level set is unexplored.</p>
+							<p>So the zeros of $P(s) = \tfrac14$ do not line up, but an exact formula gives their density, and it matches the census. An AI model, the clock shop, and a quantum interferometer all read the same kind of sum, and one digit in one reference book is now right. A line would have been tidier. What I found is a scatter with a law, and an edge just left of everything I computed, past which these zeros are unexplored.</p>
 
 							<p><em>The paper: <a href="https://doi.org/10.5281/zenodo.21252898">Prime-Leaf Tree Theory</a>. Code and data: <a href="https://github.com/gbarbalinardo/primeleaf">github.com/gbarbalinardo/primeleaf</a>. The corrected entry: <a href="https://oeis.org/A375120">OEIS A375120</a>.</em></p>
 
@@ -436,7 +440,15 @@
 	<!-- ==== Article animations (self-contained, no dependencies) ==== -->
 	<script>
 	(function () {
-		var WINE = '#9E2B25', BLUE = '#2E5E8C', INK = '#1A1A1A', MID = '#6B6B6B', RULE = '#DAD6CC', FAINT = '#B8B4AC';
+		var WINE = '#9E2B25', BLUE = '#2B5D96', INK = '#1A1A1A', MID = '#6B6B6B', RULE = '#DAD6CC', FAINT = '#B8B4AC';
+		var PRIME = { 2: WINE, 3: BLUE, 5: '#2E6E3A', 7: '#B8860B' };
+		var FF = '"Helvetica Neue", Helvetica, Arial, sans-serif';
+		var ctx2d = function (cv) {
+			var w = cv.width, h = cv.height, r = Math.min(2, window.devicePixelRatio || 1);
+			cv.width = w * r; cv.height = h * r;
+			var c = cv.getContext('2d'); c.setTransform(r, 0, 0, r, 0, 0);
+			return c;
+		};
 		var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 
@@ -445,7 +457,7 @@
 		if (zetaCv) {
 			var ZV = [1.46,1.434,1.363,1.267,1.163,1.065,0.978,0.902,0.837,0.782,0.736,0.698,0.665,0.638,0.615,0.596,0.58,0.566,0.555,0.547,0.54,0.534,0.53,0.528,0.527,0.526,0.527,0.529,0.531,0.534,0.539,0.543,0.549,0.555,0.562,0.569,0.577,0.585,0.594,0.604,0.614,0.624,0.635,0.646,0.658,0.671,0.683,0.697,0.71,0.724,0.739,0.754,0.769,0.785,0.801,0.817,0.834,0.851,0.868,0.886,0.904,0.922,0.94,0.959,0.978,0.997,1.017,1.036,1.056,1.076,1.096,1.116,1.136,1.155,1.175,1.195,1.215,1.235,1.254,1.274,1.293,1.312,1.33,1.348,1.366,1.383,1.4,1.416,1.431,1.446,1.46,1.474,1.486,1.498,1.508,1.518,1.527,1.534,1.54,1.545,1.549,1.552,1.552,1.552,1.55,1.546,1.541,1.533,1.525,1.514,1.501,1.486,1.47,1.451,1.43,1.408,1.382,1.355,1.326,1.294,1.26,1.224,1.185,1.144,1.1,1.055,1.007,0.956,0.903,0.848,0.791,0.732,0.67,0.606,0.54,0.472,0.403,0.331,0.257,0.182,0.106,0.027,0.052,0.133,0.215,0.297,0.381,0.465,0.55,0.635,0.72,0.805,0.89,0.974,1.058,1.141,1.223,1.304,1.383,1.461,1.537,1.61,1.681,1.75,1.816,1.879,1.939,1.996,2.049,2.098,2.143,2.184,2.22,2.252,2.279,2.302,2.319,2.332,2.339,2.34,2.337,2.328,2.313,2.293,2.267,2.235,2.198,2.155,2.107,2.054,1.995,1.93,1.861,1.787,1.708,1.625,1.537,1.445,1.349,1.25,1.148,1.043,0.935,0.825,0.713,0.599,0.485,0.37,0.255,0.139,0.025,0.088,0.2,0.31,0.417,0.521,0.622,0.72,0.813,0.901,0.984,1.062,1.133,1.199,1.258,1.309,1.354,1.391,1.42,1.442,1.455,1.459,1.455,1.443,1.422,1.392,1.354,1.306,1.251,1.187,1.115,1.035,0.948,0.853,0.751,0.642,0.527,0.406,0.28,0.15,0.015,0.124,0.265,0.409,0.555,0.701,0.848,0.995,1.141,1.285,1.426,1.565,1.699,1.829,1.954,2.073,2.185,2.291,2.388,2.478,2.559,2.63,2.692,2.744,2.786,2.817,2.837,2.847,2.845,2.833,2.809,2.774,2.729,2.673,2.607,2.531,2.445,2.35,2.247,2.135,2.017,1.891,1.76,1.624,1.483,1.339,1.192,1.043,0.894,0.744,0.596,0.45,0.307,0.167,0.033,0.096,0.218,0.333,0.44,0.538,0.626,0.703,0.77,0.826,0.869,0.901,0.919,0.926,0.919,0.899,0.867,0.822,0.764,0.694,0.613,0.52,0.416,0.303,0.18,0.048,0.091,0.237,0.389,0.546,0.706,0.868,1.033,1.197,1.36,1.521,1.679,1.832,1.979,2.12,2.253,2.376,2.49,2.592,2.683,2.762,2.826,2.878,2.914,2.936,2.942,2.934,2.909,2.869,2.814,2.744,2.659,2.56,2.447,2.321,2.183,2.034,1.874,1.705,1.528,1.344,1.154,0.96,0.763,0.565,0.366,0.168,0.027,0.218,0.403,0.582,0.752,0.914,1.064,1.204,1.331,1.444,1.543,1.628,1.697,1.75,1.787,1.808,1.812,1.801,1.774,1.731,1.673,1.601,1.516,1.418,1.309,1.189,1.061,0.924,0.782,0.634,0.484,0.331,0.179,0.028,0.12,0.263,0.4,0.529,0.649,0.758,0.855,0.939,1.009,1.064,1.102,1.124,1.129,1.116,1.085,1.037,0.97,0.886,0.785,0.667,0.534,0.386,0.224,0.049,0.137,0.332,0.536,0.746,0.961,1.179,1.399,1.617,1.833,2.045,2.251,2.448,2.636,2.812,2.975,3.124,3.256,3.372,3.47,3.548,3.607,3.646,3.663,3.661,3.637,3.593,3.528,3.444,3.342,3.221,3.084,2.932,2.765,2.587,2.397,2.199,1.995,1.785,1.572,1.359,1.146,0.937,0.733,0.537,0.349,0.172,0.008,0.142,0.277,0.395,0.496,0.578,0.641,0.685,0.709,0.712,0.697,0.662,0.609,0.538,0.451,0.348,0.231,0.102,0.037,0.186,0.341,0.5,0.663,0.825,0.986,1.143,1.294,1.436,1.568,1.688,1.794,1.884,1.957,2.011,2.046,2.061,2.054,2.026,1.976,1.904,1.81,1.696,1.562,1.408,1.237,1.049,0.846,0.631,0.404,0.169,0.072,0.318,0.565,0.812,1.055,1.292,1.521,1.739,1.945,2.135,2.308,2.462,2.596,2.708,2.796,2.86,2.899,2.913,2.902,2.865,2.803,2.717,2.608,2.476,2.323,2.152,1.963,1.759,1.543,1.315,1.08,0.839,0.595,0.352,0.11,0.126,0.355,0.574,0.781,0.973,1.149,1.307,1.446,1.563,1.659,1.733,1.783,1.81,1.815,1.797,1.758,1.698,1.619,1.523,1.41,1.284,1.146,0.999,0.845,0.687,0.527,0.369,0.214,0.067,0.072,0.199,0.313,0.41,0.489,0.549,0.587];
 			var ZZ = [14.1347,21.022,25.0109,30.4249,32.9351,37.5862,40.9187,43.3271,48.0052,49.7738,52.9703,56.4462,59.347];
-			var zc = zetaCv.getContext('2d');
+			var zc = ctx2d(zetaCv);
 			var zT = reduced ? 60 : 0, zPaused = reduced;
 			var ZX0 = 200, ZSC = 118, ZYB = 392, ZYT = 24;
 			var zy = function (t) { return ZYB - (ZYB - ZYT) * t / 60; };
@@ -454,7 +466,7 @@
 				zc.clearRect(0, 0, 740, 420);
 				zc.strokeStyle = INK; zc.lineWidth = 1.4;
 				zc.beginPath(); zc.moveTo(ZX0, ZYB); zc.lineTo(ZX0, ZYT); zc.stroke();
-				zc.fillStyle = MID; zc.font = '12px sans-serif'; zc.textAlign = 'left';
+				zc.fillStyle = MID; zc.font = '12px ' + FF; zc.textAlign = 'left';
 				zc.fillText('the critical line, Re s = 1\u20442', ZX0 + 10, ZYT + 10);
 				for (var tt = 0; tt <= 60; tt += 10) {
 					zc.strokeStyle = RULE;
@@ -493,7 +505,7 @@
 		var softCv = document.getElementById('animSoft');
 		if (softCv) {
 			var sPr = [2, 3, 5, 7];
-			var sc = softCv.getContext('2d');
+			var sc = ctx2d(softCv);
 			var drawSoft = function () {
 				var sig = +document.getElementById('softT').value;
 				document.getElementById('softTv').textContent = '\u03C3 = ' + sig.toFixed(2);
@@ -504,18 +516,18 @@
 				var bw = 120, gap = 45, x0 = 65, base = 168, wmax = Math.max.apply(null, w);
 				for (var i = 0; i < sPr.length; i++) {
 					var pr = w[i] / Z, x = x0 + i * (bw + gap);
-					sc.fillStyle = (w[i] === wmax) ? WINE : BLUE;
+					sc.fillStyle = PRIME[sPr[i]];
 					sc.globalAlpha = 0.9;
 					sc.fillRect(x, base - pr * 135, bw, pr * 135);
 					sc.globalAlpha = 1;
-					sc.fillStyle = MID; sc.font = '12px sans-serif'; sc.textAlign = 'center';
+					sc.fillStyle = MID; sc.font = '12px ' + FF; sc.textAlign = 'center';
 					sc.fillText('p = ' + sPr[i] + '   energy ' + Math.log(sPr[i]).toFixed(2), x + bw / 2, base + 18);
 					sc.fillStyle = INK;
 					sc.fillText((100 * pr).toFixed(1) + '%', x + bw / 2, base - pr * 135 - 6);
 				}
 				sc.strokeStyle = RULE; sc.beginPath(); sc.moveTo(40, base); sc.lineTo(700, base); sc.stroke();
 				if (sig > 2.5973851271346716) {
-					sc.fillStyle = MID; sc.font = 'italic 12px sans-serif'; sc.textAlign = 'left';
+					sc.fillStyle = MID; sc.font = 'italic 12px ' + FF; sc.textAlign = 'left';
 					sc.fillText("past the clock shop's wall \u03C3* = 2.597", 40, 24);
 				}
 			};
@@ -525,10 +537,10 @@
 		/* clock shop */
 		var clockCv = document.getElementById('animClock');
 		if (clockCv) {
-			var cc = clockCv.getContext('2d');
+			var cc = ctx2d(clockCv);
 			var trailCv = document.createElement('canvas');
 			trailCv.width = 740; trailCv.height = 420;
-			var tc = trailCv.getContext('2d');
+			var tc = ctx2d(trailCv);
 			var t = 0, sigma = 1.30, cPaused = reduced, closeN = 0, wasClose = false, cSpeed = 6;
 			var CX = 445, CY = 210, S = 310;
 			var hands = [2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97];
@@ -552,7 +564,7 @@
 						var tp = tipAt(t);
 						var px = CX + tp[0] * S, py = CY - tp[1] * S;
 						if (prevTip) {
-							tc.strokeStyle = 'rgba(46,94,140,0.30)'; tc.lineWidth = 1;
+							tc.strokeStyle = 'rgba(43,93,150,0.30)'; tc.lineWidth = 1;
 							tc.beginPath(); tc.moveTo(prevTip[0], prevTip[1]); tc.lineTo(px, py); tc.stroke();
 						}
 						prevTip = [px, py];
@@ -570,17 +582,17 @@
 				}
 				var r = Math.hypot(re, im);
 				cc.clearRect(0, 0, 740, 420);
-				cc.drawImage(trailCv, 0, 0);
+				cc.drawImage(trailCv, 0, 0, 740, 420);
 				cc.strokeStyle = FAINT; cc.lineWidth = 1;
 				cc.beginPath(); cc.moveTo(CX - 12, CY); cc.lineTo(CX + 12, CY);
 				cc.moveTo(CX, CY - 12); cc.lineTo(CX, CY + 12); cc.stroke();
 				var ax = CX - 0.25 * S;
 				cc.fillStyle = INK; cc.fillRect(ax - 3, CY - 3, 6, 6);
-				cc.fillStyle = MID; cc.font = '12px sans-serif'; cc.textAlign = 'left';
+				cc.fillStyle = MID; cc.font = '12px ' + FF; cc.textAlign = 'left';
 				cc.fillText('anchor \u22121\u20444', ax - 30, CY + 22);
 				cc.lineWidth = 1.6;
 				for (var i2 = 0; i2 < pts.length - 1; i2++) {
-					cc.strokeStyle = i2 === 0 ? WINE : (i2 < 4 ? INK : FAINT);
+					cc.strokeStyle = PRIME[hands[i2]] || FAINT;
 					cc.beginPath();
 					cc.moveTo(CX + pts[i2][0] * S, CY - pts[i2][1] * S);
 					cc.lineTo(CX + pts[i2 + 1][0] * S, CY - pts[i2 + 1][1] * S);
@@ -591,14 +603,16 @@
 				if (r < 0.035) {
 					cc.strokeStyle = WINE; cc.lineWidth = 2;
 					cc.beginPath(); cc.arc(CX, CY, 16, 0, 7); cc.stroke();
-					cc.fillStyle = WINE; cc.font = 'bold 13px sans-serif';
-					cc.fillText('conspiracy', CX + 22, CY - 18);
+					cc.fillStyle = WINE; cc.font = 'bold 13px ' + FF;
+					cc.fillText('close pass', CX + 22, CY - 18);
 				}
-				cc.fillStyle = MID; cc.font = '12px sans-serif';
-				cc.fillText('slowest hand', 18, 24);
-				cc.fillStyle = WINE; cc.fillRect(96, 18, 14, 3);
+				cc.font = '12px ' + FF; cc.textAlign = 'left';
+				for (var kp = 0, kx = 18; kp < 4; kp++, kx += 66) {
+					cc.fillStyle = PRIME[[2, 3, 5, 7][kp]]; cc.fillRect(kx, 19, 14, 3);
+					cc.fillStyle = MID; cc.fillText([2, 3, 5, 7][kp] + '-hand', kx + 19, 24);
+				}
 				document.getElementById('clockT').textContent = 't = ' + t.toFixed(1);
-				document.getElementById('clockN').textContent = 'conspiracies: ' + closeN;
+				document.getElementById('clockN').textContent = 'close passes: ' + closeN;
 				requestAnimationFrame(clockStep);
 			};
 			document.getElementById('clockS').addEventListener('input', function (e) {
@@ -639,7 +653,7 @@
 				spec.push(sre * sre + sim * sim);
 			}
 			var smax = Math.max.apply(null, spec);
-			var hc = shorCv.getContext('2d');
+			var hc = ctx2d(shorCv);
 			var kNow = 0, sweeping = !reduced;
 			var shorStep = function () {
 				if (sweeping) { kNow += 0.22; if (kNow > 255) kNow = 0;
@@ -658,7 +672,7 @@
 					re = nre; im = nim;
 				}
 				var amp = Math.hypot(re, im) / comb.length;
-				hc.fillStyle = MID; hc.font = '12px sans-serif'; hc.textAlign = 'left';
+				hc.fillStyle = MID; hc.font = '12px ' + FF; hc.textAlign = 'left';
 				hc.fillText('phasor chain, ' + comb.length + ' ticks', 26, 26);
 				hc.fillStyle = amp > 0.8 ? WINE : INK;
 				hc.fillText('|sum| / max = ' + amp.toFixed(2) + (amp > 0.8 ? '   ALIGNED' : ''), 26, 44);
@@ -689,12 +703,12 @@
 		/* dominance ledger: winding + time shares at sigma = 1.30 */
 		var domCv = document.getElementById('animDom');
 		if (domCv) {
-			var dc = domCv.getContext('2d');
+			var dc = ctx2d(domCv);
 			var dPr = [2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97];
 			var dLg = dPr.map(Math.log), dSig = 1.30;
 			var dLen = dPr.map(function (p2) { return Math.pow(p2, -dSig); });
 			var Q_TARGET = { 2: 0.624, 3: 0.148, 5: 0.042, 7: 0.017 };
-			var DCOL = { 2: WINE, 3: BLUE, 5: '#2E6E3A', 7: '#B8860B' };
+			var DCOL = PRIME;
 			var dT = 0, dW = 0, dPhiPrev = null, dPaused = reduced, dSpeed = 8;
 			var dShare = { 2: 0, 3: 0, 5: 0, 7: 0, none: 0 };
 			var dReset = function () {
@@ -723,16 +737,16 @@
 						var winner = 'none';
 						for (var j = 0; j < 4; j++) {
 							var rr2 = Math.hypot(re - terms[j][0], im - terms[j][1]);
-							if (dLen[j] > rr2) { winner = dPr[j]; break; }
+							if (dLen[j] > rr2) { dShare[dPr[j]] += dt / sub; winner = dPr[j]; }
 						}
-						dShare[winner] += dt / sub;
+						if (winner === 'none') dShare.none += dt / sub;
 					}
 				}
 				dc.clearRect(0, 0, 740, 420);
 				/* left: mini chain */
 				var CX2 = 190, CY2 = 205, S2 = 210;
 				var re2 = -0.25, im2 = 0, pts2 = [[-0.25, 0]], win2 = 'none', winIdx = -1;
-				var terms2 = [];
+				var terms2 = [], wins = [];
 				for (var i2 = 0; i2 < dPr.length; i2++) {
 					var a2 = dLen[i2] * Math.cos(-dT * dLg[i2]);
 					var b2 = dLen[i2] * Math.sin(-dT * dLg[i2]);
@@ -740,14 +754,14 @@
 				}
 				for (var j2 = 0; j2 < 4; j2++) {
 					var rr3 = Math.hypot(re2 - terms2[j2][0], im2 - terms2[j2][1]);
-					if (dLen[j2] > rr3) { win2 = dPr[j2]; winIdx = j2; break; }
+					if (dLen[j2] > rr3) { if (win2 === 'none') { win2 = dPr[j2]; winIdx = j2; } wins.push(j2); }
 				}
 				dc.strokeStyle = FAINT; dc.lineWidth = 1;
 				dc.beginPath(); dc.moveTo(CX2 - 10, CY2); dc.lineTo(CX2 + 10, CY2);
 				dc.moveTo(CX2, CY2 - 10); dc.lineTo(CX2, CY2 + 10); dc.stroke();
 				dc.lineWidth = 1.6;
 				for (var i3 = 0; i3 < pts2.length - 1; i3++) {
-					dc.strokeStyle = (i3 === winIdx) ? (DCOL[dPr[i3]] || INK) : (i3 < 4 ? INK : FAINT);
+					dc.strokeStyle = (wins.indexOf(i3) >= 0) ? (DCOL[dPr[i3]] || INK) : (i3 < 4 ? INK : FAINT);
 					dc.beginPath();
 					dc.moveTo(CX2 + pts2[i3][0] * S2, CY2 - pts2[i3][1] * S2);
 					dc.lineTo(CX2 + pts2[i3 + 1][0] * S2, CY2 - pts2[i3 + 1][1] * S2);
@@ -755,9 +769,9 @@
 				}
 				dc.fillStyle = win2 === 'none' ? MID : DCOL[win2];
 				dc.beginPath(); dc.arc(CX2 + re2 * S2, CY2 - im2 * S2, 4, 0, 7); dc.fill();
-				dc.font = 'bold 14px sans-serif'; dc.textAlign = 'left';
-				dc.fillText(win2 === 'none' ? 'no hand dominates' : 'the ' + win2 + '-hand leads', 24, 34);
-				dc.fillStyle = MID; dc.font = '12px sans-serif';
+				dc.font = 'bold 14px ' + FF; dc.textAlign = 'left';
+				dc.fillText(wins.length === 0 ? 'no hand dominates' : wins.map(function (w) { return 'the ' + dPr[w] + '-hand'; }).join(' and ') + (wins.length > 1 ? ' dominate' : ' dominates'), 24, 34);
+				dc.fillStyle = MID; dc.font = '12px ' + FF;
 				dc.fillText('σ = 1.30, first 25 hands', 24, 52);
 				/* right: share meters */
 				var mx = 420, mw = 260, my0 = 70, mh = 16, gap2 = 44;
@@ -773,7 +787,7 @@
 					var tx3 = mx + mw * Q_TARGET[pk];
 					dc.strokeStyle = INK; dc.lineWidth = 1.5;
 					dc.beginPath(); dc.moveTo(tx3, yb2 - 4); dc.lineTo(tx3, yb2 + mh + 4); dc.stroke();
-					dc.fillStyle = INK; dc.font = '12px sans-serif';
+					dc.fillStyle = INK; dc.font = '12px ' + FF;
 					dc.fillText(pk + ':  ' + (100 * frac).toFixed(1) + '%  (q = ' + (100 * Q_TARGET[pk]).toFixed(1) + ')', mx, yb2 - 7);
 				}
 				var laps = Math.floor(Math.abs(dW) / (2 * Math.PI));
@@ -793,12 +807,12 @@
 		/* token flow: tokens as interacting particles on a circle */
 		var flowCv = document.getElementById('animFlow');
 		if (flowCv) {
-			var fc = flowCv.getContext('2d');
+			var fc = ctx2d(flowCv);
 			var FN = 24, fBeta = 2.0, fPaused = reduced, depth = 0, fTh = [];
 			var FCX = 370, FCY = 152, FR = 112;
 			var fRestart = function () {
 				fTh = []; depth = 0;
-				for (var i = 0; i < FN; i++) fTh.push(Math.random() * 2 * Math.PI);
+				for (var i = 0; i < FN; i++) fTh.push(2 * Math.PI * i / FN + (Math.random() - 0.5) * 0.1);
 			};
 			fRestart();
 			var fStep = function () {
